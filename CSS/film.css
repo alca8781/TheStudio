@@ -1,0 +1,152 @@
+/* ==============================
+   RESET
+================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: rgb(15, 15, 15);
+  color: #eaeaea;
+  font-family: "Cutive Mono", monospace;
+}
+
+/* ==============================
+   TITLE
+================================ */
+h1 {
+  text-align: center;
+  margin-top: 120px;
+  letter-spacing: 0.25em;
+  font-size: 2rem;
+}
+
+/* ==============================
+   FILM STORY CONTAINER
+================================ */
+.film-story {
+  position: relative;
+  max-width: 900px;
+  margin: 140px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 140px;
+}
+
+/* ==============================
+   CALLIGRAPHIC LINE
+================================ */
+.story-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 260px;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+
+  /* removes digital sharpness */
+  filter: blur(0.15px);
+}
+
+/* thick ink */
+.line-base {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.18);
+  stroke-width: 3.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* thin pressure highlight */
+.line-detail {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.35);
+  stroke-width: 1.1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ==============================
+   IMAGE MOMENTS
+================================ */
+.film-story figure {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  display: flex;
+}
+
+/* intentional imbalance */
+.film-story figure:nth-child(odd) {
+  justify-content: flex-start;
+}
+
+.film-story figure:nth-child(even) {
+  justify-content: flex-end;
+}
+
+/* ==============================
+   IMAGES
+================================ */
+.film-story img {
+  width: 100%;
+  max-width: 580px;
+  height: auto;
+  object-fit: contain;
+
+  filter: grayscale(100%) contrast(1.1);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.04),
+    0 30px 80px rgba(0, 0, 0, 0.6);
+
+  transition: transform 1.2s ease, filter 1.2s ease;
+}
+
+.film-story img:hover {
+  transform: scale(1.015);
+  filter: grayscale(85%) contrast(1.15);
+}
+
+/* ==============================
+   FADE-IN (OPTIONAL BUT GOOD)
+================================ */
+.film-story figure {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeIn 1.4s ease forwards;
+}
+
+.film-story figure:nth-of-type(1) { animation-delay: 0.2s; }
+.film-story figure:nth-of-type(2) { animation-delay: 0.6s; }
+.film-story figure:nth-of-type(3) { animation-delay: 1s; }
+.film-story figure:nth-of-type(4) { animation-delay: 1.4s; }
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==============================
+   MOBILE
+================================ */
+@media (max-width: 600px) {
+  .film-story {
+    gap: 100px;
+  }
+
+  .story-line {
+    width: 180px;
+  }
+
+  h1 {
+    margin-top: 80px;
+  }
+}

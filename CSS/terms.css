@@ -1,0 +1,57 @@
+@media(min-width:860px) {
+p{
+    text-align: left;
+
+ font-family: "Cutive Mono", monospace;
+    font-style: normal;
+
+}
+
+h1{
+    text-align: center;
+}
+
+h2{
+    font-size: 16pt;
+    text-align: center;
+}
+h3{
+    text-align: left;
+    color: #fbb831;
+}
+
+.terms {
+   padding-left: 350px;
+        padding-right: 300px;
+        padding-top: 20pt;
+    }
+}
+
+
+@media(max-width:860px) {
+
+p{
+text-align: left; 
+font-family: "Cutive Mono", monospace;
+font-style: normal;
+font-size: 10pt;
+
+}
+
+h1{
+    text-align: center;
+}
+
+h2{
+    font-size: 14pt;
+    text-align: center;
+}
+h3{
+    text-align: left;
+    color: #fbb831;
+}
+
+.terms {
+   padding: 20px;
+    }
+}

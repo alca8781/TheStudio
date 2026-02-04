@@ -1,0 +1,290 @@
+/* ==============================
+   BASE TYPOGRAPHY
+================================ */
+
+h3 {
+  font-family: "Limelight", sans-serif;
+  font-weight: 400;
+  color: #fbb831;
+  font-size: 30pt;
+}
+
+p {
+  font-family: "Cutive Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(27,27,27);
+  line-height: 1.65;
+}
+
+.text p{
+    text-align: center;
+    padding: 10px;
+     margin: 20px;
+      background-color: rgb(231, 229, 229);
+}
+
+/* ==============================
+   ARTICLE ANIMATION
+================================ */
+
+article {
+  background-color: rgb(231, 229, 229);
+  margin: 20px;
+  animation: slideInUp 0.8s ease;
+  position: relative; 
+  padding-bottom: 60px;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==============================
+   PORTFOLIO LAYOUT
+================================ */
+
+.displayPortfolio {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: inline;
+  gap: 20px;
+  padding:20px 100px 20px 100px;
+}
+
+/* Main specimen image */
+.displayPortfolio > img {
+  width: 500px;
+  height: auto;
+  object-fit: contain;
+  margin-top: 20px;
+
+}
+
+/* ==============================
+   TEXT COLUMN CONTROL
+================================ */
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.textBlock p {
+  margin-top: 30px;
+}
+
+/* Inline specimen image */
+.inline-image {
+  width: 100%;
+  max-width: 370px;
+  margin-top: 2px;
+}
+
+/* ==============================
+   CREDIT TAG
+================================ */
+
+#CreditTag {
+  position: absolute;
+  bottom: 20px;  
+  left: 40px;    
+  margin: 0;    
+}
+
+#CreditTag p {
+  margin: 0;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: rgb(50, 50, 50);
+}
+
+#CreditTag::before {
+  content: '';
+  position: absolute;
+  top: -6px;  
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background-color: rgb(27,27,27);
+  animation: expandLine 1s ease forwards;
+}
+
+@keyframes expandLine {
+  from { width: 0; }
+  to { width: 60px; }
+}
+
+/* ==============================
+   IMAGE INTERACTIONS
+================================ */
+
+.displayPortfolio img {
+  transition: transform 0.5s ease;
+}
+
+/* ==============================
+   TYPEWRITER TITLE
+================================ */
+
+.typewriter {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.typewriter.hidden {
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+}
+
+.typewriter h3 {
+  color: #fbb831;
+  font-size: 3.5rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+
+  border-right: 8px solid #fbb831;
+  width: 0;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: var(--chars); }
+}
+
+@keyframes blink-caret {
+  50% { border-color: transparent; }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+
+/* ==============================
+   BUTTON STYLING
+================================ */
+
+button {
+  background-color: #fbb831;
+  color: rgb(0, 0, 0);
+  padding: 2px 8px;
+  margin: 15px 10px;
+  border-radius: 8px;
+  font-size: 12pt;
+  border: none;
+  cursor: pointer;
+}
+
+.centerImg button {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: auto;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+.centerImg button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.5s, height 0.5s;
+}
+
+.centerImg button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.centerImg button:hover {
+  transform: translateY(-3px);
+}
+
+/* ==============================
+   CENTERED IMAGES
+================================ */
+
+.centerImg img {
+  display: block;
+  margin: auto;
+  width: 80%;
+  height: auto;
+  padding: 10px;
+}
+
+/* ==============================
+   GRID IMAGES
+================================ */
+.GridImages{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  align-items:flex-end;
+  gap: 30px;
+    padding: 20px 20px 0px 20px;
+  margin-top: 40px;
+}
+
+.GridImages img{
+    max-width: 350px;
+    height: auto;
+}
+
+/* ==============================
+   RESPONSIVE BREAKPOINTS
+================================ */
+
+/* Tablets */
+@media (min-width: 800px) and (max-width: 1299px) {
+  .displayPortfolio > img {
+    height: 650px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 799px) {
+
+  .displayPortfolio {
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
+
+  .displayPortfolio > img {
+    width: 100%;
+    height: auto;
+  }
+
+  .inline-image {
+    max-width: 100%;
+  }
+
+  .typewriter h3 {
+    font-size: 1.5rem;
+    border-right: 0.15em solid rgb(239, 206, 19);
+    color: rgb(239, 206, 19);
+  }
+}

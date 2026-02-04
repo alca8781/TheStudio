@@ -1,0 +1,447 @@
+/* === Base Styles === */
+html {
+    background-color: rgb(27, 27, 27);
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 10;
+    padding: 0;
+    font-family: "Raleway", sans-serif;
+}
+
+h1 {
+    color: rgb(79, 87, 104);
+    font-size: 25pt;
+    font-family: "Rozha One", serif;
+}
+
+h2, h3, h4 {
+    font-family: "Raleway", sans-serif;
+}
+
+h3 {
+    font-weight: 300;
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 15pt;
+    color: inherit;
+}
+
+a img:hover {
+    transform: scale(1.1);
+}
+
+button {
+    background-color: #fbb831;
+    color: rgb(0, 0, 0);
+    padding: 2px 10px;
+    margin: 15px 10px;
+    border-radius: 8px;
+    font-size: 12pt;
+}
+
+footer {
+    font-size: x-small;
+    text-align: center;
+    padding: 30px 10px;
+    margin-top: 50px;
+    width: 100%;
+    color: rgb(79, 87, 104);
+  
+    border-top: 1px solid rgba(251, 184, 49, 0.2);
+}
+
+.copyright {
+    color: white;
+}
+
+.sr-only {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+/* === Navigation === */
+    nav {
+    padding: .5em;
+    display: flex;
+    justify-content: space-evenly;
+    position: sticky;  /* already set */
+    top: 0;
+    background-color: rgb(27, 27, 27); /* Ensure it's not transparent */
+    z-index: 1000;  /* Add this */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fbb831;
+    min-width: 260px;
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    border-radius: 10px;
+    z-index: 1100; /* Add this to be above nav */
+}
+
+nav {
+        padding: .5em;
+        display: flex;
+        justify-content: space-evenly;
+        position: sticky;
+        top: 0;
+    }
+
+    nav ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+    }
+
+    nav a {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        padding: .2em .5em;
+        margin: 0 20pt;
+        text-align: left;
+    }
+
+    a {
+        font-family: "Raleway", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 300;
+        font-style: normal;
+        padding: 10px;
+        font-size: 15pt;
+        line-height: 1.5em;
+    }
+
+    nav ul li a:hover {
+        color: #bfbfbf;
+        border-bottom: 2px solid #fbb831;
+    }
+
+   
+    li.dropdown {
+        position: relative;
+    }
+
+    li.dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown-content a {
+        font-size: 12pt;
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        color: rgb(255, 255, 255);
+        border-bottom: none;
+    }
+
+/* === Social Icons === */
+.social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#instagram-button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+#instagram-logo {
+    width: 30px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+#instagram-button:hover #instagram-logo {
+    transform: scale(1.1);
+}
+
+/* === Typography and Layout === */
+h2 {
+    text-align: center;
+    font-weight: 300;
+    font-size: 14pt;
+    line-height: 1.5em;
+    background-color: rgb(79, 87, 104);
+    color: white;
+    padding: 15px 15px 15px 30px;
+    margin: 50px 0 30px;
+}
+
+p {
+    font-weight: 300;
+}
+
+/* === Container === */
+.container {
+    margin: 0 auto;
+    padding: 0 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+/* === Gallery Layout - 2 Column Grid === */
+article {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.gallery-card {
+    position: relative;
+    width: 100%;
+    height: 270px;
+    overflow: hidden;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.gallery-card:nth-child(1) { animation-delay: 0.1s; }
+.gallery-card:nth-child(2) { animation-delay: 0.2s; }
+.gallery-card:nth-child(3) { animation-delay: 0.3s; }
+.gallery-card:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.gallery-card:hover {
+    transform: translateY(-10px) scale(1.02);
+   
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    display: block;
+    border-radius: 15px;
+}
+
+.gallery-card:hover img {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.3));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    border-radius: 15px;
+}
+
+.gallery-card:hover .overlay {
+    opacity: 1;
+}
+
+.overlay-text h3 {
+    color: white;
+    font-size: 35px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 15px;
+    pointer-events: none;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    letter-spacing: 2px;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.overlay-text h4 {
+    color: #fbb831;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    pointer-events: none;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    letter-spacing: 1px;
+    transform: translateY(20px);
+    transition: transform 0.3s ease 0.1s;
+}
+
+.gallery-card:hover .overlay-text h3,
+.gallery-card:hover .overlay-text h4 {
+    transform: translateY(0);
+}
+
+
+
+/* === Responsive Layout === */
+@media only screen and (max-width: 799px) {
+    article {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .gallery-card {
+        height: 200px;
+    }
+
+    .overlay-text h3 {
+        font-size: 24px;
+    }
+
+    .overlay-text h4 {
+        font-size: 14px;
+    }
+
+    nav a {
+        margin: 0 2pt;
+        font-size: 14px;
+    }
+
+    .dropdown-content {
+        min-width: 160px;
+        padding: 2px;
+    }
+
+    .dropdown-content a {
+        font-size: 8pt;
+    }
+
+    .button-row button {
+        font-size: 8pt;
+        padding: 6px;
+        min-width: 160px;
+        max-width: 100px;
+    }
+
+    .centerImages p {
+        text-align: center;
+        padding: 15px;
+    }
+
+    .centerImg button {
+        display: block;
+        margin: auto;
+        padding: 10px;
+    }
+
+    .headerLogo img {
+        width: 200px;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 1299px) {
+    article {
+        gap: 25px;
+    }
+
+    .gallery-card {
+        height: 250px;
+    }
+
+    nav a {
+        margin: 0 2pt;
+    }
+
+    .dropdown-content {
+        min-width: 160px;
+        padding: 2px;
+    }
+
+    .dropdown-content a {
+        font-size: 8pt;
+    }
+
+    .button-row button {
+        font-size: 8pt;
+        padding: 6px;
+        min-width: 160px;
+        max-width: 100px;
+    }
+
+    .centerImages p {
+        text-align: center;
+        padding: 15px;
+    }
+
+    .centerImg button {
+        display: block;
+        margin: auto;
+        padding: 10px;
+    }
+
+    .headerLogo img {
+        width: 250px;
+    }
+}
+
+@media (min-width: 1300px) {
+    html {
+        max-width: 1200px;
+        width: 90%;
+        height: 100%;
+        margin: 0 auto;
+    }
+
+    .headerLogo img {
+        width: 350px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .dropdown-content {
+        min-width: 260px;
+        padding: 5px;
+    }
+
+    .dropdown-content a {
+        font-size: 12pt;
+    }
+
+    .centerImg button {
+        width: 8%;
+        height: auto;
+        padding: 10px;
+    }
+}

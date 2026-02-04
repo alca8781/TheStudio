@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="/CSS/contentful.css" rel="stylesheet">
+    <script src="/JS/contentfulAPI.js" defer></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Jersey+25+Charted&family=Limelight&family=Notable&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Jersey+25+Charted&family=Limelight&family=Notable&family=Sigmar&display=swap" rel="stylesheet">
+
+
+    <title>Sleepy Hollow Wedding</title>
+    <link rel="icon" type="image/x-icon" href="/image/favicon.ico">
+</head>
+
+<body>
+<section class="galleryheader">
+    <nav>
+        <a href="/index.html" class="nav-logo">
+            <img src="/Images/2x3.png" alt="AC Studios Home">
+        </a>
+        <h3 class="sr-only">Gallery Nav</h3>
+        <ul>
+            <li><a href="Galleries.html"><b>BACK TO GALLERIES</b></a></li>
+        </ul>
+    </nav>
+
+    <div id="title">
+    <h1> Sleepy Hollow Wedding</h1>
+<p> Vermont 2019</p>
+    </div>
+    <section id="top">
+        <button id="resetCartButton">CLEAR CART</button>
+        <div class="cart">
+
+            <button id="viewCartButton">
+                <div id="cartCountContainer"></div>
+                <img src="/Images/cart.png">
+            </button>
+            <div id="cartListContainer"></div>
+        </div>
+    </section>
+
+</section>
+
+<section class="TheGalleryImages">
+    <div id="zoomModal"
+        style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background-color:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:9999;">
+        <img id="zoomedImage" style="max-width:90vw; max-height:90vh; border: 4px solid white;">
+    </div>
+
+    <div id="SleepyHollow_content" class="SleepyHollowcontainer"></div>
+
+</section>
+
+
+    <!-- Social and copyright  -->
+    <footer>
+        <h2 class="sr-only"> Socials & Copyright </h2>
+
+        <section class="social">
+            <h3 class="sr-only">Instagram Link</h3>
+            <button id="instagram-button">
+                <img src="/images/insta-logo_white.png" alt="Instagram Logo" id="instagram-logo">
+            </button>
+        </section>
+        <section class="copyright">
+            <h3 class="sr-only">Copyright </h3>
+            Copyright © 2017 AC Studios - All Rights Reserved.
+        </section>
+    </footer>
+
+</body>
+
+</html>

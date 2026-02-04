@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="CSS/navigation.css" rel="stylesheet">
+    <link href="CSS/homepage.css" rel="stylesheet">
+    <script src="/JS/graphicpages.js" defer></script>
+    <script src="/JS/index.js" defer></script>
+
+     <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Slabo+13px&family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&family=Rozha+One&family=Slabo+13px&display=swap"
+        rel="stylesheet">
+
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Jersey+25+Charted&family=Limelight&family=Notable&display=swap"
+        rel="stylesheet">
+
+          <title>AC Studios</title>
+              <link rel="icon" type="image/x-icon" href="image/favicon.ico">
+
+</head>
+
+<body>
+    <div class="progress-bar"></div>
+    <h2 class="sr-only"> Logo & Navigation</h2>
+
+    <!-- Nav -->
+    <header>
+        <nav>
+            <a href="index.html" class="nav-logo">
+                <img src="/Images/2x3.png" alt="AC Studios Home">
+            </a>
+
+            <div class="nav-controls">
+                <ul>
+                    <li class="dropdown">
+                        <a href="#">SHOP</a>
+                        <div class="dropdown-content">
+                            <a href="PhotographyShop.html">Photo Services</a>
+                            <a href="PhotoGalleries/Galleries.html">Photo Session Galleries</a>
+                        </div>
+                    </li>
+
+                    <li><a href="contact.html">CONTACT</a></li>
+
+                    <li class="dropdown">
+                        <a href="#">PORTFOLIO</a>
+                        <div class="dropdown-content">
+                            <a href="GraphicDesignPort.html">Art & Design</a>
+                            <a href="PhotographyPort.html">Digital Photography</a>
+                            <a href="Film.html">120 Film</a>
+                            <a href="Film2.html">35 Film</a>
+                            
+                        </div>
+                    </li>
+
+                    <li><a href="terms.html">TERMS</a></li>
+                </ul>
+
+                <button id="menu-toggle">
+                    <img src="/images/menuicon.png" alt="menu">
+                </button>
+            </div>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="floating-shape shape1"></div>
+        <div class="floating-shape shape2"></div>
+        <div class="floating-shape shape3"></div>
+
+        <div class="logo-container">
+            <img src="Images/2x3.png" alt="AC Studios Logo">
+            <p class="hero-subtitle">PHOTOGRAPHER & DESIGNER</p>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-content">
+                <h2>About the Artist</h2>
+                <p>
+                    I am a Photographer and Graphic Designer based in Boulder, specializing in portrait, event, and
+                    street photography as well as logo, print, digital, and website design.
+                </p>
+                <p>
+                  Send me an email with questions, bookings, or anything else!<br><br>
+                  <strong>Instagram:</strong> @ac.studios.photography<br>
+                </p>
+            </div>
+            <div class="about-images">
+                <!-- <img src="Images/Homepage/ac2.jpg" alt="Photographer with camera"> -->
+                <img src="images/ac3.jpg" alt="Photographer headshot">
+            </div>
+        </div>
+    </section>
+</section>
+
+
+
+     <footer>
+        <div class="social">
+            <button id="instagram-button">
+                <img src="images/insta-logo_white.png" alt="Instagram" id="instagram-logo">
+            </button>
+        </div>
+        <div class="copyright">
+            Copyright © 2017 AC Studios - All Rights Reserved.
+        </div>
+    </footer>
+
+
+    <script src="/JS/index.js"></script>
+    <script src="/JS/gallery.js"></script>
+    <script src="/JS/nav.js"></script>
+
+<script>
+  // === Smooth scroll only for same-page anchors ===
+  document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // === Fix dropdown click behavior ===
+  document.querySelectorAll('.dropdown > a').forEach(dropTrigger => {
+    dropTrigger.addEventListener('click', e => {
+      // Only toggle dropdown visibility for mobile
+      if (window.innerWidth < 800) {
+        e.preventDefault();
+        const dropdown = dropTrigger.nextElementSibling;
+        dropdown.style.display =
+          dropdown.style.display === 'block' ? 'none' : 'block';
+      }
+    });
+  });
+
+  // === Button navigation functionality ===
+  document.querySelectorAll('.button-row .btn').forEach(button => {
+    button.addEventListener('click', () => {
+      const text = button.textContent.trim();
+      if (text.includes('Graphic Design')) {
+        window.location.href = 'GraphicDesignPort.html';
+      } else if (text.includes('Photography Portfolio')) {
+        window.location.href = 'PhotographyPort.html';
+      } else if (text.includes('Contact')) {
+        window.location.href = 'contact.html';
+      }
+    });
+  });
+
+  // === Intersection Observer for fade-ins ===
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
+  };
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.about-section > *').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+
+  // === Parallax effect ===
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    document.querySelectorAll('.floating-shape').forEach((el, index) => {
+      const speed = (index + 1) * 0.5;
+      el.style.transform = `translateY(${scrolled * speed}px)`;
+    });
+
+    // === Progress bar update ===
+    const scrollTop = window.scrollY;
+    const docHeight = document.body.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    document.querySelector('.progress-bar').style.width = `${scrollPercent}%`;
+  });
+
+  document.querySelectorAll('.art-item').forEach(el => {
+    observer.observe(el);
+  });
+</script>
+
+</body>
+
+</html>
