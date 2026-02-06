@@ -1,26 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="stylesheet" href="CSS/contact.css">
     <link rel="stylesheet" href="CSS/navigation.css">
 
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
-
-    <!-- fonts -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Jersey+25+Charted&family=Limelight&family=Notable&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Limelight&display=swap" rel="stylesheet">
 
     <title>Contact</title>
-    <link rel="icon" type="image/x-icon" href="image/favicon.ico">
 </head>
+
 
 <body>
     <div class="progress-bar"></div>
@@ -112,7 +108,7 @@
     <script src="JS/index.js"></script>
     <script src="JS/nav.js"></script>
    
-   <script>
+<script>
 
 (function () {
     emailjs.init("YOUR_PUBLIC_KEY"); // 🔑 PUBLIC KEY ONLY
@@ -130,7 +126,7 @@ document.getElementById("contact-form").addEventListener("submit", function (e) 
         this
     )
     .then(() => {
-        status.textContent = "Message sent successfully. I’ll be in touch soon.";
+        status.textContent = "Message sent successfully.";
         this.reset();
     })
     .catch((error) => {
@@ -138,10 +134,8 @@ document.getElementById("contact-form").addEventListener("submit", function (e) 
         status.textContent = "Something went wrong. Please try again.";
     });
 });
-
-
-
-
 </script>
+
+
 </body>
 </html>

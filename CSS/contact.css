@@ -10,7 +10,6 @@
     gap: 18px;
 }
 
-/* Inputs + textarea */
 .contact-form input,
 .contact-form textarea {
     background: transparent;
@@ -25,25 +24,21 @@
     transition: border-color 0.3s ease;
 }
 
-/* Placeholder text */
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
     color: rgba(255,255,255,0.5);
 }
 
-/* Focus state */
 .contact-form input:focus,
 .contact-form textarea:focus {
     border-bottom-color: #fbb831;
 }
 
-/* Textarea sizing */
 .contact-form textarea {
     min-height: 120px;
     resize: vertical;
 }
 
-/* Submit button */
 .contact-form button {
     margin-top: 25px;
     align-self: center;
@@ -56,20 +51,14 @@
     color: #ffffff;
     border: 1px solid rgba(255,255,255,0.6);
     cursor: pointer;
-    transition: 
-        background-color 0.3s ease,
-        color 0.3s ease,
-        border-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Button hover */
 .contact-form button:hover {
     background-color: #fbb831;
-    color: #000000;
-    border-color: #fbb831;
+    color: #000;
 }
 
-/* Status message */
 #form-status {
     margin-top: 18px;
     text-align: center;
@@ -80,7 +69,7 @@
 }
 
 /* ==============================
-   PROJECT TYPE CHECKBOXES
+   CHECKBOXES
 ================================ */
 
 .project-type {
@@ -91,44 +80,33 @@
 }
 
 .project-label {
-    font-family: "Cutive Mono", monospace;
     font-size: 9pt;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: rgba(255,255,255,0.6);
 }
 
-/* Checkbox label */
 .checkbox {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-family: "Cutive Mono", monospace;
     font-size: 10pt;
-    color: #ffffff;
     cursor: pointer;
 }
 
-/* Hide default checkbox */
 .checkbox input {
     appearance: none;
-    -webkit-appearance: none;
     width: 14px;
     height: 14px;
     border: 1px solid rgba(255,255,255,0.6);
-    background: transparent;
     position: relative;
-    cursor: pointer;
 }
 
-/* Checked state */
 .checkbox input:checked {
     background-color: #fbb831;
     border-color: #fbb831;
-    color: #fbb831;
 }
 
-/* Subtle check indicator */
 .checkbox input:checked::after {
     content: "";
     position: absolute;
