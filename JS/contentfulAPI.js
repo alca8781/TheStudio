@@ -87,7 +87,7 @@ viewCartButton.addEventListener('click', () => {
     );
 
     window.location.href =
-      `mailto:ac@allycadyphotography.com?subject=${subject}&body=${body}`;
+      `mailto:ac@allycadyphotos.com?subject=${subject}&body=${body}`;
   });
 
   buttonWrapper.appendChild(emailButton);

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="CSS/contact.css">
     <link rel="stylesheet" href="CSS/navigation.css">
 
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
 
     <!-- fonts -->
@@ -66,28 +67,35 @@
     </header>
 
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <h1>CONTACT THE ARTIST</h1>
+<form id="contact-form" class="contact-form">
+    <input type="text" name="from_name" placeholder="Your Name:" required>
 
-    <h3><i>email: ac@allycadyphotos.com</i></h3>
-    <h2>-----------------------</h2>
-    <p>Email AC Studios with questions, bookings,<br>photo purchases or design needs.</p>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <input type="email" name="reply_to" placeholder="Your Email:" required>
+
+    <div class="project-type">
+    <span class="project-label">Type of work</span>
+
+    <label class="checkbox">
+        <input type="checkbox" name="project_type" value="Photo Session">
+        <span>Photo Session</span>
+    </label>
+
+    <label class="checkbox">
+        <input type="checkbox" name="project_type" value="Design Work">
+        <span>Design Work</span>
+    </label>
+</div>
+
+<textarea
+    name="message"
+    placeholder="Message:"
+    required>
+</textarea>
+
+    <button type="submit">Send Message</button>
+</form>
+
+<p id="form-status"></p>
 
 
     <footer>
@@ -103,4 +111,37 @@
     <script src="JS/gallery.js"></script>
     <script src="JS/index.js"></script>
     <script src="JS/nav.js"></script>
+   
+   <script>
+
+(function () {
+    emailjs.init("YOUR_PUBLIC_KEY"); // 🔑 PUBLIC KEY ONLY
+})();
+
+document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const status = document.getElementById("form-status");
+    status.textContent = "Sending…";
+
+    emailjs.sendForm(
+        "service_kjush15",   // e.g. service_epsdvvh
+        "template_ffqxpk2",  // e.g. template_contact
+        this
+    )
+    .then(() => {
+        status.textContent = "Message sent successfully. I’ll be in touch soon.";
+        this.reset();
+    })
+    .catch((error) => {
+        console.error("EmailJS error:", error);
+        status.textContent = "Something went wrong. Please try again.";
+    });
+});
+
+
+
+
+</script>
 </body>
+</html>
