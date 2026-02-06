@@ -244,13 +244,13 @@ button {
     grid-template-columns: 1fr 1fr 1fr 1fr;
 
   align-items:flex-end;
-  gap: 30px;
-    padding: 20px 20px 0px 20px;
+  gap: 10px;
+  padding: 20px 20px 0px 20px;
   margin-top: 40px;
 }
 
 .GridImages img{
-    max-width: 350px;
+    max-width: 300px;
     height: auto;
 }
 
@@ -263,6 +263,22 @@ button {
   .displayPortfolio > img {
     height: 650px;
   }
+
+  .GridImages{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+padding-left: 35pt;
+  align-items:center;
+  gap: 10px;
+
+  margin-top: 40px;
+}
+
+.GridImages img{
+    max-width: 280px;
+    height: auto;
+}
+
 }
 
 /* Mobile */
@@ -287,4 +303,17 @@ button {
     border-right: 0.15em solid rgb(239, 206, 19);
     color: rgb(239, 206, 19);
   }
+
+    .GridImages{
+    display: inline-block;
+text-align: center;
+  margin-top: 40px;
+
+}
+
+.GridImages img{
+    max-width: 250px;
+    height: auto;
+}
+
 }
