@@ -1,141 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="CSS/contact.css">
-    <link rel="stylesheet" href="CSS/navigation.css">
+  <link rel="stylesheet" href="CSS/contact.css">
+  <link rel="stylesheet" href="CSS/navigation.css">
 
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Limelight&display=swap" rel="stylesheet">
-
-    <title>Contact</title>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Limelight&display=swap" rel="stylesheet">
+ <link rel="icon" type="image/x-icon" href="image/favicon.ico">
+  <title>Contact</title>
 </head>
-
-
 <body>
-    <div class="progress-bar"></div>
-    <h2 class="sr-only"> Logo & Navigation</h2>
+  <header>
+    <nav>
+      <a href="index.html" class="nav-logo">
+        <img src="images/2x3.png" alt="AC Studios Home">
+      </a>
+    </nav>
+  </header>
 
-    <!-- Nav -->
-    <header>
-        <nav>
-            <a href="index.html" class="nav-logo">
-                <img src="images/2x3.png" alt="AC Studios Home">
-            </a>
+  <main>
+    <form id="contact-form" class="contact-form">
+      <input type="text" name="from_name" placeholder="Your Name:" required>
+      <input type="email" name="reply_to" placeholder="Your Email:" required>
 
-            <div class="nav-controls">
-                <ul>
-                    <li class="dropdown">
-                        <a href="#">SHOP</a>
-                        <div class="dropdown-content">
-                            <a href="PhotographyShop.html">Photo Services</a>
-                            <a href="PhotoGalleries/Galleries.html">Photo Session Galleries</a>
-                        </div>
-                    </li>
+      <div class="project-type">
+        <span class="project-label">Type of work</span>
 
-                    <li><a href="Contact.html">CONTACT</a></li>
+        <label class="checkbox">
+          <input type="radio" name="project_type" value="Photo Session" required>
+          <span>Photo Session</span>
+        </label>
 
-                    <li class="dropdown">
-                        <a href="#">PORTFOLIO</a>
-                        <div class="dropdown-content">
-                            <a href="GraphicDesignPort.html">Art & Design</a>
-                            <a href="PhotographyPort.html">Digital Photography</a>
-                            <a href="Film.html">120 Film</a>
-                            <a href="Film2.html">35 Film</a>
-                            
-                        </div>
-                    </li>
+        <label class="checkbox">
+          <input type="radio" name="project_type" value="Design Work" required>
+          <span>Design Work</span>
+        </label>
+      </div>
 
-                    <li><a href="Terms.html">TERMS</a></li>
-                </ul>
+      <textarea name="message" placeholder="Message:" required></textarea>
 
-                <button id="menu-toggle">
-                    <img src="images/menuicon.png" alt="menu">
-                </button>
-            </div>
-        </nav>
-    </header>
+      <button type="submit">Send Message</button>
+    </form>
 
+    <p id="form-status"></p>
+  </main>
 
-<form id="contact-form" class="contact-form">
-    <input type="text" name="from_name" placeholder="Your Name:" required>
+  <footer>
+    <div class="social">
+      <button id="instagram-button">
+        <img src="images/insta-logo_white.png" alt="Instagram">
+      </button>
+    </div>
+    <div class="copyright">
+      Copyright © 2017 AC Studios - All Rights Reserved.
+    </div>
+  </footer>
 
-    <input type="email" name="reply_to" placeholder="Your Email:" required>
+  <script>
+    // Initialize EmailJS
+    (function() {
+      emailjs.init("A2jlAxMkZ-l2O1XZh"); // Replace with your EmailJS public key
+    })();
 
-    <div class="project-type">
-    <span class="project-label">Type of work</span>
-
-    <label class="checkbox">
-        <input type="checkbox" name="project_type" value="Photo Session">
-        <span>Photo Session</span>
-    </label>
-
-    <label class="checkbox">
-        <input type="checkbox" name="project_type" value="Design Work">
-        <span>Design Work</span>
-    </label>
-</div>
-
-<textarea
-    name="message"
-    placeholder="Message:"
-    required>
-</textarea>
-
-    <button type="submit">Send Message</button>
-</form>
-
-<p id="form-status"></p>
-
-
-    <footer>
-        <div class="social">
-            <button id="instagram-button">
-                <img src="images/insta-logo_white.png" alt="Instagram" id="instagram-logo">
-            </button>
-        </div>
-        <div class="copyright">
-            Copyright © 2017 AC Studios - All Rights Reserved.
-        </div>
-    </footer>
-    <script src="JS/gallery.js"></script>
-    <script src="JS/index.js"></script>
-    <script src="JS/nav.js"></script>
-   
-<script>
-
-(function () {
-    emailjs.init("YOUR_PUBLIC_KEY"); // 🔑 PUBLIC KEY ONLY
-})();
-
-document.getElementById("contact-form").addEventListener("submit", function (e) {
-    e.preventDefault();
-
+    const form = document.getElementById("contact-form");
     const status = document.getElementById("form-status");
-    status.textContent = "Sending…";
 
-    emailjs.sendForm(
-        "service_kjush15",   // e.g. service_epsdvvh
-        "template_ffqxpk2",  // e.g. template_contact
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      status.textContent = "Sending…";
+
+      // EmailJS sendForm
+      emailjs.sendForm(
+        "service_kjush15",      // Replace with your actual service ID
+        "template_ffqxpk2",     // Replace with your actual template ID
         this
-    )
-    .then(() => {
-        status.textContent = "Message sent successfully.";
-        this.reset();
-    })
-    .catch((error) => {
-        console.error("EmailJS error:", error);
-        status.textContent = "Something went wrong. Please try again.";
+      )
+      .then(() => {
+        status.textContent = "Message sent successfully!";
+        form.reset();
+      })
+      .catch((err) => {
+        console.error("EmailJS error:", err);
+        status.textContent = "Sorry, something went wrong. Please try again.";
+      });
     });
-});
-</script>
-
-
+  </script>
 </body>
 </html>
+
