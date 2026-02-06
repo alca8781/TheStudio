@@ -90,8 +90,12 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 10pt;
+    font-size: 2pt;
     cursor: pointer;
+        font-family: "Cutive Mono", monospace;
+    font-size: 10pt;
+    letter-spacing: 0.15em;
+     color: rgba(255,255,255,0.5);
 }
 
 .checkbox input {
@@ -100,6 +104,9 @@
     height: 14px;
     border: 1px solid rgba(255,255,255,0.6);
     position: relative;
+        font-family: "Cutive Mono", monospace;
+    font-size: 10pt;
+    letter-spacing: 0.15em;
 }
 
 .checkbox input:checked {
@@ -113,3 +120,4 @@
     inset: 3px;
     background: #000;
 }
+

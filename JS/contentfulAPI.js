@@ -80,15 +80,20 @@ viewCartButton.addEventListener('click', () => {
   emailButton.style.backgroundColor = '#eee';
   emailButton.style.borderRadius = '4px';
 
-  emailButton.addEventListener('click', () => {
-    const subject = encodeURIComponent('Photo Selections');
-    const body = encodeURIComponent(
-      `\n\n\n\nList of Selected Photos:\n --------------------------------\n${cartItems.join('\n')}\n\n\n\nList of Prints:\n --------------------------------\n\n1. (photo#)  |  (size)  |  (matte/glossy) |  (Qty))\n\n\n\nDisclaimer:\nExpect a confirmation email with an invoice and turn around time within 1-3 business days.\nIf you do not receive and email please reach out again to ac@allycadyphotos.com\n\n\nThank you for your purchase!`
-    );
+emailButton.addEventListener('click', () => {
+  if (cartItems.length === 0) {
+    alert("Your cart is empty!");
+    return;
+  }
 
-    window.location.href =
-      `mailto:ac@allycadyphotos.com?subject=${subject}&body=${body}`;
-  });
+  // Save cart items to localStorage for the contact page
+  localStorage.setItem('checkoutCart', JSON.stringify(cartItems));
+
+  // Redirect to your contact page
+  window.location.href = "/Contact.html";
+});
+
+
 
   buttonWrapper.appendChild(emailButton);
   cartListDisplay.appendChild(buttonWrapper);

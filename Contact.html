@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="CSS/contact.css">
   <link rel="stylesheet" href="CSS/navigation.css">
+  <link rel="stylesheet" href="CSS/contact.css">
+
 
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
@@ -17,13 +18,45 @@
   <title>Contact</title>
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="index.html" class="nav-logo">
-        <img src="images/2x3.png" alt="AC Studios Home">
-      </a>
-    </nav>
-  </header>
+    <!-- Nav -->
+    <header>
+        <nav>
+            <a href="index.html" class="nav-logo">
+                <img src="images/2x3.png" alt="AC Studios Home">
+            </a>
+
+            <div class="nav-controls">
+                <ul>
+                    <li class="dropdown">
+                        <a href="#">SHOP</a>
+                        <div class="dropdown-content">
+                            <a href="PhotographyShop.html">Photo Services</a>
+                            <a href="PhotoGalleries/Galleries.html">Photo Session Galleries</a>
+                        </div>
+                    </li>
+
+                    <li><a href="Contact.html">CONTACT</a></li>
+
+                    <li class="dropdown">
+                        <a href="#">PORTFOLIO</a>
+                        <div class="dropdown-content">
+                            <a href="GraphicDesignPort.html">Art & Design</a>
+                            <a href="PhotographyPort.html">Digital Photography</a>
+                            <a href="Film.html">120 Film</a>
+                            <a href="Film2.html">35 Film</a>
+                            
+                        </div>
+                    </li>
+
+                    <li><a href="Terms.html">TERMS</a></li>
+                </ul>
+
+                <button id="menu-toggle">
+                    <img src="images/menuicon.png" alt="menu">
+                </button>
+            </div>
+        </nav>
+    </header>
 
   <main>
     <form id="contact-form" class="contact-form">
@@ -55,7 +88,7 @@
   <footer>
     <div class="social">
       <button id="instagram-button">
-        <img src="images/insta-logo_white.png" alt="Instagram">
+        <img src="images/insta-logo_white.png" alt="Instagram" style="width:30px; height:auto;">
       </button>
     </div>
     <div class="copyright">
@@ -63,6 +96,10 @@
     </div>
   </footer>
 
+
+    <script src="/JS/index.js"></script>
+     <script src="/JS/gallery.js"></script>
+    <script src="/JS/nav.js"></script>
   <script>
     // Initialize EmailJS
     (function() {
@@ -78,8 +115,8 @@
 
       // EmailJS sendForm
       emailjs.sendForm(
-        "service_kjush15",      // Replace with your actual service ID
-        "template_ffqxpk2",     // Replace with your actual template ID
+        "service_kjush15",      // service ID
+        "template_ffqxpk2",     // template ID
         this
       )
       .then(() => {
@@ -91,7 +128,46 @@
         status.textContent = "Sorry, something went wrong. Please try again.";
       });
     });
-  </script>
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contact-form");
+  const messageField = form.querySelector('textarea[name="message"]');
+
+  // Get cart items from localStorage
+  const checkoutCart = JSON.parse(localStorage.getItem("checkoutCart") || "[]");
+
+  if (checkoutCart.length > 0) {
+    const cartMessage = checkoutCart.map((item, i) => `${i+1}. ${item}`).join("\n");
+    messageField.value = `PHOTOS TO BE PURCHASED: \n\n${cartMessage}\n\n\n\n\n\n(please specify if you wish to purchase prints)`;
+    
+    // Optionally, clear the cart from localStorage
+    localStorage.removeItem("checkoutCart");
+  }
+
+  // Optional: you can still use your EmailJS form submit handler
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    const status = document.getElementById("form-status");
+    status.textContent = "Sending…";
+
+    emailjs.sendForm(
+      "service_kjush15",
+      "template_ffqxpk2",
+      this
+    )
+    .then(() => {
+      status.textContent = "Message sent successfully.";
+      this.reset();
+    })
+    .catch((error) => {
+      console.error("EmailJS error:", error);
+      status.textContent = "Something went wrong. Please try again.";
+    });
+  });
+});
+</script>
+
 </body>
+
 </html>
 
