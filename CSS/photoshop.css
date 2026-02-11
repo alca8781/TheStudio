@@ -224,6 +224,11 @@ tbody p {
   top: 3rem;
 }
 
+.designshop-layout{
+  max-width: 1000px;
+  margin: 0 auto 6rem;
+}
+
 /* =============================
    FIND PHOTOS BLOCK
 ============================= */
