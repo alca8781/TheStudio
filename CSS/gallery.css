@@ -56,10 +56,7 @@ h2 {
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.gallery img:hover {
-  transform: scale(0.98);
-  opacity: 0.9;
-}
+
 
 /* ==============================
    RESPONSIVE BREAKPOINTS
