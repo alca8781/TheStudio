@@ -1,0 +1,81 @@
+ /* ==============================
+   GLOBAL RESET
+================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* ==============================
+   GALLERY SECTION (DESKTOP)
+================================ */
+
+.gallery-section {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 1.5rem;
+  padding: 2rem;
+  border-bottom: 2px solid #fbb831;
+  align-items: start;
+}
+
+.gallery-title {
+  padding-top: 10px;
+}
+
+/* ==============================
+   VIDEO LAYOUT
+================================ */
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery video {
+  width: 90%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: 2px solid #ababa9;
+  background: black;
+}
+
+/* ==============================
+   RESPONSIVE BREAKPOINTS
+================================ */
+
+/* Tablet */
+@media (max-width: 1000px) {
+
+  .gallery-section {
+    grid-template-columns: 150px 1fr;
+    padding: 1.5rem;
+  }
+
+}
+
+/* Mobile */
+@media (max-width: 860px) {
+
+  h1 {
+    font-size: 1.5rem;
+    margin: 30px 0;
+  }
+
+  h2 {
+    font-size: 10pt;
+  }
+
+  .gallery-section {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .gallery video {
+    width: 100%;
+  }
+
+}

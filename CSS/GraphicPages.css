@@ -68,6 +68,26 @@ article {
 
 }
 
+.model {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 40px;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+
+.model img {
+  max-width: 380px;
+  height: auto;
+  transition: transform 0.4s ease;
+}
+
+.model img:hover {
+  transform: translateY(-8px);
+}
+
+
 /* ==============================
    TEXT COLUMN CONTROL
 ================================ */

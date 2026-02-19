@@ -1,0 +1,236 @@
+/* ==============================
+   BASE TYPOGRAPHY
+================================ */
+
+h3 {
+  font-family: "Limelight", sans-serif;
+  font-weight: 400;
+  color: #fbb831;
+  font-size: 30pt;
+}
+
+p {
+  font-family: "Cutive Mono", monospace;
+  font-weight: 400;
+  color: rgb(27,27,27);
+  line-height: 1.65;
+}
+
+
+/* ==============================
+   ARTICLE ANIMATION
+================================ */
+
+article {
+  background-color: rgb(231, 229, 229);
+  margin: 20px;
+  animation: slideInUp 0.8s ease;
+  position: relative;
+  padding-bottom: 60px;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ==============================
+   PORTFOLIO LAYOUT
+================================ */
+
+.displayPortfolio {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 40px 100px;
+  align-items: start;
+}
+
+/* Final sculpture piece */
+.displayPortfolio > img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: contain;
+}
+
+
+/* ==============================
+   PROCESS GRID
+================================ */
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.process {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.process img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.process img:hover {
+  transform: scale(1.03);
+}
+
+
+/* ==============================
+   CREDIT TAG
+================================ */
+
+#CreditTag {
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+}
+
+#CreditTag p {
+  margin: 0;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: rgb(50, 50, 50);
+}
+
+#CreditTag::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background-color: rgb(27,27,27);
+  animation: expandLine 1s ease forwards;
+}
+
+@keyframes expandLine {
+  from { width: 0; }
+  to { width: 60px; }
+}
+
+
+/* ==============================
+   TYPEWRITER TITLE
+================================ */
+
+.typewriter {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.typewriter.hidden {
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+}
+
+.typewriter h3 {
+  color: #fbb831;
+  font-size: 3.5rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block; 
+
+  border-right: 8px solid #fbb831;
+  width: 0;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: var(--chars); }
+}
+
+@keyframes blink-caret {
+  50% { border-color: transparent; }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+
+/* ==============================
+   BUTTON STYLING
+================================ */
+
+button {
+  background-color: #fbb831;
+  color: rgb(0, 0, 0);
+  padding: 10px 18px;
+  margin: 20px auto;
+  border-radius: 8px;
+  font-size: 12pt;
+  border: none;
+  cursor: pointer;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-3px);
+}
+
+
+/* ==============================
+   RESPONSIVE BREAKPOINTS
+================================ */
+
+/* Tablet */
+@media (min-width: 800px) and (max-width: 1299px) {
+
+  .displayPortfolio {
+    grid-template-columns: 1fr;
+    padding: 40px;
+  }
+
+  .process {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+/* Mobile */
+@media (max-width: 799px) {
+
+  .displayPortfolio {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .process {
+    grid-template-columns: 1fr;
+  }
+
+  .typewriter h3 {
+    font-size: 1.5rem;
+    border-right: 0.15em solid #fbb831;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+

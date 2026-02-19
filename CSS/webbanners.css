@@ -1,0 +1,160 @@
+.displayPortfolio {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 50px 20px;
+}
+
+.titlebanner img{
+    display: flex;
+    max-height: 500px;
+    width: 100%;
+    object-fit: cover;
+
+}
+.secondbanner img{
+    display: flex;
+    max-height: 200px;
+    width: 100%;
+    object-fit: cover;
+
+}
+/* === FULL WIDTH BANNER === */
+.banner-row.full-banner img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.banner-row.full-banner img:hover {
+    transform: scale(1.01);
+}
+
+/* === TWO SIDE-BY-SIDE BANNERS === */
+.banner-row.half-banners {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: nowrap; /* Important: prevent unnecessary wrapping */
+}
+
+.banner-row.half-banners img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s, box-shadow 0.3s;
+    object-fit: cover;
+}
+
+/* Optional: limit each image to specific width for balance */
+.banner-row.half-banners img:first-child {
+    max-width: 360px;
+}
+
+.banner-row.half-banners img:last-child {
+    max-width: 768px;
+}
+
+.banner-row.half-banners img:hover {
+    transform: scale(1.02);
+}
+
+/* === RESPONSIVE STACKING === */
+@media screen and (max-width: 900px) {
+    .banner-row.half-banners {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .banner-row.half-banners img {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+
+/* Typing effect base style */
+.typewriter h3 {
+  color: #fbb831;
+  /* font-family: monospace; */
+  font-size: 3.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.15em solid #fbb831;
+  letter-spacing: 0.1em;
+  display: inline-block;
+  width: 0ch;
+  animation: none; /* Let JS handle animation trigger */
+  /* font-weight: 900; */
+
+    font-family: "Notable", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+ 
+}
+
+.typewriter {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.typewriter.hidden {
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+}
+
+@keyframes typing {
+  from {
+    width: 0ch;
+  }
+  to {
+    width: var(--chars);
+  }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color:#fbb831; }
+}
+
+
+.divider {
+  border: none;
+  border-top: 6px solid #fbb831;;
+  width: 100%;                  /* Shrinks with screen */
+  max-width: 100%;
+  margin: 40px auto;           /* Centers the line */
+}
+
+.dividertwo{
+    border: none;
+  border-top: 3px solid rgb(255, 255, 255);
+  width: 90%;                  /* Shrinks with screen */
+  max-width: 100%;
+  margin: 10px auto; 
+}
+
+@media only screen and (max-width: 799px) {
+  .typewriter h3 {
+  color: #fbb831;;
+  /* font-family: monospace; */
+  font-size: 1.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.15em solid#fbb831;;
+  letter-spacing: 0.1em;
+  display: inline-block;
+  width: 0ch;
+  animation: none; /* Let JS handle animation trigger */
+  /* font-weight: 900; */
+
+    font-family: "Notable", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+ 
+}
+}
