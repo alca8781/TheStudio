@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,162 +15,162 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Limelight&display=swap" rel="stylesheet">
- <link rel="icon" type="image/x-icon" href="image/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="image/favicon.ico">
   <title>Contact</title>
 </head>
+
 <body>
-<body>
+
+  <body>
     <div class="progress-bar"></div>
     <h2 class="sr-only"> Logo & Navigation</h2>
 
     <!-- Nav -->
     <header>
-        <nav>
-            <a href="index.html" class="nav-logo">
-                <img src="images/2x3.png" alt="AC Studios Home">
-            </a>
+      <nav>
+        <a href="index.html" class="nav-logo">
+          <img src="images/2x3.png" alt="AC Studios Home">
+        </a>
 
-            <div class="nav-controls">
-                <ul>
-                    <li class="dropdown">
-                        <a href="#">SHOP</a>
-                        <div class="dropdown-content">
-                            <a href="PhotographyShop.html">Photo Services</a>
-                            <a href="PhotoGalleries/Galleries.html">Photo Session Galleries</a>
-                            <a href="DesignShop.html">Design Services</a>
-                        </div>
-                    </li>
+        <div class="nav-controls">
+          <ul>
+             <li class="dropdown">
+              <a href="#">PORTFOLIO</a>
+              <div class="dropdown-content">
+                <a href="GraphicDesignPort.html">Art & Design</a>
+                <a href="PhotographyPort.html">Photography</a>
+                <a href="videography.html">Videography</a>
+              </div>
+            </li>
 
-                    <li><a href="Contact.html">CONTACT</a></li>
+            <li class="dropdown">
+              <a href="#">SERVICES</a>
+              <div class="dropdown-content">
+                <a href="DesignShop.html">Design Services</a>
+                <a href="PhotographyShop.html">Photo Services</a>
+                <a href="PhotoGalleries/Galleries.html">Session Galleries</a>
+              </div>
+            </li>
 
-                    <li class="dropdown">
-                        <a href="#">PORTFOLIO</a>
-                        <div class="dropdown-content">
-                            <a href="GraphicDesignPort.html">Art & Design</a>
-                            <a href="PhotographyPort.html">Digital</a>
-                            <a href="Film.html">Film</a>
-                            <a href="videography.html">Video</a>
-                        </div>
-                    </li>
-                </ul>
-
-                <button id="menu-toggle">
-                    <img src="images/menuicon.png" alt="menu">
-                </button>
-            </div>
-        </nav>
+            <li><a href="Contact.html">CONTACT</a></li>
+          </ul>
+          <button id="menu-toggle">
+            <img src="images/menuicon.png" alt="menu">
+          </button>
+        </div>
+      </nav>
     </header>
+
     
-  <main>
-    <form id="contact-form" class="contact-form">
-      <input type="text" name="from_name" placeholder="Your Name:" required>
-      <input type="email" name="reply_to" placeholder="Your Email:" required>
+    <main>
+      <form id="contact-form" class="contact-form">
+        <input type="text" name="from_name" placeholder="Your Name:" required>
+        <input type="email" name="reply_to" placeholder="Your Email:" required>
 
-      <div class="project-type">
-        <span class="project-label">Type of work</span>
+        <div class="project-type">
+          <span class="project-label">Type of work</span>
 
-        <label class="checkbox">
-          <input type="radio" name="project_type" value="Photo Session" required>
-          <span>Photo Session</span>
-        </label>
+          <label class="checkbox">
+            <input type="radio" name="project_type" value="Photo Session" required>
+            <span>Photo Session</span>
+          </label>
 
-        <label class="checkbox">
-          <input type="radio" name="project_type" value="Design Work" required>
-          <span>Design Work</span>
-        </label>
+          <label class="checkbox">
+            <input type="radio" name="project_type" value="Design Work" required>
+            <span>Design Work</span>
+          </label>
+        </div>
+
+        <textarea name="message" placeholder="Message:" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+
+      <p id="form-status"></p>
+    </main>
+
+    <footer>
+      <div class="social">
+        <button id="instagram-button">
+          <img src="images/insta-logo_white.png" alt="Instagram" style="width:30px;">
+        </button>
       </div>
-
-      <textarea name="message" placeholder="Message:" required></textarea>
-
-      <button type="submit">Send Message</button>
-    </form>
-
-    <p id="form-status"></p>
-  </main>
-
-  <footer>
-    <div class="social">
-      <button id="instagram-button">
-        <img src="images/insta-logo_white.png" alt="Instagram" style="width:30px;">
-      </button>
-    </div>
-    <div class="copyright">
-      Copyright © 2017 AC Studios - All Rights Reserved.
-    </div>
-  </footer>
+      <div class="copyright">
+        Copyright © 2017 AC Studios - All Rights Reserved.
+      </div>
+    </footer>
 
 
     <script src="/JS/index.js"></script>
-     <script src="/JS/gallery.js"></script>
+    <script src="/JS/gallery.js"></script>
     <script src="/JS/nav.js"></script>
-  <script>
-    // Initialize EmailJS
-    (function() {
-      emailjs.init("A2jlAxMkZ-l2O1XZh"); // Replace with your EmailJS public key
-    })();
+    <script>
+      // Initialize EmailJS
+      (function () {
+        emailjs.init("A2jlAxMkZ-l2O1XZh"); // Replace with your EmailJS public key
+      })();
 
-    const form = document.getElementById("contact-form");
-    const status = document.getElementById("form-status");
+      const form = document.getElementById("contact-form");
+      const status = document.getElementById("form-status");
 
-    form.addEventListener("submit", function(e) {
-      e.preventDefault();
-      status.textContent = "Sending…";
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        status.textContent = "Sending…";
 
-      // EmailJS sendForm
-      emailjs.sendForm(
-        "service_kjush15",      // service ID
-        "template_ffqxpk2",     // template ID
-        this
-      )
-      .then(() => {
-        status.textContent = "Message sent successfully!";
-        form.reset();
-      })
-      .catch((err) => {
-        console.error("EmailJS error:", err);
-        status.textContent = "Sorry, something went wrong. Please try again.";
+        // EmailJS sendForm
+        emailjs.sendForm(
+          "service_kjush15",      // service ID
+          "template_ffqxpk2",     // template ID
+          this
+        )
+          .then(() => {
+            status.textContent = "Message sent successfully!";
+            form.reset();
+          })
+          .catch((err) => {
+            console.error("EmailJS error:", err);
+            status.textContent = "Sorry, something went wrong. Please try again.";
+          });
       });
-    });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("contact-form");
-  const messageField = form.querySelector('textarea[name="message"]');
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("contact-form");
+        const messageField = form.querySelector('textarea[name="message"]');
 
-  // Get cart items from localStorage
-  const checkoutCart = JSON.parse(localStorage.getItem("checkoutCart") || "[]");
+        // Get cart items from localStorage
+        const checkoutCart = JSON.parse(localStorage.getItem("checkoutCart") || "[]");
 
-  if (checkoutCart.length > 0) {
-    const cartMessage = checkoutCart.map((item, i) => `${i+1}. ${item}`).join("\n");
-    messageField.value = `PHOTOS TO BE PURCHASED: \n\n${cartMessage}\n\n\n\n\n\n(please specify if you wish to purchase prints)`;
-    
-    // Optionally, clear the cart from localStorage
-    localStorage.removeItem("checkoutCart");
-  }
+        if (checkoutCart.length > 0) {
+          const cartMessage = checkoutCart.map((item, i) => `${i + 1}. ${item}`).join("\n");
+          messageField.value = `PHOTOS TO BE PURCHASED: \n\n${cartMessage}\n\n\n\n\n\n(please specify if you wish to purchase prints)`;
 
-  // Optional: you can still use your EmailJS form submit handler
-  form.addEventListener("submit", function(e) {
-    e.preventDefault();
-    const status = document.getElementById("form-status");
-    status.textContent = "Sending…";
+          // Optionally, clear the cart from localStorage
+          localStorage.removeItem("checkoutCart");
+        }
 
-    emailjs.sendForm(
-      "service_kjush15",
-      "template_ffqxpk2",
-      this
-    )
-    .then(() => {
-      status.textContent = "Message sent successfully.";
-      this.reset();
-    })
-    .catch((error) => {
-      console.error("EmailJS error:", error);
-      status.textContent = "Something went wrong. Please try again.";
-    });
-  });
-});
-</script>
+        // Optional: you can still use your EmailJS form submit handler
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const status = document.getElementById("form-status");
+          status.textContent = "Sending…";
 
-</body>
+          emailjs.sendForm(
+            "service_kjush15",
+            "template_ffqxpk2",
+            this
+          )
+            .then(() => {
+              status.textContent = "Message sent successfully.";
+              this.reset();
+            })
+            .catch((error) => {
+              console.error("EmailJS error:", error);
+              status.textContent = "Something went wrong. Please try again.";
+            });
+        });
+      });
+    </script>
+
+  </body>
 
 </html>
-

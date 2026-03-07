@@ -1,5 +1,8 @@
 
-
+h1{
+    text-align: center;
+    margin-top: 100px;
+}
 button {
     background-color: #fbb831;
     color: rgb(0, 0, 0);
@@ -8,25 +11,6 @@ button {
     border-radius: 8px;
     font-size: 12pt;
 }
-
-
-
-.copyright {
-    color: white;
-}
-
-.sr-only {
-    border: 0;
-    clip: rect(0, 0, 0, 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-}
-
 
 
 /* === Typography and Layout === */
@@ -57,18 +41,19 @@ p {
 /* === Gallery Layout - 2 Column Grid === */
 article {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    width: 90%;
+    width: 100%;
     max-width: 1400px;
     margin: 0 auto;
     padding: 20px 0;
+
 }
 
 .gallery-card {
     position: relative;
     width: 100%;
-    height: 270px;
+    height: 250px;
     overflow: hidden;
     text-decoration: none;
     display: block;
@@ -140,7 +125,7 @@ article {
     font-size: 35px;
     font-weight: 700;
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     pointer-events: none;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
     letter-spacing: 2px;
@@ -188,41 +173,7 @@ article {
         font-size: 14px;
     }
 
-    nav a {
-        margin: 0 2pt;
-        font-size: 14px;
-    }
 
-    .dropdown-content {
-        min-width: 160px;
-        padding: 2px;
-    }
-
-    .dropdown-content a {
-        font-size: 8pt;
-    }
-
-    .button-row button {
-        font-size: 8pt;
-        padding: 6px;
-        min-width: 160px;
-        max-width: 100px;
-    }
-
-    .centerImages p {
-        text-align: center;
-        padding: 15px;
-    }
-
-    .centerImg button {
-        display: block;
-        margin: auto;
-        padding: 10px;
-    }
-
-    .headerLogo img {
-        width: 200px;
-    }
 }
 
 @media (min-width: 800px) and (max-width: 1299px) {
@@ -234,68 +185,7 @@ article {
         height: 250px;
     }
 
-    nav a {
-        margin: 0 2pt;
-    }
-
-    .dropdown-content {
-        min-width: 160px;
-        padding: 2px;
-    }
-
-    .dropdown-content a {
-        font-size: 8pt;
-    }
-
-    .button-row button {
-        font-size: 8pt;
-        padding: 6px;
-        min-width: 160px;
-        max-width: 100px;
-    }
-
-    .centerImages p {
-        text-align: center;
-        padding: 15px;
-    }
-
-    .centerImg button {
-        display: block;
-        margin: auto;
-        padding: 10px;
-    }
-
-    .headerLogo img {
-        width: 250px;
-    }
+   
 }
 
-@media (min-width: 1300px) {
-    html {
-        max-width: 1200px;
-        width: 90%;
-        height: 100%;
-        margin: 0 auto;
-    }
 
-    .headerLogo img {
-        width: 350px;
-        text-align: center;
-        align-items: center;
-    }
-
-    .dropdown-content {
-        min-width: 260px;
-        padding: 5px;
-    }
-
-    .dropdown-content a {
-        font-size: 12pt;
-    }
-
-    .centerImg button {
-        width: 8%;
-        height: auto;
-        padding: 10px;
-    }
-}

@@ -13,15 +13,16 @@ p {
   font-family: "Cutive Mono", monospace;
   font-weight: 400;
   font-style: normal;
-  color: rgb(27,27,27);
+  color: rgb(231, 229, 229);
   line-height: 1.65;
 }
 
 .text p{
-    text-align: center;
+    text-align: left;
     padding: 10px;
-     margin: 20px;
-      background-color: rgb(231, 229, 229);
+    margin: 20px;
+    margin-left: 100px;
+
 }
 
 /* ==============================
@@ -29,10 +30,7 @@ p {
 ================================ */
 
 article {
-  background-color: rgb(231, 229, 229);
-  margin: 20px;
   animation: slideInUp 0.8s ease;
-  position: relative; 
   padding-bottom: 60px;
 }
 
@@ -55,25 +53,25 @@ article {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: inline;
-  gap: 20px;
-  padding:20px 100px 20px 100px;
+  gap: 10px;
+  padding: 20px 100px 20px 100px;
 }
 
 /* Main specimen image */
+
 .displayPortfolio > img {
-  width: 500px;
+  width: 550px;
   height: auto;
   object-fit: contain;
   margin-top: 20px;
-
 }
 
 .model {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: 40px;
-  margin: 40px 0;
+  gap: 30px;
+  margin: 30px 0;
   flex-wrap: wrap;
 }
 
@@ -86,7 +84,6 @@ article {
 .model img:hover {
   transform: translateY(-8px);
 }
-
 
 /* ==============================
    TEXT COLUMN CONTROL
@@ -103,6 +100,7 @@ article {
 }
 
 /* Inline specimen image */
+
 .inline-image {
   width: 100%;
   max-width: 370px;
@@ -113,34 +111,34 @@ article {
    CREDIT TAG
 ================================ */
 
-#CreditTag {
-  position: absolute;
-  bottom: 20px;  
-  left: 40px;    
-  margin: 0;    
+#CreditTag{
+  text-align: left;
+  margin-top: 30px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-#CreditTag p {
+#CreditTag p{
   margin: 0;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-style: italic;
-  color: rgb(50, 50, 50);
+  color: rgb(231,229,229);
 }
 
-#CreditTag::before {
-  content: '';
-  position: absolute;
-  top: -6px;  
-  left: 0;
-  width: 60px;
-  height: 2px;
-  background-color: rgb(27,27,27);
+#CreditTag::before{
+  content:'';
+  display:block;
+  width:60px;
+  height:2px;
+  background-color: rgb(231,229,229);
+  margin-bottom:8px;
   animation: expandLine 1s ease forwards;
 }
 
-@keyframes expandLine {
-  from { width: 0; }
-  to { width: 60px; }
+@keyframes expandLine{
+  from{ width:0; }
+  to{ width:60px; }
 }
 
 /* ==============================
@@ -177,7 +175,7 @@ article {
 
   border-right: 8px solid #fbb831;
   width: 0;
-  margin-left: 20px;
+  margin-left: 100px;
   margin-bottom: 10px;
 }
 
@@ -196,7 +194,6 @@ article {
     visibility: hidden;
   }
 }
-
 
 /* ==============================
    BUTTON STYLING
@@ -259,10 +256,10 @@ button {
 /* ==============================
    GRID IMAGES
 ================================ */
-.GridImages{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
 
+.GridImages{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   align-items:flex-end;
   gap: 10px;
   padding: 20px 20px 0px 20px;
@@ -270,8 +267,8 @@ button {
 }
 
 .GridImages img{
-    max-width: 300px;
-    height: auto;
+  max-width: 300px;
+  height: auto;
 }
 
 /* ==============================
@@ -279,29 +276,28 @@ button {
 ================================ */
 
 /* Tablets */
+
 @media (min-width: 800px) and (max-width: 1299px) {
+
   .displayPortfolio > img {
     height: 650px;
   }
 
   .GridImages{
-    display: grid;
     grid-template-columns: 1fr 1fr;
-padding-left: 35pt;
-  align-items:center;
-  gap: 10px;
+    padding-left: 35pt;
+    align-items:center;
+    gap: 10px;
+    margin-top: 40px;
+  }
 
-  margin-top: 40px;
-}
-
-.GridImages img{
+  .GridImages img{
     max-width: 280px;
-    height: auto;
-}
-
+  }
 }
 
 /* Mobile */
+
 @media (max-width: 799px) {
 
   .displayPortfolio {
@@ -319,25 +315,21 @@ padding-left: 35pt;
   }
 
   .typewriter h3 {
-    font-size: 1.5rem;
-    border-right: 0.15em solid rgb(239, 206, 19);
-    color: rgb(239, 206, 19);
+    font-size: 2.5rem;
+    border-right: 0.15em solid #fbb831;
+    color: #fbb831;
   }
 
-    .GridImages{
+  .GridImages{
     display: inline-block;
-text-align: center;
-  margin-top: 40px;
+    text-align: center;
+    margin-top: 40px;
+  }
 
-}
-
-.GridImages img{
+  .GridImages img{
     max-width: 250px;
-    height: auto;
-}
+  }
 
-
-  /* Make all media responsive */
   img,
   video {
     max-width: 100%;
@@ -349,5 +341,72 @@ text-align: center;
     max-height: 70vh;
   }
 
+}
 
+/* ==============================
+   PROCESS GRID
+================================ */
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.process {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.process img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.process img:hover {
+  transform: scale(1.03);
+}
+
+/* ==============================
+   RESPONSIVE BREAKPOINTS
+================================ */
+
+/* Tablet */
+@media (min-width: 800px) and (max-width: 1299px) {
+
+  .displayPortfolio {
+    grid-template-columns: 1fr;
+    padding: 40px;
+  }
+
+  .process {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+/* Mobile */
+@media (max-width: 799px) {
+
+  .displayPortfolio {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .process {
+    grid-template-columns: 1fr;
+  }
+
+  .typewriter h3 {
+    font-size: 1.5rem;
+    border-right: 0.15em solid #fbb831;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 }

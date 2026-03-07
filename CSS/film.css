@@ -59,8 +59,8 @@ h1 {
 /* thick ink */
 .line-base {
   fill: none;
-  stroke: rgba(255, 255, 255, 0.18);
-  stroke-width: 3.2;
+  stroke:#fbb831;
+  stroke-width: 1.5;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
@@ -68,7 +68,7 @@ h1 {
 /* thin pressure highlight */
 .line-detail {
   fill: none;
-  stroke: rgba(255, 255, 255, 0.35);
+  stroke:#fbb831;
   stroke-width: 1.1;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -167,7 +167,7 @@ h1{
 
   box-shadow: 0 30px 80px rgba(0,0,0,0.6);
   border-bottom: 2px solid #fbb831; 
-  border-top: 2px solid #fbb831; 
+
 }
 
 /* Individual frames */
