@@ -39,23 +39,23 @@ a {
    HERO SECTION
 ================================ */
 .hero {
-  min-height: 500px;
+  min-height: 1000px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: rem;
   position: relative;
   overflow: hidden;
 }
 
 .logo-container img {
   display: block;
-  margin: 0 auto;   /* 👈 centers the image */
-  max-width: 700px;
+  margin: 0 auto; 
+  max-width: 900px;
   width: 100%;
   height: auto;
-  filter: drop-shadow(0 5px 10px rgba(79, 87, 104, 0.5));
+
 }
 
 @keyframes fadeInScale {
@@ -64,10 +64,9 @@ a {
 }
 
 .logo-container img {
-  width: 90%;
-  height: 90%;
+  width: 100%;
+  height:auto;
   text-align: center;
-  filter: drop-shadow(0 5px 10px rgba(79, 87, 104, 0.5));
   margin-top: 10rem;
 }
 
@@ -75,7 +74,7 @@ a {
   font-family: "Rozha One", serif;
   font-size: clamp(2rem, 5vw, 4rem);
  
-  background: linear-gradient(135deg, #fff 0%, #b1b1b3 100%);
+  /* background: linear-gradient(135deg, #fff 0%, #b1b1b3 100%); */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -144,7 +143,7 @@ a {
   left: 0;
   width: 60px;
   height: 3px;
-  background: linear-gradient(90deg, #fff, transparent);
+
 }
 
 .about-content p {

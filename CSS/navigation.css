@@ -100,11 +100,11 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.5rem;
 }
 
 .nav-logo img {
-  width: 150px;
+  width: 120px;
   height: auto;
 }
 
