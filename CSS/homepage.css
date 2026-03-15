@@ -44,7 +44,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: rem;
+  padding: 1rem;
   position: relative;
   overflow: hidden;
 }
@@ -67,7 +67,7 @@ a {
   width: 100%;
   height:auto;
   text-align: center;
-  margin-top: 10rem;
+  margin-top: 2rem;
 }
 
 .hero-title {
@@ -153,79 +153,7 @@ a {
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* ==============================
-   BUTTONS
-================================ */
-.button-row {
-  display: flex;
-  justify-content: center; 
-  align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-  width: 100%;
-  margin-bottom: 20rem;
-}
 
-.btn {
-  padding: 1rem 2rem;
-  border: none;
-  border-radius: 15px;
-  font-family: "Raleway", sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  text-decoration: none;
-  display: inline-block;
-}
-
-.btn::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
-  transform: translate(-50%, -50%);
-  transition: width 0.6s, height 0.6s;
-}
-
-.btn:hover::before {
-  width: 300px;
-  height: 300px;
-}
-
-.btn span { position: relative; z-index: 1; }
-
-.btn-primary {
-  background: #fbb831;
-  border: 2px solid white;
-  color: #000;
-  box-shadow: 0 5px 20px rgba(79, 87, 104, 0.4);
-}
-
-.btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 30px rgba(79, 87, 104, 0.6);
-}
-
-.btn-secondary {
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px solid white;
-  color: white;
-  backdrop-filter: blur(10px);
-}
-
-.btn-secondary:hover {
-  background: white;
-  color: rgb(79, 94, 125);
-  transform: translateY(-3px);
-}
 
 
 
