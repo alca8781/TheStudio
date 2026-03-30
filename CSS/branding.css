@@ -1,0 +1,44 @@
+/* article {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+    gap:10px
+}
+
+article img{
+    max-width: 480px;
+    height: auto;
+} */
+/* ======= Branding Page CSS ======= */
+
+article{
+    margin: 50px 100px 100px 50px;
+}
+
+.carousel-scroll {
+    display: flex;             
+    overflow-x: auto;           
+    scroll-behavior: smooth;   
+    gap: 10px;  
+    padding: 10px;                
+}
+
+.carousel-scroll img {
+    flex-shrink: 0;            
+    width: 700px;               
+    height: auto;
+    object-fit: cover;
+}
+
+/* Optional: hide scrollbar on desktop */
+.carousel-scroll::-webkit-scrollbar {
+    height: 8px; 
+    padding: 10px;
+}
+
+.carousel-scroll::-webkit-scrollbar-thumb {
+    background-color: #fbb831;
+}
+
+.carousel-scroll::-webkit-scrollbar-track {
+    background: #adadad;
+}
