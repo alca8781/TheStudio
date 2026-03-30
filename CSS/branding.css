@@ -42,3 +42,29 @@ article{
 .carousel-scroll::-webkit-scrollbar-track {
     background: #adadad;
 }
+
+/* ===== Responsive for tablets ===== */
+@media (min-width: 480px) and (max-width: 768px) {
+    .carousel-scroll img {
+        width: 640px;             /* smaller images */
+    }
+    .carousel-scroll {
+        gap: 10px;
+        padding: 16px;
+    }
+}
+
+/* ===== Responsive for phones ===== */
+@media (max-width: 480px) {
+    .carousel-scroll {
+        gap: 8px;
+        padding: 10px;
+    }
+    .carousel-scroll img {
+        width: 400px;             /* fit smaller screens */
+    }
+
+    article{
+    margin: 8px;
+}
+}
