@@ -200,4 +200,20 @@ a {
   100% { transform: translate(50px, 50px); }
 }
 
+@media (max-width: 768px) {
+  .hero {
+    min-height: 70vh; /* reduce giant empty space */
+    padding: 2rem 1rem;
+  }
 
+  .logo-container img {
+    max-width: 90%;
+    width: 300px; /* control size */
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+  }
+}
