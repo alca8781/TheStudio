@@ -295,4 +295,25 @@ tbody p {
   }
 }
 
+.contact-link{
+  text-align: center;
+}
+.contact-button {
+  text-align: center;
+  display: inline-block;
+  padding: 10px 30px;
+  font-family: "Limelight", sans-serif;
+  font-size: 12pt;
+  color: #000;
+  background-color: #fbb831;
+  border-radius: 0px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
 
+.contact-button:hover {
+  background-color: rgb(27,27,27);
+  color:#fbb831;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
