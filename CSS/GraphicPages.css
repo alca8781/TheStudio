@@ -57,13 +57,38 @@ article {
   padding: 20px 100px 20px 100px;
 }
 
-/* Main specimen image */
-
 .displayPortfolio > img {
-  width: 550px;
+  width: 600px;
   height: auto;
   object-fit: contain;
   margin-top: 20px;
+}
+
+
+/* Main specimen image */
+
+.displayPortfolio2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: inline;
+  gap: 60px;
+  padding: 20px 100px 20px 100px;
+}
+
+
+.displayPortfolio2 > img {
+  width: 780px;
+  height: auto;
+  object-fit: contain;
+  margin-top: 20px;
+}
+
+.centerImg .letters {
+  display: inline-flex;
+}
+
+.centerImg .letters img {
+  width: 800px;
 }
 
 .model {
@@ -105,6 +130,10 @@ article {
   width: 100%;
   max-width: 370px;
   margin-top: 2px;
+}
+
+video{
+  width: 400px;
 }
 
 
