@@ -42,7 +42,40 @@ article{
 .carousel-scroll::-webkit-scrollbar-track {
     background: #adadad;
 }
+.mainlogo{
+    text-align: center;
+}
+.mainlogo img{
+    width:600px; 
+}
 
+#brand h2{
+    padding:0px; 
+    margin-bottom: -30px;
+    margin-left: 60px;
+    color: #fbb831;
+}
+
+.para{
+    padding-right: 100px;
+    padding-left: 100px;
+    margin-bottom: 100px;
+}
+.para p{
+    text-align: left;
+    color: #cbcac8; 
+}
+
+.identity{
+    display:block;
+    text-align: center;
+
+}
+.identity img{
+    width:600px; 
+    height: 100%;
+    text-align: center;
+}
 /* ===== Responsive for tablets ===== */
 @media (min-width: 480px) and (max-width: 768px) {
     .carousel-scroll img {
