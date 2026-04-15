@@ -2,13 +2,13 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/CSS/navigation.css" rel="stylesheet">
-    <link href="/CSS/GraphicPortfolio.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="stylesheet" href="/CSS/branding.css">
+    <link rel="stylesheet" href="/CSS/GraphicPages.css">
+    <link rel="stylesheet" href="/CSS/navigation.css">
 
-
-    <script src="/JS/designindex.js" defer></script>
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,18 +16,15 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Jersey+25+Charted&family=Limelight&family=Notable&display=swap"
         rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Slabo+13px&family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-        rel="stylesheet">
 
-    <title>Branding</title>
+    <title>Rome Olympic Branding</title>
     <link rel="icon" type="image/x-icon" href="/image/favicon.ico">
 </head>
 
 <body>
-<body>
     <div class="progress-bar"></div>
     <h2 class="sr-only"> Logo & Navigation</h2>
+
 
     <!-- Nav -->
     <header>
@@ -44,6 +41,7 @@
                 <a href="/GraphicDesignPort.html">Art & Design</a>
                 <a href="/PhotographyPort.html">Photography</a>
                 <a href="/videography.html">Videography</a>
+                
               </div>
             </li>
 
@@ -65,50 +63,51 @@
       </nav>
     </header>
 
-    <h1>BRANDING</h1>
-    <article>
 
 
-        <a href="/GraphicPages/Branding/Wiki.html" class="gallery-card">
-            <img src="/images/Branding/CoverImg/wikicover.png" alt="Branding">
-            <div class="overlay">
-                <div class="overlay-text">
-                    <h3>WIKIPEDIA</h3>
-                </div>
-            </div>
-        </a>
+    
+  <div class="mainlogo">     
+     <img src="/images/Branding/Olympic/RomaLogo.png" alt="wikipedia rebrand" />
+  </div>
 
-        <a href="/GraphicPages/Branding/Rome.html" class="gallery-card">
-            <img src="/images/Branding/CoverImg/RomaCover.jpg" alt="Branding">
-            <div class="overlay">
-                <div class="overlay-text">
-                    <h3>ROME OLYMPICS '28</h3>
-                </div>
-            </div>
-        </a>
+  <div class="para">
+  <p></p>
+  </div>
 
-  
-    </article>
+  <div class="identity">
+  </div>
+
+<div id="brand">
+  <h2>Brand Identity & Research</h2>
+</div>
+<article class="carousel-scroll">
+       
+</article>
+
+
     <!-- Social and copyright  -->
     <footer>
-        <div class="social">
-            <button id="instagram-button">
-                <img src="/images/insta-logo_white.png" alt="Instagram" id="instagram-logo">
-            </button>
-        </div>
-        <div class="copyright">
-            Copyright © 2017 AC Studios - All Rights Reserved.
-        </div>
-    </footer>
+        <h2 class="sr-only"> Socials & Copyright </h2>
 
-    <script src="/JS/index.js"></script>
+        <section class="social">
+            <h3 class="sr-only">Instagram Link</h3>
+            <button id="instagram-button">
+ <img src="/images/insta-logo_white.png" alt="Instagram Logo" id="instagram-logo">
+            </button>
+        </section>
+        <section class="copyright">
+            <h3 class="sr-only">Copyright </h3>
+            Copyright © 2017 AC Studios - All Rights Reserved.
+        </section>
+    </footer>
+    <script src="/JS/branding.js"></script>
+    <script src="/JS/designindex.js"></script>
     <script src="/JS/gallery.js"></script>
     <script src="/JS/nav.js"></script>
-
+    <script src="/JS/graphicpages.js"></script>
 </body>
 
 </html>
-
 <script>
 document.addEventListener("contextmenu", function(e) {
     e.preventDefault();
