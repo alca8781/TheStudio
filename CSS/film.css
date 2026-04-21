@@ -16,15 +16,7 @@ body {
 
 
 
-/* ==============================
-   TITLE
-================================ */
-h1 {
-  text-align: center;
-  margin-top: 120px;
-  letter-spacing: 0.25em;
-  font-size: 2rem;
-}
+
 
 /* ==============================
    FILM STORY CONTAINER
@@ -148,14 +140,9 @@ h1 {
     width: 180px;
   }
 
-  h1 {
-    margin-top: 80px;
-  }
 }
 
-h1{
-    text-align: center;
-}
+
 .film-contact-sheet {
   max-width: 1100px;
   margin: 0 auto 120px;

@@ -40,6 +40,8 @@ h1 {
   font-family: "Limelight", sans-serif;
   font-weight: 400;
   color: #fbb831;
+  font-size: 60px;
+  text-align: center;
 }
 
 h2 {
@@ -190,7 +192,7 @@ li.dropdown {
   .nav-logo img {
   width: 100px;
   height: auto;
-}
+  }
 
   .nav-controls {
     display: flex;
@@ -210,7 +212,6 @@ li.dropdown {
     height: auto;
     display: block;
   }
-
 
   /* Mobile dropdowns */
   li.dropdown .dropdown-content {
@@ -237,7 +238,7 @@ li.dropdown {
     nav ul {
     position: absolute;
     top: 50%;
-    right: 60px; /* pushes menu left of icon */
+    right: 60px;
 
     transform: translateY(-20%);
     display: none;
@@ -265,10 +266,23 @@ li.dropdown {
     white-space: nowrap;
   }
 
+  h1{
+    font-size: 40px;
+  }
+
+
 }
 @media (max-width: 768px) {
   .nav-logo img {
-    width: 80px;   /* clean, balanced size */
+    width: 80px; 
     height: auto;
+  }
+
+  h1{
+    font-size: 35px;
+  }
+
+  h2{
+    margin-left: 0px;
   }
 }

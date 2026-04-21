@@ -1,34 +1,26 @@
-/* ==============================
-   BASE TYPOGRAPHY
-================================ */
-
-/* h3 {
+/* ============================== BASE TYPOGRAPHY ============================== */
+h3 {
   font-family: "Limelight", sans-serif;
   font-weight: 400;
   color: #fbb831;
-  font-size: 30pt;
-} */
+  font-size: 60pt;
+  padding-top: 50px;
+}
 
 p {
   font-family: "Cutive Mono", monospace;
   font-weight: 400;
-  font-style: normal;
   color: rgb(231, 229, 229);
   line-height: 1.65;
 }
 
-.text p{
-    text-align: left;
-    padding: 10px;
-    margin: 20px;
-    margin-left: 100px;
-
+.text p {
+  text-align: left;
+  padding: 10px;
+  margin: 20px 20px 20px 100px;
 }
 
-/* ==============================
-   ARTICLE ANIMATION
-================================ */
-
+/* ============================== ARTICLE ANIMATION ============================== */
 article {
   animation: slideInUp 0.8s ease;
   padding-bottom: 60px;
@@ -45,42 +37,38 @@ article {
   }
 }
 
-/* ==============================
-   PORTFOLIO LAYOUT
-================================ */
-
-.displayPortfolio {
+/* ============================== PORTFOLIO LAYOUT ============================== */
+.displayPortfolio,
+.displayPortfolio2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: inline;
-  gap: 10px;
-  padding: 20px 100px 20px 100px;
+  gap: 20px;
+  padding: 20px 100px;
 }
 
 .displayPortfolio > img {
   width: 600px;
-  height: auto;
   object-fit: contain;
   margin-top: 20px;
 }
-
-
-/* Main specimen image */
-
-.displayPortfolio2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: inline;
-  gap: 60px;
-  padding: 20px 100px 20px 100px;
-}
-
 
 .displayPortfolio2 > img {
   width: 780px;
-  height: auto;
   object-fit: contain;
   margin-top: 20px;
+}
+
+.displayPortfolio img {
+  transition: transform 0.5s ease;
+}
+
+/* ============================== CENTER / MODEL ============================== */
+.centerImg img {
+  display: block;
+  margin: auto;
+  width: 80%;
+  height: auto;
+  padding: 10px;
 }
 
 .centerImg .letters {
@@ -95,14 +83,13 @@ article {
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  flex-wrap: wrap;
   gap: 30px;
   margin: 30px 0;
-  flex-wrap: wrap;
 }
 
 .model img {
   max-width: 380px;
-  height: auto;
   transition: transform 0.4s ease;
 }
 
@@ -110,10 +97,7 @@ article {
   transform: translateY(-8px);
 }
 
-/* ==============================
-   TEXT COLUMN CONTROL
-================================ */
-
+/* ============================== TEXT BLOCK ============================== */
 .textBlock {
   display: flex;
   flex-direction: column;
@@ -124,31 +108,17 @@ article {
   margin-top: 30px;
 }
 
-/* Inline specimen image */
-
+/* ============================== MEDIA ============================== */
 .inline-image {
   width: 100%;
   max-width: 370px;
-  margin-top: 2px;
 }
 
-video{
+video {
   width: 400px;
 }
 
-
-/* ==============================
-   IMAGE INTERACTIONS
-================================ */
-
-.displayPortfolio img {
-  transition: transform 0.5s ease;
-}
-
-/* ==============================
-   TYPEWRITER TITLE
-================================ */
-
+/* ============================== TYPEWRITER ============================== */
 .typewriter {
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
@@ -160,19 +130,14 @@ video{
 }
 
 .typewriter h3 {
-  color: #fbb831;
   font-size: 3.5rem;
-  font-weight: 400;
   letter-spacing: 0.1em;
-
   white-space: nowrap;
   overflow: hidden;
   display: inline-block;
-
   border-right: 8px solid #fbb831;
   width: 0;
-  margin-left: 30px;
-  margin-bottom: 10px;
+  margin: 0 0 10px 30px;
 }
 
 @keyframes typing {
@@ -184,21 +149,11 @@ video{
   50% { border-color: transparent; }
 }
 
-@keyframes fade-out {
-  to {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
-/* ==============================
-   BUTTON STYLING
-================================ */
-
+/* ============================== BUTTONS ============================== */
 button {
   background-color: #fbb831;
-  color: rgb(0, 0, 0);
-  padding: 2px 8px;
+  color: #000;
+  padding: 4px 10px;
   margin: 15px 10px;
   border-radius: 8px;
   font-size: 12pt;
@@ -208,15 +163,15 @@ button {
 
 .centerImg button {
   position: relative;
-  overflow: hidden;
   display: block;
   margin: auto;
   padding: 10px;
-  transition: all 0.3s ease;
+  overflow: hidden;
+  transition: 0.3s ease;
 }
 
 .centerImg button::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -237,96 +192,71 @@ button {
   transform: translateY(-3px);
 }
 
-/* ==============================
-   CENTERED IMAGES
-================================ */
-
-.centerImg img {
-  display: block;
-  margin: auto;
-  width: 80%;
-  height: auto;
-  padding: 10px;
-}
-
-/* ==============================
-   GRID IMAGES
-================================ */
-
-.GridImages{
+/* ============================== GRID IMAGES ============================== */
+.GridImages {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  align-items:flex-end;
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
-  padding: 20px 20px 0px 20px;
+  padding: 20px 20px 0;
   margin-top: 40px;
 }
 
-.GridImages img{
+.GridImages img {
   max-width: 300px;
-  height: auto;
 }
 
-/* ==============================
-   RESPONSIVE BREAKPOINTS
-================================ */
+/* ============================== PROCESS GRID ============================== */
+.process {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
 
-/* Tablets */
+.process img {
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
 
+.process img:hover {
+  transform: scale(1.03);
+}
+
+/* ============================== TABLET ============================== */
 @media (min-width: 800px) and (max-width: 1299px) {
+    .typewriter h3 {
+      font-size: 50px;
+    }
 
-  .displayPortfolio > img {
-    height: 650px;
+  .displayPortfolio {
+    grid-template-columns: 1fr;
+    padding: 40px;
   }
 
-  .GridImages{
+  .GridImages {
     grid-template-columns: 1fr 1fr;
     padding-left: 35pt;
-    align-items:center;
-    gap: 10px;
-    margin-top: 40px;
+    align-items: center;
   }
 
-  .GridImages img{
+  .GridImages img {
     max-width: 280px;
   }
-  
+
+  .process {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
-/* Mobile */
-
+/* ============================== MOBILE ============================== */
 @media (max-width: 799px) {
 
   .displayPortfolio {
     grid-template-columns: 1fr;
-    padding: 15px;
+    padding: 20px;
   }
 
-  .displayPortfolio > img {
-    width: 100%;
-    height: auto;
-  }
-
-  .inline-image {
-    max-width: 100%;
-  }
-
-  .typewriter h3 {
-    font-size: 5.5rem;
-    border-right: 0.15em solid #fbb831;
-    color: #fbb831;
-  }
-
-  .GridImages{
-    display: inline-block;
-    text-align: center;
-    margin-top: 40px;
-  }
-
-  .GridImages img{
-    max-width: 250px;
-  }
-
+  .displayPortfolio > img,
   img,
   video {
     max-width: 100%;
@@ -338,61 +268,17 @@ button {
     max-height: 70vh;
   }
 
-}
-
-/* ==============================
-   PROCESS GRID
-================================ */
-
-.textBlock {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
-.process {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 10px;
-}
-
-.process img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.process img:hover {
-  transform: scale(1.03);
-}
-
-/* ==============================
-   RESPONSIVE BREAKPOINTS
-================================ */
-
-/* Tablet */
-@media (min-width: 800px) and (max-width: 1299px) {
-
-  .displayPortfolio {
-    grid-template-columns: 1fr;
-    padding: 40px;
+  .inline-image {
+    max-width: 100%;
   }
 
-  .process {
-    grid-template-columns: 1fr 1fr;
+  .GridImages {
+    display: block;
+    text-align: center;
   }
 
-
-}
-
-
-/* Mobile */
-@media (max-width: 799px) {
-
-  .displayPortfolio {
-    grid-template-columns: 1fr;
-    padding: 20px;
+  .GridImages img {
+    max-width: 250px;
   }
 
   .process {
@@ -400,14 +286,9 @@ button {
   }
 
   .typewriter h3 {
-    font-size: 2rem;
+    font-size: 45px;
     border-right: 0.15em solid #fbb831;
-    text-align: left;
     margin-left: 2px;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
+    text-align: left;
   }
 }
