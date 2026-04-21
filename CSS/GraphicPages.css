@@ -130,13 +130,12 @@ video {
 }
 
 .typewriter h3 {
-  font-size: 3.5rem;
+  font-size: 3rem;
   letter-spacing: 0.1em;
   white-space: nowrap;
   overflow: hidden;
   display: inline-block;
-  border-right: 8px solid #fbb831;
-  width: 0;
+  border-right: 5px solid #fbb831;
   margin: 0 0 10px 30px;
 }
 
@@ -146,7 +145,7 @@ video {
 }
 
 @keyframes blink-caret {
-  50% { border-color: transparent; }
+  0% { border-color: transparent; }
 }
 
 /* ============================== BUTTONS ============================== */
