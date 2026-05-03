@@ -10,6 +10,7 @@ article img{
 } */
 /* ======= Branding Page CSS ======= */
 
+
 article{
     margin: 50px 100px 100px 50px;
 }
@@ -74,6 +75,10 @@ article{
 .identity img{
     width:600px; 
     height: 100%;
+    text-align: center;
+}
+
+.mockups{
     text-align: center;
 }
 /* ===== Responsive for tablets ===== */
