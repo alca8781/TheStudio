@@ -78,6 +78,15 @@ article{
     text-align: center;
 }
 
+.labels{
+    display: block;
+    text-align: center;
+}
+.labels img{
+    max-width: 900px;
+    padding-bottom: 8px;
+}
+
 .mockups{
     text-align: center;
 }
