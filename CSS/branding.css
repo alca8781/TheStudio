@@ -47,7 +47,7 @@ article{
     text-align: center;
 }
 .mainlogo img{
-    width:600px; 
+    width: 1000px; 
 }
 
 #brand h2{
@@ -90,6 +90,46 @@ article{
 .mockups{
     text-align: center;
 }
+
+/* =========================
+   ASSEMBLING LOGO
+========================= */
+
+/* .assemble-logo {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-piece {
+    position: absolute;
+
+    max-width: 500px;
+    width: 40vw;
+
+    will-change: transform, opacity;
+    transition: transform 0.08s linear;
+
+    opacity: 0.9;
+} */
+
+/* final centered stacking */
+/* .logo-piece:nth-child(1) {
+    z-index: 1;
+}
+
+.logo-piece:nth-child(2) {
+    z-index: 2;
+}
+
+.logo-piece:nth-child(3) {
+    z-index: 3;
+} */
+
 /* ===== Responsive for tablets ===== */
 @media (min-width: 480px) and (max-width: 768px) {
     .carousel-scroll img {
@@ -133,3 +173,4 @@ article{
     }
 
 }
+
