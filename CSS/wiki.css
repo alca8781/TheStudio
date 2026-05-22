@@ -1,0 +1,134 @@
+/* =============================================
+   SCROLL SECTION
+============================================= */
+
+.scroll-container {
+  height: 400vh;
+  position: relative;
+}
+
+.sticky-stage {
+  position: sticky;
+  top: 0;
+
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+
+/* =============================================
+   LOGO STAGE
+============================================= */
+
+.logo-stage {
+  width: min(900px, 92vw);
+  aspect-ratio: 16 / 9;
+
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =============================================
+   SHARED LOGO LAYER STYLES
+============================================= */
+
+.logo-layer {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 60%;
+  height: auto;
+
+  opacity: 0;
+
+  /* perfectly center each layer */
+  transform: translate(-50%, -50%) scale(0.9);
+
+  transition:
+    opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.75s cubic-bezier(0.4, 0, 0.2, 1),
+    filter 0.65s;
+
+  will-change: transform, opacity;
+}
+
+
+/* =============================================
+   ACTIVE / VISIBLE STATE
+============================================= */
+
+.logo-layer.visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  filter: blur(0);
+}
+
+
+/* =============================================
+   INDIVIDUAL LAYERS
+   Customize sizing/animation here
+============================================= */
+
+
+/* --- Layer 1 --- */
+#layer-1 {
+  width: 90%;
+  z-index: 1;
+}
+
+
+/* --- Layer 2 --- */
+#layer-2 {
+  width: 90%;
+  z-index: 2;
+}
+
+
+/* --- Layer 3 --- */
+#layer-3 {
+  width: 90%;
+  z-index: 3;
+}
+
+
+/* --- Layer 4 --- */
+#layer-4 {
+  width: 90%;
+  z-index: 5;
+}
+
+
+
+
+
+
+
+/* =============================================
+   MOBILE
+============================================= */
+
+@media (max-width: 768px) {
+
+  .logo-stage {
+    width: 95vw;
+  }
+
+  .logo-layer {
+    width: 90%;
+  }
+
+
+}

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/CSS/branding.css">
     <link rel="stylesheet" href="/CSS/GraphicPages.css">
     <link rel="stylesheet" href="/CSS/navigation.css">
+    <link rel="stylesheet" href="/CSS/wiki.css">
 
 
     <!-- fonts -->
@@ -63,12 +64,59 @@
       </nav>
     </header>
 
-
-
     
-  <div class="mainlogo">     
-     <img src="/images/Branding/Wiki/logoPNG.png" alt="wikipedia rebrand" />
-  </div>
+<div class="scroll-container">
+  <div class="sticky-stage">
+
+    <div class="scroll-hint" id="hint">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M8 2v9M4 8l4 4 4-4" stroke="#888" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+     
+    </div>
+
+    <div class="logo-stage">
+       
+      <img id="layer-1" class="logo-layer"
+           src="/images/Branding/Wiki/dots2.png"
+           alt="figure" />
+
+      <!-- LAYER 2 — e.g. LEVANT wordmark -->
+      <img id="layer-2" class="logo-layer"
+           src="/images/Branding/Wiki/dots3.png"
+           alt="wordmark" />
+
+      <!-- LAYER 3 — e.g. cedar tree icon -->
+      <img id="layer-3" class="logo-layer"
+           src="/images/Branding/Wiki/dots4.png"
+           alt="icon" />
+
+      <!-- LAYER 4 — e.g. GOURMET sub-text -->
+      <img id="layer-4" class="logo-layer"
+           src="/images/Branding/Wiki/dots5.png"
+           alt="sub-text" />
+
+
+
+    </div><!-- /.logo-stage -->
+
+    <div class="progress-bar">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+
+    <div class="dots">
+      <div class="dot" id="dot-0"></div>
+      <div class="dot" id="dot-1"></div>
+      <div class="dot" id="dot-2"></div>
+      <div class="dot" id="dot-3"></div>
+      <div class="dot" id="dot-4"></div>
+    </div>
+
+  </div><!-- /.sticky-stage -->
+</div><!-- /.scroll-container -->
+
+
   <div class="para">
   <p>In the current logo design, Wikipedia uses the globe and puzzle pieces with different languages represented on each
       piece to indicate their commitment to community and accessibility across 340 languages. Taking the notion of 
@@ -95,7 +143,7 @@
   <div class="mockups">
 <img src="/images/Branding/Wiki/mockups.png" alt="wikipedia rebrand" />
   </div>
-  
+<!--   
 <div id="brand">
   <h2>Brand Identity & Research</h2>
 </div>
@@ -138,7 +186,7 @@
         <img src="/images/Branding/Wiki/Wikipedia37.jpg" alt="wikipedia rebrand" />
         <img src="/images/Branding/Wiki/Wikipedia38.jpg" alt="wikipedia rebrand" />
         <img src="/images/Branding/Wiki/Wikipedia39.jpg" alt="wikipedia rebrand" />
-</article>
+</article> -->
 
  <div class="centerImg">
       <br><br>
@@ -160,6 +208,7 @@
             Copyright © 2017 AC Studios - All Rights Reserved.
         </section>
     </footer>
+     <script src="/JS/logo.js"></script>
     <script src="/JS/branding.js"></script>
     <script src="/JS/designindex.js"></script>
     <script src="/JS/gallery.js"></script>
