@@ -449,15 +449,15 @@ li.dropdown {
     width: 90%;
   }
 .labels img{
-    max-width: 400px;
+    max-width: 320px;
     padding-bottom: 8px;
 }
 
 .mockups img{
-    max-width: 400px;
+    max-width: 320px;
 }
 
 .identity img{
-  max-width: 400px;
+ max-width: 320px;
 }
 }
