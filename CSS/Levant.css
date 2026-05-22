@@ -436,5 +436,28 @@ li.dropdown {
 }
 
 .mockups img{
-    max-width: 900px;
+    max-width: 1200px;
+}
+
+@media (max-width: 768px) {
+
+  .logo-stage {
+    width: 95vw;
+  }
+
+  .logo-layer {
+    width: 90%;
+  }
+.labels img{
+    max-width: 400px;
+    padding-bottom: 8px;
+}
+
+.mockups img{
+    max-width: 400px;
+}
+
+.identity img{
+  max-width: 400px;
+}
 }
