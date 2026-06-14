@@ -112,6 +112,7 @@
 .checkbox input:checked {
     background-color: #fbb831;
     border-color: #fbb831;
+    color: #fbb831;
 }
 
 .checkbox input:checked::after {

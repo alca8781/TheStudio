@@ -69,49 +69,31 @@
 
     <form id="contact-form" class="contact-form">
 
-      <input
-        type="text"
-        name="from_name"
-        placeholder="Your Name:"
-        required
-      >
+      <input type="text" name="from_name" placeholder="Your Name:" required>
 
-      <input
-        type="email"
-        name="reply_to"
-        placeholder="Your Email:"
-        required
-      >
+      <input type="email" name="reply_to" placeholder="Your Email:" required>
 
       <div class="project-type">
-        <span class="project-label">Type of work</span>
+        <span class="project-label">Service:</span>
 
         <label class="checkbox">
-          <input
-            type="radio"
-            name="project_type"
-            value="Photo Session"
-            required
-          >
-          <span>Photo Session</span>
-        </label>
-
-        <label class="checkbox">
-          <input
-            type="radio"
-            name="project_type"
-            value="Design Work"
-            required
-          >
+          <input type="radio" name="project_type" value="Design Work" required>
           <span>Design Work</span>
         </label>
       </div>
 
-      <textarea
-        name="message"
-        placeholder="Message:"
-        required
-      ></textarea>
+      <label class="checkbox">
+        <input type="radio" name="project_type" value="Photo Session" required>
+        <span>Photo Session</span>
+      </label>
+
+      <label class="checkbox">
+        <input type="radio" name="project_type" value="Purchase Photos" required>
+        <span>Purchase Photos</span>
+      </label>
+      </div>
+
+      <textarea name="message" placeholder="Message:" required></textarea>
 
       <button type="submit">
         Send Message
@@ -156,7 +138,7 @@
           .join("\n");
 
         messageField.value =
-`PHOTOS TO BE PURCHASED:
+          `PHOTOS TO BE PURCHASED:
 
 ${cartMessage}
 
@@ -180,20 +162,20 @@ ${cartMessage}
           "template_ffqxpk2",
           this
         )
-        .then(() => {
+          .then(() => {
 
-          status.textContent = "Message sent successfully!";
-          form.reset();
+            status.textContent = "Message sent successfully!";
+            form.reset();
 
-        })
-        .catch((error) => {
+          })
+          .catch((error) => {
 
-          console.error("EmailJS Error:", error);
+            console.error("EmailJS Error:", error);
 
-          status.textContent =
-            "Sorry, something went wrong. Please try again.";
+            status.textContent =
+              "Sorry, something went wrong. Please try again.";
 
-        });
+          });
 
       });
 
@@ -202,4 +184,5 @@ ${cartMessage}
   </script>
 
 </body>
+
 </html>
