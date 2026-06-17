@@ -190,3 +190,44 @@ article {
 }
 
 
+button {
+  background-color: #fbb831;
+  color: #000;
+  padding: 4px 10px;
+  margin: 15px 10px;
+  border-radius: 8px;
+  font-size: 12pt;
+  border: none;
+  cursor: pointer;
+}
+
+.centerImg button {
+  position: relative;
+  display: block;
+  margin: auto;
+  padding: 10px;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.centerImg button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.5s, height 0.5s;
+}
+
+.centerImg button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.centerImg button:hover {
+  transform: translateY(-3px);
+}
