@@ -119,14 +119,11 @@ a {
   width: 100%;
   height: auto;
   object-fit: cover;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+
 }
 
-.about-images img:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 20px 40px rgba(79, 87, 104, 0.4);
-}
+
 
 .about-content h2 {
 
