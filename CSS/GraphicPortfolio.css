@@ -59,7 +59,7 @@ article {
     text-decoration: none;
     display: block;
     margin-bottom: 0;
-    
+    border-radius: 6px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     transition: all 0.4s ease;
     opacity: 0;

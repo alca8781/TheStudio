@@ -44,6 +44,15 @@ article {
     color: #cbcac8; 
 }
 
+.altlogo{
+    display: grid;
+    grid-template-columns:1fr 2fr;
+    gap:10px; 
+}
+.altlogo img{
+    max-width: 600px;
+}
+
 .identity{
     display:block;
     text-align: center;
