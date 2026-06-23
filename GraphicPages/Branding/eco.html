@@ -5,10 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <link rel="stylesheet" href="/CSS/branding.css">
+
     <link rel="stylesheet" href="/CSS/GraphicPages.css">
     <link rel="stylesheet" href="/CSS/navigation.css">
-    <link rel="stylesheet" href="/CSS/wiki.css">
+    <link rel="stylesheet" href="/CSS/eco.css">
 
 
     <!-- fonts -->
@@ -68,16 +68,73 @@
      <img src="/images/Branding/Eco/EcoMaterialsLibrary_InlineLogo-White.png" alt="Eco Materials Library Inline Logo" />
     </div>
 
-
+<div class="materials">
+     <img src="/images/Branding/Eco/m1.png">
+     <img src="/images/Branding/Eco/m2.png">
+     <img src="/images/Branding/Eco/m3.png">
+</div>
+<div class="circlesinline">
+     <img src="/images/Branding/Eco/line.png" alt="Eco Materials Circles" />
+    </div>
   <div class="para">
-  <p> COMING SOON...</p>
-  </div>
-  <div class="identity">
-  
-  </div>
-  <div class="mockups">
+  <p> 
+    <br><br>
+    The Eco Materials Library is a physical and digital resource for exploring sustainable and 
+    emerging materials through samples, recipes, process documentation, and selected tools. 
+    It supports material literacy, experimentation, and sustainability learning through direct 
+    engagement. The library helps students and researchers inspect materials, understand how they 
+    are made, how they behave, and how they can be worked with in practice. 
+    </p>
+    </div>
 
+  <div class="mockups">
+   
+    <!-- <img src="/images/Branding/Eco/A5LabelMockup.png" alt="A5 mockup">
+    <img src="/images/Branding/Eco/A6LabelMockup.png" alt="A5 mockup"> -->
+    <img src="/images/Branding/Eco/labels.png" alt="A5 mockup">
   </div>
+
+  <div class="icons">
+    <img src="/images/Branding/Eco/icons/EcoMaterialsLibrary_MakeItYourself.png" alt="make it yourself icon">
+    <img src="/images/Branding/Eco/icons/EcoMaterialsLibrary_Molded.png" alt="molded icon">
+    <img src="/images/Branding/Eco/icons/EcoMaterialsLibrary_3DPrinted.png" alt="3D printed icon">
+    <img src="/images/Branding/Eco/icons/EcoMaterialsLibrary_LaserCut.png" alt="laser cut icon ">
+    <img src="/images/Branding/Eco/icons/EcoMaterialsLibrary_Extruded.png" alt="extruded icon">
+    <img src="/images/Branding/Eco/icons/EcoMaterialsLibrary_HotPressed.png" alt="hot pressed icon">
+    <img src="/images/Branding/Eco/icons/EcoMaterialsLibrary_ColdPressed.png" alt="cold pressed icon">
+    <img src="/images/Branding/Eco/icons/EcoMaterialsLibrary_VacuumFormed.png" alt="vacuum formed icon">
+    <img src="/images/Branding/Eco/icons/EcoMaterialsLibrary_Assembled.png" alt="assembled icon">
+    <img src="/images/Branding/Eco/icons/EcoMaterialsLibrary_TreatedSurface.png" alt="treated surface icon">
+  </div>
+
+  <div class="icons">
+    <img src="/images/Branding/Eco/icons/EcoMaterialsLibrary_Renewable.png" alt="renewable icon">
+    <img src="/images/Branding/Eco/icons/EcoMaterialsLibrary_ByProduct.png" alt="by product icon">
+    <img src="/images/Branding/Eco/icons/EcoMaterialsLibrary_LocallySourced.png" alt="locally sourced icon">
+    <img src="/images/Branding/Eco/icons/EcoMaterialsLibrary_HomeComp.png" alt="home compostable icon">
+    <img src="/images/Branding/Eco/icons/EcoMaterialsLibrary_IndustrialComp.png" alt="industrial compostable icon ">
+    <img src="/images/Branding/Eco/icons/EcoMaterialsLibrary_Recycled.png" alt="recycled icon ">
+  </div>
+
+<article>
+<div class="logo-stack">
+    <img src="/images/Branding/Eco/EcoMaterialsLibrary_CircleLogo-Plant.png">
+    <img src="/images/Branding/Eco/EcoMaterialsLibrary_CircleLogo-Animal.png">
+    <img src="/images/Branding/Eco/EcoMaterialsLibrary_CircleLogo-Fungal.png">
+    <img src="/images/Branding/Eco/EcoMaterialsLibrary_CircleLogo-Microbial.png">
+    <img src="/images/Branding/Eco/EcoMaterialsLibrary_CircleLogo-NatDyes.png">
+    <img src="/images/Branding/Eco/EcoMaterialsLibrary_CircleLogo-Recycled.png">
+    <img src="/images/Branding/Eco/EcoMaterialsLibrary_CircleLogo-AnimalPlant.png">
+    <img src="/images/Branding/Eco/EcoMaterialsLibrary_CircleLogo-PlantAnimal.png">
+</div>
+
+<div class="colorpalette">
+     <img src="/images/Branding/Eco/styleguideWhiteTxt.png" alt="color palette">
+</div>
+</article>
+
+
+
 
 
  <div class="centerImg">
@@ -113,4 +170,29 @@
 document.addEventListener("contextmenu", function(e) {
     e.preventDefault();
 });
+
+const images = [
+    "images/logo-red.png",
+    "images/logo-orange.png",
+    "images/logo-yellow.png",
+    "images/logo-green.png",
+    "images/logo-teal.png",
+    "images/logo-blue.png",
+    "images/logo-purple.png",
+    "images/logo-burgundy.png"
+];
+
+const logo = document.getElementById("logo");
+
+let current = 0;
+
+setInterval(() => {
+    logo.style.opacity = 0;
+
+    setTimeout(() => {
+        current = (current + 1) % images.length;
+        logo.src = images[current];
+        logo.style.opacity = 1;
+    }, 800);
+}, 2500);
 </script>

@@ -1,0 +1,292 @@
+/* ============================== BASE TYPOGRAPHY ============================== */
+h3 {
+  font-family: "Limelight", sans-serif;
+  font-weight: 400;
+  color: #fbb831;
+  font-size: 60pt;
+  padding-top: 50px;
+}
+
+p {
+  font-family: "Cutive Mono", monospace;
+  font-weight: 400;
+  color: rgb(231, 229, 229);
+  line-height: 1.65;
+}
+
+.text p {
+  text-align: left;
+  padding: 10px;
+  margin: 20px 20px 20px 100px;
+}
+
+/* ============================== ARTICLE ANIMATION ============================== */
+article {
+  animation: slideInUp 0.8s ease;
+  padding-bottom: 60px;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================== PORTFOLIO LAYOUT ============================== */
+.displayPortfolio,
+.displayPortfolio2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px 100px;
+}
+
+.displayPortfolio > img {
+  width: 600px;
+  object-fit: contain;
+  margin-top: 20px;
+}
+
+.displayPortfolio2 > img {
+  width: 780px;
+  object-fit: contain;
+  margin-top: 20px;
+}
+
+.displayPortfolio img {
+  transition: transform 0.5s ease;
+}
+
+/* ============================== CENTER / MODEL ============================== */
+.centerImg img {
+  display: block;
+  margin: auto;
+  width: 80%;
+  height: auto;
+  padding: 10px;
+}
+
+.centerImg .letters {
+  display: inline-flex;
+}
+
+.centerImg .letters img {
+  width: 800px;
+}
+
+.model {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 30px 0;
+}
+
+.model img {
+  max-width: 380px;
+  transition: transform 0.4s ease;
+}
+
+.model img:hover {
+  transform: translateY(-8px);
+}
+
+/* ============================== TEXT BLOCK ============================== */
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.textBlock p {
+  margin-top: 30px;
+}
+
+/* ============================== MEDIA ============================== */
+.inline-image {
+  width: 100%;
+  max-width: 370px;
+}
+
+video {
+  width: 400px;
+}
+
+/* ============================== TYPEWRITER ============================== */
+.typewriter {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.typewriter.hidden {
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+}
+
+.typewriter h3 {
+  font-size: 3rem;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  border-right: 5px solid #fbb831;
+  margin: 0 0 10px 30px;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: var(--chars); }
+}
+
+@keyframes blink-caret {
+  0% { border-color: transparent; }
+}
+
+/* ============================== BUTTONS ============================== */
+button {
+  background-color: #fbb831;
+  color: #000;
+  padding: 4px 10px;
+  margin: 15px 10px;
+  border-radius: 8px;
+  font-size: 12pt;
+  border: none;
+  cursor: pointer;
+}
+
+.centerImg button {
+  position: relative;
+  display: block;
+  margin: auto;
+  padding: 10px;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.centerImg button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.5s, height 0.5s;
+}
+
+.centerImg button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.centerImg button:hover {
+  transform: translateY(-3px);
+}
+
+/* ============================== GRID IMAGES ============================== */
+.GridImages {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 20px 20px 0;
+  margin-top: 40px;
+}
+
+.GridImages img {
+  max-width: 300px;
+}
+
+/* ============================== PROCESS GRID ============================== */
+.process {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.process img {
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.process img:hover {
+  transform: scale(1.03);
+}
+
+/* ============================== TABLET ============================== */
+@media (min-width: 800px) and (max-width: 1299px) {
+    .typewriter h3 {
+      font-size: 50px;
+    }
+
+  .displayPortfolio {
+    grid-template-columns: 1fr;
+    padding: 40px;
+  }
+
+  .GridImages {
+    grid-template-columns: 1fr 1fr;
+    padding-left: 35pt;
+    align-items: center;
+  }
+
+  .GridImages img {
+    max-width: 280px;
+  }
+
+  .process {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ============================== MOBILE ============================== */
+@media (max-width: 799px) {
+
+  .displayPortfolio {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .displayPortfolio img{
+    max-width: 300px;
+  }
+
+  .inline-image {
+    max-width: 100%;
+  }
+
+  .GridImages {
+    display: block;
+    text-align: center;
+  }
+
+  .GridImages img {
+    max-width: 250px;
+  }
+
+  .process {
+    grid-template-columns: 1fr 1fr;
+    max-width: 300px;
+  }
+
+  .typewriter h3 {
+    font-size: 35px;
+    border-right: 0.15em solid #fbb831;
+    margin-left: 2px;
+    text-align: left;
+  }
+
+    video {
+    width: 100%;
+    max-height: 70vh;
+  }
+  
+}
