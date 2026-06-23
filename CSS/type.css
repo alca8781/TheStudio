@@ -1,0 +1,296 @@
+/* ============================== BASE TYPOGRAPHY ============================== */
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+h3 {
+  font-family: "Limelight", sans-serif;
+  font-weight: 400;
+  color: #fbb831;
+  font-size: clamp(2rem, 6vw, 4rem);
+  padding-top: 50px;
+}
+
+p {
+  font-family: "Cutive Mono", monospace;
+  font-weight: 400;
+  color: rgb(231, 229, 229);
+  line-height: 1.65;
+}
+
+/* ============================== ARTICLE ============================== */
+
+article {
+  animation: slideInUp 0.8s ease;
+  padding-bottom: 60px;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================== PORTFOLIO LAYOUT ============================== */
+
+.displayPortfolio,
+.displayPortfolio2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 20px 40px;
+  align-items: start;
+}
+
+.displayPortfolio img,
+.displayPortfolio2 img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ============================== TEXT ============================== */
+
+.text p {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.textBlock p {
+  margin-top: 20px;
+}
+
+/* ============================== CENTER IMAGES ============================== */
+
+.centerImg img {
+  display: block;
+  margin: auto;
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+}
+
+.centerImg .letters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.centerImg .letters img {
+  width: 100%;
+  max-width: 800px;
+}
+
+/* ============================== MODEL SECTION ============================== */
+
+.model {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 30px 0;
+}
+
+.model img,
+.model video {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  transition: transform 0.4s ease;
+}
+
+.model img:hover {
+  transform: translateY(-8px);
+}
+
+/* ============================== VIDEO ============================== */
+
+video {
+  display: block;
+}
+
+/* ============================== TYPEWRITER ============================== */
+
+.typewriter {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.typewriter.hidden {
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+}
+
+.typewriter h3 {
+  letter-spacing: 0.1em;
+  display: inline-block;
+  border-right: 5px solid #fbb831;
+  margin: 0 0 10px 30px;
+}
+
+/* ============================== BUTTONS ============================== */
+
+button {
+  background-color: #fbb831;
+  color: #000;
+  padding: 4px 10px;
+  margin: 15px 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 12pt;
+  cursor: pointer;
+}
+
+.centerImg button {
+  position: relative;
+  display: block;
+  margin: auto;
+  padding: 10px 20px;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.centerImg button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.5s, height 0.5s;
+}
+
+.centerImg button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.centerImg button:hover {
+  transform: translateY(-3px);
+}
+
+/* ============================== GRID IMAGES ============================== */
+
+.GridImages {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.GridImages img {
+  width: 100%;
+  height: auto;
+}
+
+/* ============================== PROCESS GRID ============================== */
+
+.process {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.process img {
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.process img:hover {
+  transform: scale(1.03);
+}
+
+/* ============================== TABLET ============================== */
+
+@media (min-width: 800px) and (max-width: 1299px) {
+
+  .displayPortfolio,
+  .displayPortfolio2 {
+    grid-template-columns: 1fr;
+    padding: 40px;
+  }
+
+  .GridImages {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .process {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .typewriter h3 {
+    font-size: 3rem;
+  }
+}
+
+/* ============================== MOBILE ============================== */
+
+@media (max-width: 799px) {
+
+  article {
+    padding: 0 15px 40px;
+  }
+
+  h3 {
+    font-size: clamp(2rem, 10vw, 3rem);
+    padding-top: 20px;
+  }
+
+  .displayPortfolio,
+  .displayPortfolio2 {
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
+
+  .text p,
+  .textBlock p {
+    margin: 0;
+
+  }
+
+  .centerImg .letters {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .model {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .GridImages {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  /* .GridImages img{
+    width: 100px;
+  } */
+
+  .typewriter h3 {
+    margin-left: 0;
+    border-right: none;
+    white-space: normal;
+  }
+}

@@ -33,6 +33,7 @@ p {
   font-family: "Cutive Mono", monospace;
   font-weight: 400;
   font-style: normal;
+
 }
 
 #instagram-button {
@@ -52,7 +53,49 @@ p {
   transform: scale(1.1) rotate(5deg);
 }
 
+/* ============================== BUTTONS ============================== */
 
+button {
+  background-color: #fbb831;
+  color: #000;
+  padding: 4px 10px;
+  margin: 15px 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 10pt;
+  cursor: pointer;
+}
+
+.centerImg button {
+  position: relative;
+  display: block;
+  margin: auto;
+  padding: 10px 20px;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.centerImg button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.5s, height 0.5s;
+}
+
+.centerImg button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.centerImg button:hover {
+  transform: translateY(-3px);
+}
 
 
 
@@ -66,78 +109,77 @@ p {
     margin: 0 auto;
   }
 
-.galleryheader {
-  position: fixed;       
-  top: 0;                
-  left: 20; 
-  right: 20;              
-  width: 100%;           
-  z-index: 9999;         
-  background-color: rgb(27, 27, 27); 
-  display:grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  .galleryheader {
+    position: fixed;
+    top: 0;
+    left: 20;
+    right: 20;
+    width: 100%;
+    z-index: 9999;
+    background-color: rgb(27, 27, 27);
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
 
-}
+  }
 
-footer {
-  font-size: x-small;
-  text-align: center;
-  color: rgb(255, 255, 255);
-  padding: 10px;
-  margin-top: 100pt;
-  width: 100%;
-  text-align: center;
-  padding: 3rem 2rem;
-  backdrop-filter: blur(10px);
-}
+  footer {
+    font-size: x-small;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    margin-top: 100pt;
+    width: 100%;
+    text-align: center;
+    padding: 3rem 2rem;
+    backdrop-filter: blur(10px);
+  }
 
-nav {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  background-color: rgb(27, 27, 27);
-  padding: 10px 0;
-}
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: rgb(27, 27, 27);
+    padding: 10px 0;
+  }
 
-nav a {
-  font-family: "Zalando Sans Expanded", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  color: rgb(0, 0, 0);
-  text-decoration: none;
-  text-align: left;
-}
+  nav a {
+    font-family: "Zalando Sans Expanded", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    text-align: left;
+  }
 
-nav ul {
-  background-color: #fbb831;
-  border-radius: 6px;
+  nav ul {
+    background-color: #fbb831;
+    border-radius: 6px;
     padding: 0.6em 3em;
-    font-size: 12px;
-      list-style: none;
-      margin-left:8px;
-}
+    font-size: 10px;
+    list-style: none;
+    margin-left: 8px;
+  }
 
 
-.nav-logo img {
-  display: block;
-  margin-bottom: 8px;
-  background-color: rgb(27, 27, 27);
-  width: 200px;
-}
+  .nav-logo img {
+    display: block;
+    margin-bottom: 8px;
+    background-color: rgb(27, 27, 27);
+    width: 120px;
+    padding-left: 30px;
+    padding-top: 30px;
+  }
 
-nav ul li {
-  display: flex;
-  align-items: center;
-}
-
-
-
-nav  :hover {
-  background-color: rgb(27, 27, 27);
-  color: #fbb831;
-}
+  nav ul li {
+    display: flex;
+    align-items: center;
+  }
 
 
+  nav :hover {
+    background-color: rgb(27, 27, 27);
+    color: #fbb831;
+  }
 
 
   h1 {
@@ -214,49 +256,20 @@ nav  :hover {
     margin-bottom: 8px;
     color: rgb(0, 0, 0);
   }
-  
+
 
   #cartListContainer p {
     font-family: "Cutive Mono", monospace;
     font-size: 10pt;
     text-align: center;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
   }
 
   #viewCartButton img {
     height: 35px;
   }
 
-  #resetCartButton {
-    border: 2px solid #ffffff;
-    background-color: #ffffff;
-    border-radius: 4px;
-
-  font-family: "Zalando Sans Expanded", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 800;
-
-
-
-    text-decoration: none;
-    font-size: 8pt;
-    margin-top: 50px;
-    margin-right: 150px;
-    position: fixed;
-    top: 0;
-    right: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    z-index: 1000;
-    padding: 4px;
-  }
-
-  #resetCartButton:active {
-    background-color: #c66666;
-  }
-
-  .TheGalleryImages{
+  .TheGalleryImages {
     text-align: center;
     padding-top: 200pt;
   }
@@ -267,79 +280,74 @@ nav  :hover {
 @media (max-width: 860px) {
 
   html {
-    max-width: 70%;
+    max-width: 90%;
     height: 100%;
     margin: 0 auto;
   }
 
   footer {
-  font-size: x-small;
-  text-align: center;
-  color: rgb(255, 255, 255);
-  padding: 10px;
-  margin-top: 100pt;
-  width: 100%;
-  text-align: center;
-  padding: 3rem 2rem;
-  backdrop-filter: blur(10px);
-}
+    font-size: x-small;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    margin-top: 100pt;
+    width: 100%;
+    text-align: center;
+    padding: 3rem 2rem;
+    backdrop-filter: blur(10px);
+  }
 
-.galleryheader {
-  position: fixed;       
-  top: 0;                
+  .galleryheader {
+    position: fixed;
+    top: 0;
+    width: 90%;
+    z-index: 9999;
+    background-color: rgb(27, 27, 27);
+  }
 
-             
-  width: 90%;           
-  z-index: 9999;         
-  background-color: rgb(27, 27, 27); 
+  .TheGalleryImages {
+    text-align: center;
+    padding-top: 200px;
+  }
 
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: rgb(27, 27, 27);
+    padding: 10px 0;
+  }
 
-}
+  nav a {
+    font-family: "Zalando Sans Expanded", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    text-align: left;
+  }
 
-.TheGalleryImages{
-  text-align: center;
-}
-
-nav {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  background-color: rgb(27, 27, 27);
-  padding: 10px 0;
-}
-
-nav a {
-  font-family: "Zalando Sans Expanded", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  color: rgb(0, 0, 0);
-  text-decoration: none;
-  text-align: left;
-}
-
-nav ul {
-  background-color: #fbb831;
-  border-radius: 6px;
+  nav ul {
+    background-color: #fbb831;
+    border-radius: 6px;
     padding: .3em .5em;
     font-size: 9px;
-      list-style: none;
-}
+    list-style: none;
+  }
 
 
-.nav-logo img {
-  display: block;
-  margin-bottom: 10px;
-  background-color: rgb(27, 27, 27);
-  width: 100px;
+  .nav-logo img {
+    display: block;
+    margin-bottom: 10px;
+    background-color: rgb(27, 27, 27);
+    width: 60px;
 
-}
+  }
 
-nav ul li {
-  display: flex;
-  align-items: center;
-}
-
-
+  nav ul li {
+    display: flex;
+    align-items: center;
+  }
 
 
 
@@ -352,18 +360,18 @@ nav ul li {
 
   p {
     font-size: 10pt;
-      color: #c3c3c3;
+    color: #c3c3c3;
     margin-bottom: 15px;
     margin-top: -10pt;
 
-  
+
   }
 
   /* CART */
   .cart {
     position: fixed;
     top: 50px;
-    right: 60px;
+    right: 50px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -399,7 +407,7 @@ nav ul li {
     padding: 2px;
     margin-top: 5px;
     font-size: 10pt;
-    color: rgb(0,0,0);
+    color: rgb(0, 0, 0);
 
   }
 
@@ -410,15 +418,15 @@ nav ul li {
     margin-bottom: 5px;
   }
 
-    #cartListContainer li{
+  #cartListContainer li {
     font-family: "Cutive Mono", monospace;
     font-size: 8pt;
     margin-bottom: 2px;
-    margin-right: 10pt;
+    margin-right: 20pt;
     text-align: left;
   }
 
-  #cartListContainer p{
+  #cartListContainer p {
     font-family: "Cutive Mono", monospace;
     font-size: 8pt;
     margin-bottom: 2px;
@@ -426,26 +434,45 @@ nav ul li {
     color: black;
   }
 
+  button {
+  background-color: #fbb831;
+  color: #000;
+  padding: 4px 8px;
+  margin: 15px 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 8pt;
+  cursor: pointer;
+}
 
-  #resetCartButton {
-    position: fixed;
-    top: 20px;
-    right: 60px;
-    font-size: 10px;
-    padding: 2px 5px;
-    border-radius: 4px;
-    background-color: #ffffff;
-    color: #333;
-    border: 2px solid #ffffff;
-    font-weight: bold;
-    z-index: 1000;
-  }
+.centerImg button {
+  position: relative;
+  display: block;
+  margin: auto;
+  padding: 10px 20px;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
 
-  #resetCartButton:active {
-    background-color: #c66666;
-    color: white;
-  }
+.centerImg button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.5s, height 0.5s;
+}
 
+.centerImg button:hover::before {
+  width: 300px;
+  height: 300px;
+}
 
-
+.centerImg button:hover {
+  transform: translateY(-3px);
+}
 }

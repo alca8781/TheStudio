@@ -63,22 +63,29 @@ viewCartButton.addEventListener('click', () => {
   });
   cartListDisplay.appendChild(list);
 
-  const buttonWrapper = document.createElement('div');
-  buttonWrapper.style.display = 'flex';
-  buttonWrapper.style.justifyContent = 'center';
-  buttonWrapper.style.marginTop = '15px';
+//
+// =======================
+// BUTTON WRAPPER
+// =======================
+const buttonWrapper = document.createElement('div');
+buttonWrapper.style.display = 'flex';
+buttonWrapper.style.flexDirection = 'column';
+buttonWrapper.style.alignItems = 'center';
+buttonWrapper.style.gap = '5px';
+buttonWrapper.style.marginTop = '15px';
 
-  // =======================
-  // EMAIL BUTTON
-  // =======================
-  const emailButton = document.createElement('button');
-  emailButton.textContent = 'CHECK OUT';
-  emailButton.style.padding = '6px 10px';
-  emailButton.style.fontSize = '12px';
-  emailButton.style.cursor = 'pointer';
-  emailButton.style.border = '1px solid #888';
-  emailButton.style.backgroundColor = '#eee';
-  emailButton.style.borderRadius = '4px';
+// =======================
+// CHECKOUT BUTTON
+// =======================
+const emailButton = document.createElement('button');
+emailButton.textContent = 'CHECK OUT';
+emailButton.style.padding = '6px 10px';
+emailButton.style.fontSize = '10px';
+emailButton.style.cursor = 'pointer';
+emailButton.style.border = '1px solid #888';
+emailButton.style.backgroundColor = '#eee';
+emailButton.style.borderRadius = '4px';
+emailButton.style.margin = '0';
 
 emailButton.addEventListener('click', () => {
   if (cartItems.length === 0) {
@@ -86,18 +93,47 @@ emailButton.addEventListener('click', () => {
     return;
   }
 
-  // Save cart items to localStorage for the contact page
   localStorage.setItem('checkoutCart', JSON.stringify(cartItems));
-
-  // Redirect to your contact page
   window.location.href = "/Contact.html";
 });
 
+// =======================
+// CLEAR CART BUTTON
+// =======================
+const clearButton = document.createElement('button');
+clearButton.textContent = 'CLEAR CART';
+clearButton.style.padding = '6px 10px';
+clearButton.style.fontSize = '10px';
+clearButton.style.cursor = 'pointer';
+clearButton.style.border = '1px solid #888';
+clearButton.style.backgroundColor = '#131313';
+clearButton.style.color = '#ffffff';
+clearButton.style.borderRadius = '4px';
+clearButton.style.margin = '0';
 
+clearButton.addEventListener('click', () => {
+  cartCount = 0;
+  cartItems = [];
+  isCartVisible = false;
 
-  buttonWrapper.appendChild(emailButton);
-  cartListDisplay.appendChild(buttonWrapper);
+  cartCountText.textContent = ` ${cartCount}`;
+  saveCartToLocalStorage();
+  cartListDisplay.innerHTML = '';
+
+  document.querySelectorAll('[data-image-name]').forEach(container => {
+    const img = container.querySelector('img');
+    const button = container.querySelector('.add-to-cart');
+
+    if (img) img.style.filter = 'none';
+    if (button) button.textContent = 'Add to Cart';
+  });
 });
+
+buttonWrapper.appendChild(emailButton);
+buttonWrapper.appendChild(clearButton);
+cartListDisplay.appendChild(buttonWrapper);
+
+ });
 
 // =======================
 // DISPLAY IMAGES
@@ -232,26 +268,7 @@ document.getElementById('zoomModal')
     document.getElementById('zoomModal').style.display = 'none'
   );
 
-// =======================
-// RESET CART
-// =======================
-resetCartButton.addEventListener('click', () => {
-  cartCount = 0;
-  cartItems = [];
-  isCartVisible = false;
 
-  cartCountText.textContent = ` ${cartCount}`;
-  saveCartToLocalStorage();
-  cartListDisplay.innerHTML = '';
-
-  document.querySelectorAll('[data-image-name]').forEach(container => {
-    const img = container.querySelector('img');
-    const button = container.querySelector('.add-to-cart');
-
-    if (img) img.style.filter = 'none';
-    if (button) button.textContent = 'Add to Cart';
-  });
-});
 
 // =======================
 // LOAD GALLERIES
@@ -265,3 +282,5 @@ DisplayImages('Larson_content', 'larsonFamily');
 DisplayImages('Kelly_content', 'Kelly');
 DisplayImages('Nalven_content', 'nalven');
 DisplayImages('Maddy_content', 'maddySeniorPhotos');
+DisplayImages('AngelEddie_content', 'AngelEddie');
+DisplayImages('zoe_content', 'zoe');

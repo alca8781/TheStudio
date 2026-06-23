@@ -18,62 +18,63 @@
         rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Jersey+25+Charted&family=Limelight&family=Notable&family=Sigmar&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Jersey+25+Charted&family=Limelight&family=Notable&family=Sigmar&display=swap"
+        rel="stylesheet">
 
 
     <title>Larson Family Photos</title>
     <link rel="icon" type="image/x-icon" href="/image/favicon.ico">
 
- <!-- email -->
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>
-  (function(){
-    emailjs.init("A2jlAxMkZ-l2O1XZh");
-  })();
-</script>
+    <!-- email -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init("A2jlAxMkZ-l2O1XZh");
+        })();
+    </script>
 
 </head>
 
 <body>
-<section class="galleryheader">
-    <nav>
-        <a href="/index.html" class="nav-logo">
-            <img src="/images/2x3.png" alt="AC Studios Home">
-        </a>
-        <h3 class="sr-only">Gallery Nav</h3>
-        <ul>
-            <li><a href="Galleries.html"><b>BACK TO GALLERIES</b></a></li>
-        </ul>
-    </nav>
+    <section class="galleryheader">
+        <nav>
+            <a href="/index.html" class="nav-logo">
+                <img src="/images/2x3.png" alt="AC Studios Home">
+            </a>
+        </nav>
 
-    <div id="title">
+        <div id="title">
             <h1>Shanahan Ridge</h1>
-    <p> Boulder 2024</p>
-    </div>
-    <section id="top">
-        <button id="resetCartButton">CLEAR CART</button>
-        <div class="cart">
-
-            <button id="viewCartButton">
-                <div id="cartCountContainer"></div>
-                <img src="/images/cart.png">
-            </button>
-            <div id="cartListContainer"></div>
+            <p>Boulder 2024</p>
         </div>
+
+        <section id="top">
+            <div class="cart">
+                <button id="viewCartButton">
+                    <div id="cartCountContainer"></div>
+                    <img src="/images/cart.png">
+                </button>
+                <div id="cartListContainer"></div>
+            </div>
+        </section>
+
     </section>
 
-</section>
+    <section class="TheGalleryImages">
+        <div id="zoomModal"
+            style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background-color:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:9999;">
+            <img id="zoomedImage" style="max-width:90vw; max-height:90vh; border: 4px solid white;">
+        </div>
 
-<section class="TheGalleryImages">
-    <div id="zoomModal"
-        style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background-color:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:9999;">
-        <img id="zoomedImage" style="max-width:90vw; max-height:90vh; border: 4px solid white;">
+        <div id="Larson_content" class="Larsoncontainer"></div>
+
+    </section>
+
+    <div class="centerImg">
+        <br><br>
+        <button onclick="location.href='/PhotoGalleries/Galleries.html'">BACK TO GALLERIES</button>
     </div>
-
-    <div id="Larson_content" class="Larsoncontainer"></div>
-
-</section>
-
 
     <!-- Social and copyright  -->
     <footer>
@@ -96,7 +97,7 @@
 </html>
 
 <script>
-document.addEventListener("contextmenu", function(e) {
-    e.preventDefault();
-});
+    document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+    });
 </script>
