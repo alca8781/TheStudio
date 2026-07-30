@@ -1,0 +1,199 @@
+/* ============================== BASE TYPOGRAPHY ============================== */
+
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+h3 {
+    font-family: "Limelight", sans-serif;
+    font-weight: 400;
+    color: #fbb831;
+    font-size: clamp(2rem, 6vw, 4rem);
+    padding-top: 50px;
+}
+
+p {
+    font-family: "Cutive Mono", monospace;
+    font-weight: 400;
+    color: rgb(231, 229, 229);
+    line-height: 1.65;
+}
+
+/* ============================== BUTTONS ============================== */
+
+button {
+    background-color: #fbb831;
+    color: #000;
+    padding: 4px 10px;
+    margin: 15px 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 12pt;
+    cursor: pointer;
+}
+
+.centerImg button {
+    position: relative;
+    display: block;
+    margin: auto;
+    padding: 10px 20px;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.centerImg button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.5s, height 0.5s;
+}
+
+.centerImg button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.centerImg button:hover {
+    transform: translateY(-3px);
+}
+
+/* ============================== TYPEWRITER ============================== */
+
+.typewriter {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.typewriter.hidden {
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+}
+
+.typewriter h3 {
+    letter-spacing: 0.1em;
+    display: inline-block;
+    border-right: 5px solid #fbb831;
+    margin: 0 0 10px 30px;
+}
+
+/* ============================== CENTER IMAGES ============================== */
+
+.centerImg img {
+    display: block;
+    margin: auto;
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+}
+
+.centerImg .letters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.centerImg .letters img {
+    width: 100%;
+    max-width: 800px;
+}
+
+/* ============================== ARTICLE ============================== */
+
+.picnic {
+    margin-top: 80pt;
+    display: block;
+    text-align: center;
+}
+
+.picnic img {
+    max-width: 600px;
+    padding: 10px;
+}
+
+.POM {
+    margin-top: 80pt;
+    display: block;
+    text-align: center;
+}
+
+.POM img {
+    max-height: 700px;
+    padding: 20px;
+}
+
+.smallPOM {
+    margin-top: 30pt;
+    display: block;
+    text-align: center;
+}
+
+.smallPOM img {
+    max-width: 300px;
+    padding: 10px;
+}
+
+
+.printAds {
+    margin-top: 80pt;
+    display: block;
+    text-align: center;
+}
+
+.printAds img {
+    max-height: 600px;
+    padding: 20px;
+}
+
+.bus {
+    margin-top: 120pt;
+    display: block;
+    text-align: center;
+}
+
+.bus img {
+    max-width: 710px;
+    padding: 10px;
+}
+
+.busDisp {
+    display: block;
+    text-align: center;
+}
+
+.busDisp img {
+    max-height:350px;
+    padding: 10px;
+}
+
+.facebook {
+    margin-top: 120pt;
+    display: block;
+    text-align: center;
+}
+
+.facebook img {
+    max-height:350px;
+    padding: 2px;
+}
+
+.facebook img:nth-child(2) {
+  margin-right: 20px;
+}
+
+.facebook img:nth-child(6) {
+  margin-right: 20px;
+}
+
+.facebook img:nth-child(10) {
+  margin-right: 20px;
+}
+

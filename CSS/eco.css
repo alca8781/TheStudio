@@ -1,3 +1,6 @@
+body{
+    background-color: #fbf8ed;
+}
 article {
     margin: 0;
     min-height: 100vh;
@@ -31,37 +34,27 @@ article {
 }
 
 .materials img {
-    max-width: 400px;
+    max-width: 350px;
 }
 
-.para{
-    padding-right: 110px;
-    padding-left: 110px;
-    padding-bottom: 0px;
+.about{
+    display: flex; 
 }
-.para p{
+.about img{
+    max-width: 300px;
+    max-height: fit-content;
+    margin-left: 260px;
+    margin-top: 60px;
+}
+
+#para{
+  margin-top: 100px; 
+  margin-left: 60px;
+  margin-right: 260px;
+}
+#para p{
     text-align: left;
-    color: #cbcac8; 
-}
-
-.altlogo{
-    display: grid;
-    grid-template-columns:1fr 2fr;
-    gap:10px; 
-}
-.altlogo img{
-    max-width: 600px;
-}
-
-.identity{
-    display:block;
-    text-align: center;
-
-}
-.identity img{
-    width:600px; 
-    height: 100%;
-    text-align: center;
+    color: #2e2d2b; 
 }
 
 .logo-stack {
@@ -85,7 +78,7 @@ article {
     padding-top: 60px;
 }
 .mockups img{
-    width: 1200px;
+    width: 400px;
 }
 
 .icons{ 
@@ -98,7 +91,7 @@ article {
   
 }
 
-/* stagger each image */
+
 .logo-stack img:nth-child(1) { animation-delay: 0s; }
 .logo-stack img:nth-child(2) { animation-delay: 2s; }
 .logo-stack img:nth-child(3) { animation-delay: 4s; }
@@ -116,9 +109,9 @@ article {
     100% { opacity: 0; }
 }
 
-.colorpalette img{
-    max-width: 700px;
-}
+
+
+
 
 
 
