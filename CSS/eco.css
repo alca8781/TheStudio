@@ -231,6 +231,16 @@ article {
     width:72px; 
 }
 
+.animation{
+    text-align: center;
+    margin:60px;
+}
+.eco-gif {
+width: 800px;
+height: auto;
+}
+
+
 .signs{
 display: block;
 text-align: center;
@@ -524,6 +534,14 @@ text-align: center;
         margin-top: 0px;
     }
 
+    .animation{
+    text-align: center;
+   
+}
+.eco-gif {
+width: 300px;
+height: auto;
+}
 
     /* ---------- Signs ---------- */
 
