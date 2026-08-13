@@ -1,118 +1,232 @@
+/* =========================================================
+   ECO MATERIALS LIBRARY — FULL RESPONSIVE CSS
+   ========================================================= */
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+
+    background-color: #fbf8ed;
+
+    overflow-x: hidden;
+}
+
 p {
     font-family: "Figtree", sans-serif;
     font-size: 10pt;
-    font-weight: regular;
+    font-weight: 400;
     font-style: normal;
     color: black;
+
+    line-height: 1.45;
 }
 
 h2 {
     font-family: "Figtree", sans-serif;
     font-size: 22pt;
-    font-weight: bold;
+    font-weight: 700;
     font-style: normal;
     color: black;
+
     text-align: left;
+
+    line-height: 1.1;
 }
 
 h3 {
     font-family: "Figtree", sans-serif;
     font-size: 16pt;
-    font-weight: bold;
+    font-weight: 700;
     font-style: normal;
     color: #425563;
+
     text-align: left;
+
     margin-top: -20pt;
+
+    line-height: 1.2;
 }
+
 h4 {
     font-family: "Figtree", sans-serif;
     font-size: 12pt;
-    font-weight: bold;
+    font-weight: 700;
     font-style: normal;
     color: #000000;
+
     text-align: left;
+
     margin-top: 30pt;
     margin-bottom: -5pt;
+
+    line-height: 1.25;
 }
 
 
-body {
-    background-color: #fbf8ed;
-}
+/* =========================================================
+   MAIN ARTICLE
+   ========================================================= */
+
+/*
+   Fluid width:
+
+   Large desktop:
+   max-width = 1200px
+
+   Smaller screens:
+   automatically becomes narrower.
+*/
 
 article {
-    margin-left: 300px;
-    margin-right: 300px;
+    width: min(1200px, calc(100% - 80px));
+
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.inlineLogo{
+
+/* =========================================================
+   INLINE LOGO
+   ========================================================= */
+
+.inlineLogo {
+    width: 100%;
+
     padding-top: 150px;
+
+    text-align: center;
 }
 
 .inlineLogo img {
+    display: block;
+
+    width: 100%;
     max-width: 1000px;
-    text-align: center;
+
+    height: auto;
+
+    margin: 0 auto;
 }
 
 
+/* =========================================================
+   MATERIAL SAMPLES
+   ========================================================= */
 
 .materials {
-    display: flex;
-    justify-content: center;
+    display: grid;
+
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+
+    gap: clamp(5px, 1.5vw, 20px);
+
+    align-items: center;
+
+    width: 100%;
+
+    margin: 50px auto;
 }
 
 .materials img {
+    display: block;
+
+    width: 100%;
     max-width: 190px;
-    text-align: center;
-    padding: 80px 10px 80px 0px;
+
+    height: auto;
+
+    padding: 40px 5px;
+
+    margin: 0 auto;
 }
 
 
-
+/* =========================================================
+   ABOUT
+   ========================================================= */
 
 .about {
-    display: flex;
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    gap: clamp(30px, 5vw, 80px);
+
+    align-items: center;
+
+    width: 100%;
+
+    margin-top: 80px;
 }
 
-.about img {
+.about > img {
+    display: block;
+
+    width: 100%;
     max-width: 500px;
+
     height: auto;
-    margin-top: 60px;
+
+    margin: 0 auto;
 }
 
 .about #para {
-    margin-left: 60px;
+    min-width: 0;
+
+    margin-left: 0;
 }
 
 .about #para h2 {
-    margin-left: -0pt;
+    margin-left: 0;
 }
+
+
+/* =========================================================
+   ANIMATED LOGO STACK
+   ========================================================= */
 
 .logo-stack {
     position: relative;
-    width: 350px;
-    height: 350px;
-    margin-bottom: 80px;
-    margin-left: 60px;
+
+    width: min(350px, 100%);
+
+    aspect-ratio: 1 / 1;
+
+    margin: 0 auto 60px auto;
 }
 
 .logo-stack img {
     position: absolute;
+
     inset: 0;
+
     width: 100%;
     height: 100%;
+
     object-fit: contain;
+
     opacity: 0;
-    animation: fadeCycle 18s linear infinite;
-}
-.logo-stack img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    opacity: 0;
-    transition: opacity 1.8s cubic-bezier(0.4, 0, 0.2, 1);
+
+    transition:
+        opacity 1.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .logo-stack img.active {
@@ -120,181 +234,344 @@ article {
 }
 
 
-
+/* =========================================================
+   DESIGN STRATEGY
+   ========================================================= */
 
 .design {
-    display: flex;
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    gap: clamp(30px, 5vw, 100px);
+
+    align-items: start;
+
+    width: 100%;
+
+    margin-top: 100px;
     margin-bottom: 100px;
 }
 
 .design #para {
-    margin-top: 100px
+    min-width: 0;
+
+    margin-top: 50px;
 }
 
 .design #para h2 {
-    margin-left: -0pt;
+    margin-left: 0;
 }
 
-.design #para li{
+.design #para li {
     font-family: "Figtree", sans-serif;
+
     font-size: 10pt;
-    font-weight: regular;
-    font-style: normal;
+
+    font-weight: 400;
+
     color: black;
+
     margin-left: 30px;
     margin-top: 10px;
 }
 
 .design #color img {
+    display: block;
+
+    width: 100%;
     max-width: 540px;
-    max-height: fit-content;
-    margin-left: -10px;
-    margin-top: 20px;
-}
-.design #labelmock{
-    margin: 130px 0px 0px 100px;
 
+    height: auto;
+
+    margin: 20px auto 0 auto;
 }
+
+.design #labelmock {
+    width: 100%;
+
+    margin: 80px 0 0 0;
+}
+
 .design #labelmock img {
+    display: block;
+
+    width: 100%;
     max-width: 500px;
-    max-height: fit-content;
+
+    height: auto;
+
+    margin: 20px auto;
 }
 
 
+/* =========================================================
+   LABELS
+   ========================================================= */
 
+.labels {
+    display: grid;
 
-.labels{
-    display: flex;
+    grid-template-columns:
+        minmax(0, 1.1fr)
+        minmax(0, 0.9fr);
+
+    gap: clamp(30px, 6vw, 100px);
+
+    align-items: center;
+
+    width: 100%;
+
+    margin-top: 80px;
 }
 
-.labels #realLabel img{
-    width: 600px; 
-    margin-top: 30px;
+.labels #realLabel {
+    min-width: 0;
+}
+
+.labels #realLabel img {
+    display: block;
+
+    width: 100%;
+    max-width: 600px;
+
+    height: auto;
+
+    margin: 0 auto;
 }
 
 .labels #para {
-    margin-left: 100px;
+    min-width: 0;
+
+    margin-left: 0;
 }
 
 .labels #para h2 {
-    margin-left: -0pt;
+    margin-left: 0;
 }
 
 
+/* =========================================================
+   ICONOGRAPHY
+   ========================================================= */
 
-.iconography{
-    display:flex;
-    margin-top: 60px;
+.iconography {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    gap: clamp(30px, 5vw, 80px);
+
+    align-items: start;
+
+    width: 100%;
+
+    margin-top: 80px;
+}
+
+.iconography #para {
+    min-width: 0;
 }
 
 .iconography #para h2 {
-    margin-left: -0pt;
+    margin-left: 0;
 }
 
-.iconography #para p{
-    padding-right: 120px;
+.iconography #para p {
+    padding-right: clamp(0px, 3vw, 60px);
 }
-.iconography #compatibility{
-   
+
+.iconography #compatibility {
+    width: 100%;
 }
-.iconography #compatibility img{
-    width:90px; 
-    margin-left: -20px;
-    margin-right: 5px;
+
+.iconography #compatibility img {
+    width: clamp(55px, 6vw, 90px);
+
+    height: auto;
+
+    margin-left: 0;
+    margin-right: 3px;
 }
-.iconography #fabrication{
-    margin-left: 40px;
+
+.iconography #fabrication {
+    min-width: 0;
+
+    margin-left: 0;
     margin-top: 40px;
 }
-.iconography #fabrication img{
-    width:90px; 
-    margin-left: -20px;
-    margin-right: 5px;
-    margin-bottom: -10px;
+
+.iconography #fabrication img {
+    width: clamp(55px, 6vw, 90px);
+
+    height: auto;
+
+    margin-left: 0;
+    margin-right: 3px;
+    margin-bottom: 5px;
 }
 
-.displayIcons{
+
+/* =========================================================
+   DISPLAY ICONS
+   ========================================================= */
+
+.displayIcons {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    margin-top: 50px;
-}
-.displayIcons img{
-    width:72px; 
-}
-.webIcons{
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    margin-top: 30px;
-}
-.webIcons img{
-    margin-top: 20px;
-    width:72px; 
+
+    grid-template-columns:
+        minmax(180px, 1fr)
+        minmax(0, 2fr);
+
+    gap: 30px;
+
+    align-items: start;
+
+    width: 100%;
+
+    margin-top: 60px;
 }
 
-.animation{
+.displayIcons img {
+    width: clamp(50px, 5vw, 72px);
+
+    height: auto;
+}
+
+
+/* =========================================================
+   WEBSITE ICONS
+   ========================================================= */
+
+.webIcons {
+    display: grid;
+
+    grid-template-columns:
+        minmax(180px, 1fr)
+        minmax(0, 2fr);
+
+    gap: 30px;
+
+    align-items: start;
+
+    width: 100%;
+
+    margin-top: 40px;
+}
+
+.webIcons img {
+    width: clamp(50px, 5vw, 72px);
+
+    height: auto;
+
+    margin-top: 10px;
+}
+
+
+/* =========================================================
+   ANIMATION
+   ========================================================= */
+
+.animation {
     text-align: center;
-    margin:60px;
+
+    margin: 60px 0;
 }
+
 .eco-gif {
-width: 800px;
-height: auto;
-}
-
-
-.signs{
-display: block;
-text-align: center;
-margin-top: 100px;
-}
-.signs p{
-text-align: left;
-}
-.signs img{
-    max-height: 400px;
-    padding: 10px;
-}
-.expo{
     display: block;
+
+    width: 100%;
+    max-width: 800px;
+
+    height: auto;
+
+    margin: 0 auto;
 }
-.expo img{
-    height: 300px;
+
+
+/* =========================================================
+   DISPLAY SIGNAGE
+   ========================================================= */
+
+.signs {
+    display: block;
+
+    width: 100%;
+
+    margin-top: 100px;
+
+    text-align: center;
+}
+
+.signs p {
+    text-align: left;
+}
+
+.signs img {
+    max-width: 45%;
+    max-height: 500px;
+
     width: auto;
+    height: auto;
+
     padding: 10px;
+
+    vertical-align: middle;
 }
-.expo h2{
-    margin-left: -0px;
-}
+
+
+/* =========================================================
+   BOOK CAROUSEL
+   ========================================================= */
 
 .book-carousel {
     width: 100%;
-    margin: 150px 0;
+
+    margin: 120px 0;
 }
 
-.bookpara h2{
-text-align: center;
+.bookpara h2 {
+    text-align: center;
+
+    margin-bottom: 40px;
 }
 
 
-/* Carousel window */
+/* ---------- Carousel Wrapper ---------- */
+
 .carousel-wrapper {
     position: relative;
 
     display: flex;
+
     align-items: center;
 
     width: 100%;
 }
 
+
+/* ---------- Carousel Window ---------- */
+
 .carousel {
     width: 100%;
+
     overflow: hidden;
+
+    padding: 20px 0;
 }
 
 
-/* Track */
+/* ---------- Track ---------- */
+
 .carousel-track {
     display: flex;
-    gap: 50px;
+
+    gap: clamp(20px, 3vw, 50px);
 
     align-items: center;
 
@@ -303,11 +580,13 @@ text-align: center;
 }
 
 
-/* 17 x 11 spread */
-.book-spread {
-    flex: 0 0 850px;
+/* ---------- Book Page ---------- */
 
-    width: 850px;
+.book-page {
+    flex: 0 0 min(850px, 100%);
+
+    width: min(850px, 100%);
+
     aspect-ratio: 17 / 11;
 
     background: white;
@@ -316,303 +595,169 @@ text-align: center;
 
     box-shadow:
         0 12px 35px rgba(0, 0, 0, 0.15);
-
-    transition:
-        transform 0.6s ease,
-        opacity 0.6s ease;
 }
 
-
-.book-spread img {
+.book-page img {
     display: block;
 
     width: 100%;
     height: 100%;
 
     object-fit: contain;
+
+    object-position: center;
 }
 
+
 /* =========================================================
-   MOBILE
+   CAROUSEL BUTTONS
    ========================================================= */
 
-@media (max-width: 768px) {
+.carousel-btn {
+    position: relative;
 
-    /* ---------- General ---------- */
+    z-index: 5;
 
-    body {
-        overflow-x: hidden;
-    }
+    flex: 0 0 auto;
 
-    article {
-        margin-left: 20px;
-        margin-right: 20px;
-    }
+    width: 42px;
+    height: 42px;
 
-    p {
-        font-size: 10pt;
-        line-height: 1.5;
-    }
+    border: none;
 
-    h2 {
-        font-size: 18pt;
-        line-height: 1.15;
-    }
+    border-radius: 50%;
 
-    h3 {
-        font-size: 14pt;
-        margin-top: 0;
-    }
+    background: #425563;
 
-    h4 {
-        font-size: 11pt;
-    }
+    color: white;
 
+    font-size: 22px;
 
-    /* ---------- Logo ---------- */
+    cursor: pointer;
 
-    .inlineLogo {
-        padding-top: 100px;
-        text-align: center;
-    }
-
-    .inlineLogo img {
-        width: 100%;
-        max-width: 500px;
-    }
-
-
-    /* ---------- Material Samples ---------- */
-
-    .materials {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-
-        margin-top: 30px;
-    }
-
-    .materials img {
-        width: 100%;
-        max-width: none;
-
-        padding: 10px 0;
-    }
-
-
-    /* ---------- About ---------- */
-
-    .about {
-        display: flex;
-        flex-direction: column;
-
-        margin-top: 60px;
-    }
-
-    .about > img {
-        width: 100%;
-        max-width: 500px;
-
-        margin: 0 auto 50px auto;
-    }
-
-    .about #para {
-        margin: 0;
-    }
-
-
-    /* ---------- Animated Logo ---------- */
-
-    .logo-stack {
-        width: 320px;
-        height: 320px;
-
-        margin: 0 auto 100px auto;
-    }
-
-
-    /* ---------- Design Strategy ---------- */
-
-    .design {
-        display: flex;
-        flex-direction: column;
-
-        margin-top: 0px;
-        margin-bottom: 0px;
-    }
-
-    .design #para {
-        margin-top: 0;
-    }
-
-    .design #color img {
-        width: 100%;
-        max-width: 540px;
-
-        margin: 10px auto;
-    }
-
-    .design #labelmock {
-        margin: 10px 0 0 0;
-    }
-
-    .design #labelmock img {
-        width: 100%;
-        max-width: 500px;
-
-        display: block;
-        margin: 20px auto;
-    }
-
-
-    /* ---------- Labels ---------- */
-
-    .labels {
-        display: flex;
-        flex-direction: column;
-
-        margin-top: 40px;
-    }
-
-    .labels #realLabel img {
-        width: 100%;
-        max-width: 600px;
-
-        margin: 0 auto 40px auto;
-        display: block;
-    }
-
-    .labels #para {
-        margin-left: 0;
-    }
-
-
-    /* ---------- Iconography ---------- */
-
-    .iconography {
-        display: flex;
-        flex-direction: column;
-
-        margin-top: 40px;
-    }
-
-    .iconography #para p {
-        padding-right: 0;
-    }
-
-    .iconography #compatibility img,
-    .iconography #fabrication img {
-        width: 53px;
-
-        margin-left: 0;
-        margin-right: 5px;
-        margin-bottom: 5px;
-    }
-
-    .iconography #fabrication {
-        margin-left: 0;
-        margin-top: 0px;
-    }
-
-
-    /* ---------- Display Icons ---------- */
-
-    .displayIcons,
-    .webIcons {
-        display: flex;
-        flex-direction: column;
-
-        margin-top: 0px;
-    }
-
-    .displayIcons img,
-    .webIcons img {
-        width: 44px;
-    }
-
-    #iconsdisplay {
-        margin-top: 0px;
-    }
-
-    .animation{
-    text-align: center;
-   
-}
-.eco-gif {
-width: 300px;
-height: auto;
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
 }
 
-    /* ---------- Signs ---------- */
+.carousel-btn:hover {
+    background: #000;
 
-    .signs {
-        margin-top: 80px;
-    }
-
-    .signs p {
-        text-align: left;
-    }
-
-    .signs img {
-        width: 100%;
-        max-width: 300px;
-        max-height: none;
-
-        padding: 10px 0;
-
-        display: block;
-        margin: 0 auto;
-    }
-
-
-    /* ---------- Book Carousel ---------- */
-
-    .book-carousel {
-        display: none;
-    }
-
-    .expo{
-        text-align: center;
-    }
-     .expo h2{
-        text-align: center;
-    }
-    .expo img{
-       
-        max-width: 300px;
-        height: auto;
-    }
+    transform: scale(1.08);
 }
+
+.carousel-btn.prev {
+    margin-right: 15px;
+}
+
+.carousel-btn.next {
+    margin-left: 15px;
+}
+
 
 /* =========================================================
-   TABLET — 769px to 1100px
+   CAROUSEL DOTS
+   ========================================================= */
+
+.carousel-dots {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 25px;
+}
+
+
+/* =========================================================
+   EXPO / INSTALLATION
+   ========================================================= */
+
+.expo {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    width: 100%;
+
+    margin-top: 100px;
+}
+
+.expo h2 {
+    width: 100%;
+
+    margin-left: 0;
+
+    text-align: left;
+}
+
+.expo img {
+    width: auto;
+
+    height: clamp(180px, 20vw, 300px);
+
+    max-width: 100%;
+
+    padding: 5px;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+.centerImg {
+    text-align: center;
+
+    margin-top: 60px;
+}
+
+
+/* =========================================================
+   =========================================================
+   TABLET
+   769px — 1100px
+   =========================================================
    ========================================================= */
 
 @media (min-width: 769px) and (max-width: 1100px) {
 
-    /* ---------- General ---------- */
 
-    body {
-        overflow-x: hidden;
-    }
+    /* =====================================================
+       GENERAL
+       ===================================================== */
 
     article {
-        margin-left: 50px;
-        margin-right: 50px;
+        width: calc(100% - 80px);
+
+        margin-left: auto;
+        margin-right: auto;
     }
 
     p {
         font-size: 10pt;
+
         line-height: 1.5;
     }
 
     h2 {
         font-size: 20pt;
+
         line-height: 1.2;
     }
 
     h3 {
         font-size: 15pt;
+
         margin-top: 0;
     }
 
@@ -627,35 +772,35 @@ height: auto;
 
     .inlineLogo {
         padding-top: 130px;
-        text-align: center;
     }
 
     .inlineLogo img {
-        width: 80%;
+        width: 85%;
+
         max-width: 750px;
     }
 
 
     /* =====================================================
-       MATERIAL SAMPLES
+       MATERIALS
        ===================================================== */
 
     .materials {
-        display: grid;
         grid-template-columns: repeat(3, 1fr);
+
         gap: 20px;
 
-        margin: 50px auto;
         max-width: 750px;
+
+        margin: 50px auto;
     }
 
     .materials img {
         width: 100%;
+
         max-width: 180px;
 
         padding: 20px 0;
-
-        margin: auto;
     }
 
 
@@ -664,67 +809,461 @@ height: auto;
        ===================================================== */
 
     .about {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 45px;
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr);
 
-        align-items: center;
+        gap: 40px;
 
-        margin-top: 80px;
+        margin-top: 70px;
     }
 
     .about > img {
         width: 100%;
+
         max-width: 450px;
-
-        margin: 0 auto;
-    }
-
-    .about #para {
-        margin-left: 0;
     }
 
     .logo-stack {
-        width: 260px;
-        height: 260px;
+        width: min(260px, 100%);
 
-        margin: 0 auto 50px auto;
+        margin-bottom: 40px;
     }
 
 
     /* =====================================================
-       DESIGN STRATEGY
+       DESIGN
        ===================================================== */
 
     .design {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr);
+
+        gap: 35px;
+
+        margin-top: 80px;
+
+        margin-bottom: 80px;
+    }
+
+    .design #para {
+        margin-top: 20px;
+    }
+
+    .design #color img {
+        max-width: 100%;
+    }
+
+    .design #labelmock {
+        margin-top: 50px;
+    }
+
+    .design #labelmock img {
+        max-width: 100%;
+    }
+
+
+    /* =====================================================
+       LABELS
+       ===================================================== */
+
+    .labels {
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr);
+
         gap: 40px;
 
-        margin-top: 100px;
-        margin-bottom: 100px;
+        margin-top: 70px;
+    }
+
+    .labels #realLabel img {
+        max-width: 100%;
+    }
+
+
+    /* =====================================================
+       ICONOGRAPHY
+       ===================================================== */
+
+    .iconography {
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr);
+
+        gap: 30px;
+
+        margin-top: 70px;
+    }
+
+    .iconography #para p {
+        padding-right: 10px;
+    }
+
+    .iconography #compatibility img,
+    .iconography #fabrication img {
+        width: 62px;
+    }
+
+
+    /* =====================================================
+       DISPLAY ICONS
+       ===================================================== */
+
+    .displayIcons,
+    .webIcons {
+        grid-template-columns:
+            1fr
+            2fr;
+
+        gap: 20px;
+
+        margin-top: 50px;
+    }
+
+    .displayIcons img,
+    .webIcons img {
+        width: 55px;
+    }
+
+
+    /* =====================================================
+       SIGNS
+       ===================================================== */
+
+    .signs {
+        margin-top: 80px;
+    }
+
+    .signs img {
+        max-width: 45%;
+
+        max-height: 350px;
+    }
+
+
+    /* =====================================================
+       BOOK CAROUSEL
+       ===================================================== */
+
+    .book-carousel {
+        margin: 100px 0;
+    }
+
+    .carousel {
+        padding: 15px 0;
+    }
+
+    .carousel-track {
+        gap: 25px;
+    }
+
+    .book-page {
+        flex: 0 0 min(700px, 100%);
+
+        width: min(700px, 100%);
+
+        aspect-ratio: 17 / 11;
+    }
+
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+
+        font-size: 20px;
+    }
+
+
+    /* =====================================================
+       EXPO
+       ===================================================== */
+
+    .expo {
+        margin-top: 80px;
+    }
+
+    .expo img {
+        height: 240px;
+    }
+}
+
+
+/* =========================================================
+   SMALL TABLET
+   769px — 900px
+   ========================================================= */
+
+@media (min-width: 769px) and (max-width: 900px) {
+
+    article {
+        width: calc(100% - 50px);
+    }
+
+
+    /* ---------- Main Layouts ---------- */
+
+    .about,
+    .design,
+    .labels,
+    .iconography {
+        gap: 25px;
+    }
+
+
+    /* ---------- Logo ---------- */
+
+    .logo-stack {
+        width: 220px;
+    }
+
+
+    /* ---------- Iconography ---------- */
+
+    .iconography #compatibility img,
+    .iconography #fabrication img {
+        width: 55px;
+    }
+
+
+    /* ---------- Display Icons ---------- */
+
+    .displayIcons,
+    .webIcons {
+        grid-template-columns:
+            150px
+            minmax(0, 1fr);
+    }
+
+
+    /* ---------- Booklet ---------- */
+
+    .book-page {
+        flex-basis: 100%;
+
+        width: 100%;
+    }
+
+    .carousel-btn {
+        width: 36px;
+        height: 36px;
+
+        font-size: 18px;
+    }
+
+    .carousel-btn.prev {
+        margin-right: 8px;
+    }
+
+    .carousel-btn.next {
+        margin-left: 8px;
+    }
+
+
+    /* ---------- Expo ---------- */
+
+    .expo img {
+        height: 210px;
+    }
+}
+
+
+/* =========================================================
+   =========================================================
+   MOBILE
+   0px — 768px
+   =========================================================
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+
+    /* =====================================================
+       GENERAL
+       ===================================================== */
+
+    html,
+    body {
+        width: 100%;
+
+        overflow-x: hidden;
+    }
+
+    article {
+        width: auto;
+
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    p {
+        font-size: 10pt;
+
+        line-height: 1.5;
+    }
+
+    h2 {
+        font-size: 18pt;
+
+        line-height: 1.15;
+    }
+
+    h3 {
+        font-size: 14pt;
+
+        line-height: 1.2;
+
+        margin-top: 0;
+    }
+
+    h4 {
+        font-size: 11pt;
+
+        line-height: 1.25;
+    }
+
+
+    /* =====================================================
+       LOGO
+       ===================================================== */
+
+    .inlineLogo {
+        padding-top: 100px;
+
+        text-align: center;
+    }
+
+    .inlineLogo img {
+        width: 100%;
+
+        max-width: 500px;
+
+        height: auto;
+    }
+
+
+    /* =====================================================
+       MATERIALS
+       ===================================================== */
+
+    .materials {
+        display: grid;
+
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 10px;
+
+        width: 100%;
+
+        margin-top: 30px;
+    }
+
+    .materials img {
+        width: 100%;
+
+        max-width: none;
+
+        height: auto;
+
+        padding: 10px 0;
+    }
+
+
+    /* =====================================================
+       ABOUT
+       ===================================================== */
+
+    .about {
+        display: flex;
+
+        flex-direction: column;
+
+        width: 100%;
+
+        margin-top: 60px;
+    }
+
+    .about > img {
+        width: 100%;
+
+        max-width: 500px;
+
+        height: auto;
+
+        margin: 0 auto 50px auto;
+    }
+
+    .about #para {
+        margin: 0;
+    }
+
+    .about #para h2 {
+        margin-left: 0;
+    }
+
+
+    /* =====================================================
+       ANIMATED LOGO
+       ===================================================== */
+
+    .logo-stack {
+        width: min(320px, 100%);
+
+        aspect-ratio: 1 / 1;
+
+        margin: 0 auto 70px auto;
+    }
+
+
+    /* =====================================================
+       DESIGN
+       ===================================================== */
+
+    .design {
+        display: flex;
+
+        flex-direction: column;
+
+        width: 100%;
+
+        margin-top: 0;
+
+        margin-bottom: 0;
     }
 
     .design #para {
         margin-top: 0;
     }
 
-    .design #color img {
-        width: 100%;
-        max-width: 450px;
+    .design #para h2 {
+        margin-left: 0;
+    }
 
-        margin: 20px 0;
+    .design #color img {
+        display: block;
+
+        width: 100%;
+
+        max-width: 540px;
+
+        height: auto;
+
+        margin: 10px auto;
     }
 
     .design #labelmock {
-        margin: 40px 0 0 0;
+        margin: 10px 0 0 0;
     }
 
     .design #labelmock img {
-        width: 100%;
-        max-width: 450px;
-
         display: block;
+
+        width: 100%;
+
+        max-width: 500px;
+
+        height: auto;
+
         margin: 20px auto;
     }
 
@@ -734,22 +1273,25 @@ height: auto;
        ===================================================== */
 
     .labels {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 50px;
+        display: flex;
 
-        align-items: center;
+        flex-direction: column;
 
-        margin-top: 80px;
+        width: 100%;
+
+        margin-top: 60px;
     }
 
     .labels #realLabel img {
-        width: 100%;
-        max-width: 500px;
-
-        margin: 0 auto;
-
         display: block;
+
+        width: 100%;
+
+        max-width: 600px;
+
+        height: auto;
+
+        margin: 0 auto 40px auto;
     }
 
     .labels #para {
@@ -762,54 +1304,84 @@ height: auto;
        ===================================================== */
 
     .iconography {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        display: flex;
 
-        gap: 40px;
+        flex-direction: column;
 
-        margin-top: 100px;
-    }
-
-    .iconography #para p {
-        padding-right: 20px;
-    }
-
-    .iconography #fabrication {
-        margin-left: 0;
-        margin-top: 40px;
-    }
-
-    .iconography #compatibility img,
-    .iconography #fabrication img {
-        width: 65px;
-
-        margin-left: 0;
-        margin-right: 5px;
-        margin-bottom: 8px;
-    }
-
-
-    /* =====================================================
-       DISPLAY + WEBSITE ICONS
-       ===================================================== */
-
-    .displayIcons,
-    .webIcons {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-
-        gap: 20px;
+        width: 100%;
 
         margin-top: 60px;
     }
 
+    .iconography #para h2 {
+        margin-left: 0;
+    }
+
+    .iconography #para p {
+        padding-right: 0;
+    }
+
+    .iconography #compatibility img,
+    .iconography #fabrication img {
+        width: 53px;
+
+        height: auto;
+
+        margin-left: 0;
+        margin-right: 5px;
+        margin-bottom: 5px;
+    }
+
+    .iconography #fabrication {
+        margin-left: 0;
+
+        margin-top: 30px;
+    }
+
+
+    /* =====================================================
+       DISPLAY ICONS
+       ===================================================== */
+
+    .displayIcons,
+    .webIcons {
+        display: flex;
+
+        flex-direction: column;
+
+        width: 100%;
+
+        margin-top: 40px;
+    }
+
     .displayIcons img,
     .webIcons img {
-        width: 58px;
+        width: 44px;
+
+        height: auto;
     }
 
     #iconsdisplay {
-        line-height: 1.2;
+        margin-top: 15px;
+    }
+
+
+    /* =====================================================
+       ANIMATION
+       ===================================================== */
+
+    .animation {
+        text-align: center;
+
+        margin: 40px 0;
+    }
+
+    .eco-gif {
+        width: 100%;
+
+        max-width: 300px;
+
+        height: auto;
     }
 
 
@@ -818,7 +1390,9 @@ height: auto;
        ===================================================== */
 
     .signs {
-        margin-top: 100px;
+        width: 100%;
+
+        margin-top: 80px;
 
         text-align: center;
     }
@@ -828,73 +1402,88 @@ height: auto;
     }
 
     .signs img {
-        max-width: 40%;
-        max-height: 350px;
+        display: block;
 
-        padding: 8px;
+        width: 100%;
 
-        vertical-align: middle;
+        max-width: 300px;
+
+        height: auto;
+
+        max-height: none;
+
+        padding: 10px 0;
+
+        margin: 0 auto;
     }
 
 
     /* =====================================================
-       BOOKLET CAROUSEL
+       BOOK CAROUSEL
        ===================================================== */
 
     .book-carousel {
+        display: block;
+
         width: 100%;
 
-        margin: 130px 0;
+        margin: 80px 0 60px 0;
     }
 
     .bookpara h2 {
         text-align: center;
 
-        margin-bottom: 40px;
+        font-size: 18pt;
+
+        margin-bottom: 30px;
     }
+
+
+    /* ---------- Wrapper ---------- */
 
     .carousel-wrapper {
         position: relative;
 
         display: flex;
+
         align-items: center;
 
         width: 100%;
     }
+
+
+    /* ---------- Window ---------- */
 
     .carousel {
         width: 100%;
 
         overflow: hidden;
 
-        /* Gives the spread some breathing room */
-        padding: 20px 0;
+        padding: 10px 0 20px 0;
     }
+
+
+    /* ---------- Track ---------- */
 
     .carousel-track {
         display: flex;
 
-        gap: 30px;
+        gap: 15px;
 
         align-items: center;
 
         transition:
-            transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    /*
-       Each booklet spread is:
-       8.5" + 8.5" = 17"
-       11" tall
 
-       Keep the 17:11 ratio.
-    */
+    /* ---------- Book ---------- */
 
-    .book-page,
-    .book-spread {
-        flex: 0 0 700px;
+    .book-page {
+        flex: 0 0 100%;
 
-        width: 700px;
+        width: 100%;
+
         aspect-ratio: 17 / 11;
 
         background: white;
@@ -902,98 +1491,119 @@ height: auto;
         overflow: hidden;
 
         box-shadow:
-            0 10px 30px rgba(0, 0, 0, 0.14);
+            0 6px 20px rgba(0, 0, 0, 0.15);
     }
 
-    .book-page img,
-    .book-spread img {
+    .book-page img {
         display: block;
 
         width: 100%;
         height: 100%;
 
         object-fit: contain;
+
+        object-position: center;
     }
 
 
-    /* ---------- Carousel Buttons ---------- */
+    /* ---------- Buttons ---------- */
 
     .carousel-btn {
-        position: relative;
-        z-index: 5;
+        position: absolute;
 
-        flex: 0 0 auto;
+        z-index: 10;
 
-        width: 42px;
-        height: 42px;
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        width: 36px;
+        height: 36px;
 
         border: none;
+
         border-radius: 50%;
 
-        background: #425563;
+        background: rgba(66, 85, 99, 0.9);
+
         color: white;
 
-        font-size: 22px;
+        font-size: 18px;
 
         cursor: pointer;
 
-        transition:
-            background 0.25s ease,
-            transform 0.25s ease;
+        box-shadow:
+            0 3px 10px rgba(0, 0, 0, 0.2);
     }
 
     .carousel-btn:hover {
         background: #000;
-        transform: scale(1.08);
     }
 
     .carousel-btn.prev {
-        margin-right: 15px;
+        left: 8px;
+
+        margin: 0;
     }
 
     .carousel-btn.next {
-        margin-left: 15px;
+        right: 8px;
+
+        margin: 0;
     }
 
 
-    /* ---------- Carousel Dots ---------- */
+    /* ---------- Dots ---------- */
 
     .carousel-dots {
         display: flex;
-        justify-content: center;
-        gap: 8px;
 
-        margin-top: 25px;
+        justify-content: center;
+
+        align-items: center;
+
+        flex-wrap: wrap;
+
+        gap: 6px;
+
+        margin-top: 10px;
     }
 
 
     /* =====================================================
-       EXPO / INSTALLATION
+       EXPO
        ===================================================== */
 
     .expo {
         display: flex;
 
-        flex-wrap: wrap;
+        flex-direction: column;
 
-        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+
+        margin-top: 80px;
 
         gap: 10px;
-
-        margin-top: 100px;
     }
 
     .expo h2 {
         width: 100%;
 
-        margin-left: 0;
+        margin: 40px 0 20px 0;
 
-        text-align: left;
+        text-align: center;
     }
 
     .expo img {
-        height: 260px;
-        width: auto;
+        width: 100%;
+
+        max-width: 300px;
+
+        height: auto;
 
         padding: 5px;
 
@@ -1009,5 +1619,7 @@ height: auto;
         text-align: center;
 
         margin-top: 60px;
+
+        margin-bottom: 40px;
     }
 }
