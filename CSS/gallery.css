@@ -13,8 +13,6 @@ body {
   color: white;
 }
 
-
-
 /* ==============================
    GALLERY SECTIONS (DESKTOP DEFAULT)
 ================================ */
@@ -29,7 +27,7 @@ body {
 
 .gallery-title h2 {
   font-family: "Cutive Mono", monospace;
-  font-size: 14pt;
+  font-size: 12pt;
   line-height: 1.1;
 }
 
