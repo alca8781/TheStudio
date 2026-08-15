@@ -1,296 +1,854 @@
-/* ============================== BASE TYPOGRAPHY ============================== */
+/* =========================================================
+   TYPE DESIGN PAGE
+   Clean editorial portfolio style
+   ========================================================= */
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
 html,
 body {
-  width: 100%;
-  overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
+    background-color:rgba(39, 42, 43, 0.842);
+    color: #fbf8ed;
+}
+
+
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
+
+p {
+    font-family: "Figtree", sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: #d6d6d6;
+
+    line-height: 1.55;
 }
 
 h3 {
+    font-family: "Figtree", sans-serif;
+    font-size: clamp(20pt, 3vw, 30pt);
+    font-weight: 700;
+    color: #d6d6d6;
+
+    line-height: 1.1;
+
+    margin: 0;
+    padding: 0;
+}
+
+.typewriter h3 {
   font-family: "Limelight", sans-serif;
-  font-weight: 400;
-  color: #fbb831;
-  font-size: clamp(2rem, 6vw, 4rem);
-  padding-top: 50px;
+    color: #fbb831;
+    font-size: clamp(22pt, 4vw, 34pt);
+    font-weight: 700;
+    border: none;
 }
 
-p {
-  font-family: "Cutive Mono", monospace;
-  font-weight: 400;
-  color: rgb(231, 229, 229);
-  line-height: 1.65;
-}
 
-/* ============================== ARTICLE ============================== */
+/* =========================================================
+   PAGE CONTENT
+   ========================================================= */
 
 article {
-  animation: slideInUp 0.8s ease;
-  padding-bottom: 60px;
+    width: min(1200px, calc(100% - 80px));
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-bottom: 40px;
+
+    animation: none;
 }
 
-@keyframes slideInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
 
-  to {
+/* =========================================================
+   SECTION TITLES
+   ========================================================= */
+
+.typewriter {
+    width: min(1200px, calc(100% - 80px));
+
+    margin: 120px auto 45px auto;
+
     opacity: 1;
-    transform: translateY(0);
-  }
+    transform: none;
 }
 
-/* ============================== PORTFOLIO LAYOUT ============================== */
+.typewriter:first-of-type {
+    margin-top: 150px;
+}
+
+.typewriter h3 {
+    display: block;
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid  #d6d6d6;
+}
+
+
+/* Remove old typewriter behavior */
+
+.typewriter.hidden {
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   MAIN PROJECT INTRO
+   ========================================================= */
 
 .displayPortfolio,
 .displayPortfolio2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  padding: 20px 40px;
-  align-items: start;
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(0, 0.85fr);
+
+    gap: clamp(40px, 6vw, 90px);
+
+    align-items: start;
+
+    padding: 0;
+
+    width: 100%;
 }
 
-.displayPortfolio img,
-.displayPortfolio2 img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
+
+/* =========================================================
+   FEATURE IMAGES
+   ========================================================= */
+
+.displayPortfolio > img,
+.displayPortfolio2 > img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    max-width: 100%;
+
+    object-fit: contain;
+
+    margin: 0 auto;
 }
 
-/* ============================== TEXT ============================== */
 
-.text p {
-  max-width: 900px;
-  margin: 20px auto;
-  padding: 10px;
+/* Slightly smaller text column */
+
+.displayPortfolio .textBlock,
+.displayPortfolio2 .textBlock {
+    min-width: 0;
+
+    padding-top: 5px;
 }
 
-.textBlock {
-  display: flex;
-  flex-direction: column;
-}
+
+/* =========================================================
+   PROJECT TEXT
+   ========================================================= */
 
 .textBlock p {
-  margin-top: 20px;
+    margin: 0;
 }
 
-/* ============================== CENTER IMAGES ============================== */
+.textBlock b {
+    font-weight: 700;
+    color: #fbb831;
+}
+d
+.textBlock i {
+    color:  #d6d6d6;
+}
+
+
+/* =========================================================
+   ISOBLOCKS SPECIMENS
+   ========================================================= */
+
+.centerImg {
+    width: 100%;
+
+    text-align: center;
+
+    margin-top: 80px;
+    margin-bottom: 40px;
+}
 
 .centerImg img {
-  display: block;
-  margin: auto;
-  width: 100%;
-  max-width: 1200px;
-  height: auto;
+    display: block;
+
+    width: 100%;
+    max-width: 1100px;
+
+    height: auto;
+
+    margin: 0 auto;
 }
 
+
+/* Two alphabet specimens */
+
 .centerImg .letters {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    gap: clamp(20px, 4vw, 50px);
+
+    align-items: center;
+
+    width: 100%;
 }
 
 .centerImg .letters img {
-  width: 100%;
-  max-width: 800px;
+    width: 100%;
+    max-width: none;
+
+    height: auto;
+
+    margin: 0;
 }
 
-/* ============================== MODEL SECTION ============================== */
+
+/* =========================================================
+   GLADIATOR
+   ========================================================= */
+
+.displayPortfolio2 {
+    margin-bottom: 70px;
+}
+
+
+/* =========================================================
+   VIDEO + GLADIATOR IMAGES
+   ========================================================= */
 
 .model {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  flex-wrap: wrap;
-  gap: 30px;
-  margin: 30px 0;
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: clamp(15px, 2.5vw, 30px);
+
+    align-items: end;
+
+    width: 100%;
+
+    margin: 60px auto 100px auto;
 }
 
 .model img,
 .model video {
-  width: 100%;
-  max-width: 380px;
-  height: auto;
-  transition: transform 0.4s ease;
+    display: block;
+
+    width: 100%;
+    max-width: none;
+
+    height: auto;
+
+    margin: 0;
+
+    object-fit: contain;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
+
+
+/* Subtle hover */
 
 .model img:hover {
-  transform: translateY(-8px);
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
-/* ============================== VIDEO ============================== */
 
-video {
-  display: block;
+/* Video */
+
+.model video {
+    background: #eee;
 }
 
-/* ============================== TYPEWRITER ============================== */
 
-.typewriter {
-  transition: opacity 0.3s ease, transform 0.3s ease;
+/* =========================================================
+   ALPHABRICKS DESCRIPTION
+   ========================================================= */
+
+.text {
+    width: 90%;
+
+    margin: 0 auto 40px auto;
 }
 
-.typewriter.hidden {
-  opacity: 0;
-  transform: translateY(-20px);
-  pointer-events: none;
+.text p {
+    max-width: 750px;
+
+    margin: 0;
 }
 
-.typewriter h3 {
-  letter-spacing: 0.1em;
-  display: inline-block;
-  border-right: 5px solid #fbb831;
-  margin: 0 0 10px 30px;
+/* =========================================================
+   ALPHABRICKS INTRO
+   ========================================================= */
+
+.alphaIntro {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr)
+        minmax(0, 1fr)
+        minmax(220px, 1fr);
+
+    gap: clamp(15px, 2.5vw, 30px);
+
+    align-items: center;
+
+    width: 100%;
+
+    margin: 60px 0 100px 0;
 }
 
-/* ============================== BUTTONS ============================== */
+.alphaIntro > img {
+    display: block;
 
-button {
-  background-color: #fbb831;
-  color: #000;
-  padding: 4px 10px;
-  margin: 15px 10px;
-  border: none;
-  border-radius: 8px;
-  font-size: 12pt;
-  cursor: pointer;
+    width: 100%;
+    height: auto;
+
+    margin: 0;
+
+    object-fit: contain;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-.centerImg button {
-  position: relative;
-  display: block;
-  margin: auto;
-  padding: 10px 20px;
-  overflow: hidden;
-  transition: 0.3s ease;
+.alphaIntro > img:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
-.centerImg button::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
-  transform: translate(-50%, -50%);
-  transition: width 0.5s, height 0.5s;
+
+/* =========================================================
+   ALPHABRICKS TEXT
+   ========================================================= */
+
+.alphaText {
+    min-width: 0;
+
+    padding-left: 10px;
 }
 
-.centerImg button:hover::before {
-  width: 300px;
-  height: 300px;
+.alphaText p {
+    margin: 0;
+
+    line-height: 1.55;
 }
 
-.centerImg button:hover {
-  transform: translateY(-3px);
+.alphaText b {
+    color: #fbb831;
+
+    font-weight: 700;
 }
 
-/* ============================== GRID IMAGES ============================== */
+/* =========================================================
+   LEGO MODELS
+   ========================================================= */
+
+.model + .typewriter {
+    margin-top: 100px;
+}
+
+
+/* =========================================================
+   LEGO PROCESS GRIDS
+   ========================================================= */
 
 .GridImages {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-  padding: 20px;
-  margin-top: 40px;
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: clamp(8px, 1.5vw, 18px);
+
+    width: 100%;
+
+    padding: 0;
+
+    margin: 40px 0 90px 0;
 }
 
 .GridImages img {
-  width: 100%;
-  height: auto;
-}
+    display: block;
 
-/* ============================== PROCESS GRID ============================== */
+    width: 100%;
+    height: auto;
 
-.process {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-}
-
-.process img {
-  width: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.process img:hover {
-  transform: scale(1.03);
-}
-
-/* ============================== TABLET ============================== */
-
-@media (min-width: 800px) and (max-width: 1299px) {
-
-  .displayPortfolio,
-  .displayPortfolio2 {
-    grid-template-columns: 1fr;
-    padding: 40px;
-  }
-
-  .GridImages {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .process {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .typewriter h3 {
-    font-size: 3rem;
-  }
-}
-
-/* ============================== MOBILE ============================== */
-
-@media (max-width: 799px) {
-
-  article {
-    padding: 0 15px 40px;
-  }
-
-  h3 {
-    font-size: clamp(2rem, 10vw, 3rem);
-    padding-top: 20px;
-  }
-
-  .displayPortfolio,
-  .displayPortfolio2 {
-    grid-template-columns: 1fr;
-    padding: 15px;
-  }
-
-  .text p,
-  .textBlock p {
     margin: 0;
 
-  }
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
 
-  .centerImg .letters {
-    flex-direction: column;
-    align-items: center;
-  }
 
-  .model {
-    flex-direction: column;
-    align-items: center;
-  }
 
-  .GridImages {
-    grid-template-columns: repeat(1, 1fr);
-  }
+/* =========================================================
+   SECTION DIVIDERS
+   ========================================================= */
 
-  /* .GridImages img{
-    width: 100px;
-  } */
+.displayPortfolio,
+.displayPortfolio2,
+.model,
+.text,
+.GridImages {
+    position: relative;
+}
 
-  .typewriter h3 {
-    margin-left: 0;
-    border-right: none;
-    white-space: normal;
-  }
+
+/* Divider before major sections */
+
+.displayPortfolio2::before,
+.model::before,
+.GridImages::before {
+    content: "";
+
+    position: absolute;
+
+    top: -50px;
+    left: 0px;
+
+    width: 100%;
+
+    height: 1px;
+
+    background: #fbf8ed;
+
+    opacity: 0.18;
+}
+
+
+/* Don't show divider immediately on first project */
+
+.displayPortfolio::before {
+    display: none;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+.centerImg button {
+    position: relative;
+
+    display: inline-block;
+
+    padding: 12px 30px;
+
+    margin: 50px auto 0 auto;
+
+    border: 1px solid #fbf8ed;
+    border-radius: 0;
+
+    background: transparent;
+    color: #fbf8ed;
+
+    font-family: "Figtree", sans-serif;
+    font-size: 10pt;
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.centerImg button::before {
+    display: none;
+}
+
+.centerImg button:hover {
+    background: #fbb831;
+    color: rgb(20, 20, 20);
+
+    transform: translateY(-2px);
+}
+
+
+
+/* =========================================================
+   TABLET
+   769px — 1100px
+   ========================================================= */
+
+@media (min-width: 769px) and (max-width: 1100px) {
+
+    article {
+        width: calc(100% - 60px);
+    }
+
+    .typewriter {
+        width: calc(100% - 60px);
+
+        margin-top: 110px;
+        margin-bottom: 40px;
+    }
+
+    .displayPortfolio,
+    .displayPortfolio2 {
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 0.9fr);
+
+        gap: 40px;
+    }
+
+    .model {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 15px;
+
+        margin-top: 50px;
+        margin-bottom: 80px;
+    }
+
+    .GridImages {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 15px;
+
+        margin-bottom: 70px;
+    }
+
+    .centerImg .letters {
+        gap: 20px;
+    }
+}
+
+
+/* =========================================================
+   SMALL TABLET
+   769px — 900px
+   ========================================================= */
+
+@media (min-width: 769px) and (max-width: 900px) {
+
+    article {
+        width: calc(100% - 50px);
+    }
+
+    .typewriter {
+        width: calc(100% - 50px);
+    }
+
+    .displayPortfolio,
+    .displayPortfolio2 {
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr);
+
+        gap: 25px;
+    }
+
+    .model {
+        gap: 10px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   0px — 768px
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    html,
+    body {
+        width: 100%;
+
+        overflow-x: hidden;
+    }
+
+
+    /* =====================================================
+       GENERAL
+       ===================================================== */
+
+    article {
+        width: auto;
+
+        margin-left: 20px;
+        margin-right: 20px;
+
+        padding-bottom: 20px;
+    }
+
+    p {
+        font-size: 10pt;
+
+        line-height: 1.55;
+    }
+
+
+    /* =====================================================
+       SECTION TITLES
+       ===================================================== */
+
+    .typewriter {
+        width: auto;
+
+        margin: 90px 20px 35px 20px;
+    }
+
+    .typewriter:first-of-type {
+        margin-top: 100px;
+    }
+
+    .typewriter h3 {
+        font-size: 21pt;
+
+        padding-bottom: 14px;
+
+        letter-spacing: -0.01em;
+    }
+
+
+    /* =====================================================
+       MAIN PROJECT
+       ===================================================== */
+
+    .displayPortfolio,
+    .displayPortfolio2 {
+        display: flex;
+
+        flex-direction: column;
+
+        width: 100%;
+
+        gap: 35px;
+
+        padding: 0;
+    }
+
+
+    .displayPortfolio > img,
+    .displayPortfolio2 > img {
+        width: 100%;
+
+        height: auto;
+
+        margin: 0 auto;
+    }
+
+
+    .displayPortfolio .textBlock,
+    .displayPortfolio2 .textBlock {
+        width: 100%;
+
+        padding: 0;
+    }
+
+
+    /* =====================================================
+       LETTER SPECIMENS
+       ===================================================== */
+
+    .centerImg {
+        width: 100%;
+
+        margin-top: 60px;
+        margin-bottom: 30px;
+    }
+
+    .centerImg .letters {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 25px;
+
+        width: 100%;
+    }
+
+    .centerImg .letters img {
+        width: 100%;
+
+        max-width: none;
+    }
+
+
+    /* =====================================================
+       GLADIATOR MODEL SECTION
+       ===================================================== */
+
+    .model {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 25px;
+
+        width: 100%;
+
+        margin: 70px 0 80px 0;
+    }
+
+    .model img,
+    .model video {
+        width: 100%;
+
+        max-width: 500px;
+
+        height: auto;
+
+        margin: 0 auto;
+    }
+
+
+    /* =====================================================
+       ALPHABRICKS
+       ===================================================== */
+
+    .text {
+        width: 100%;
+
+        margin-bottom: 30px;
+    }
+
+    .text p {
+        width: 100%;
+    }
+
+
+    /* =====================================================
+       LEGO PROCESS
+       ===================================================== */
+
+    .GridImages {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 8px;
+
+        width: 100%;
+
+        margin: 30px 0 70px 0;
+    }
+
+
+    /* =====================================================
+       DIVIDERS
+       ===================================================== */
+
+    .displayPortfolio2::before,
+    .model::before,
+    .GridImages::before {
+        top: -35px;
+
+        left: 5%;
+
+        width: 90%;
+
+        opacity: 0.2;
+    }
+
+
+    /* =====================================================
+       BACK BUTTON
+       ===================================================== */
+
+    .centerImg button {
+        margin-top: 40px;
+
+        padding: 11px 28px;
+
+        font-size: 9pt;
+    }
+
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+
+    footer {
+        margin-top: 60px;
+
+        padding: 3rem 1rem;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 450px) {
+
+    article {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .typewriter {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .typewriter h3 {
+        font-size: 19pt;
+    }
+
+    .GridImages {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+
+    .model {
+        gap: 20px;
+    }
 }
