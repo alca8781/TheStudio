@@ -1,134 +1,477 @@
-/* =============================================
-   SCROLL SECTION
-============================================= */
+/* =========================================================
+   WIKIPEDIA BRANDING PAGE
+   Matches Eco Materials / other Graphic Pages
+   ========================================================= */
 
-.scroll-container {
-  height: 400vh;
-  position: relative;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
-.sticky-stage {
-  position: sticky;
-  top: 0;
-
-  height: 100vh;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  overflow: hidden;
+html {
+    width: 100%;
+    overflow-x: hidden;
 }
 
-
-/* =============================================
-   LOGO STAGE
-============================================= */
-
-.logo-stage {
-  width: min(900px, 92vw);
-  aspect-ratio: 16 / 9;
-
-  position: relative;
-  overflow: hidden;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+body {
+    width: 100%;
+    margin: 0;
+    background-color: #fbf8ed;
+    color: #000;
+    overflow-x: hidden;
 }
 
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
 
-/* =============================================
-   SHARED LOGO LAYER STYLES
-============================================= */
-
-.logo-layer {
-  position: absolute;
-
-  left: 50%;
-  top: 50%;
-
-  width: 60%;
-  height: auto;
-
-  opacity: 0;
-
-  /* perfectly center each layer */
-  transform: translate(-50%, -50%) scale(0.9);
-
-  transition:
-    opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1),
-    transform 0.75s cubic-bezier(0.4, 0, 0.2, 1),
-    filter 0.65s;
-
-  will-change: transform, opacity;
+p {
+    font-family: "Figtree", sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    line-height: 1.45;
+    color: #000;
 }
 
-
-/* =============================================
-   ACTIVE / VISIBLE STATE
-============================================= */
-
-.logo-layer.visible {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
-  filter: blur(0);
+h2 {
+    font-family: "Figtree", sans-serif;
+    font-size: 22pt;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #000;
 }
 
-
-/* =============================================
-   INDIVIDUAL LAYERS
-   Customize sizing/animation here
-============================================= */
-
-
-/* --- Layer 1 --- */
-#layer-1 {
-  width: 90%;
-  z-index: 1;
+h3 {
+    font-family: "Figtree", sans-serif;
+    font-size: 16pt;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #425563;
 }
 
+/* =========================================================
+   MAIN CONTENT WIDTH
+   ========================================================= */
 
-/* --- Layer 2 --- */
-#layer-2 {
-  width: 90%;
-  z-index: 2;
+.para,
+.identity,
+.mockups,
+#brand,
+.centerImg {
+    width: min(1200px, calc(100% - 80px));
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/* =========================================================
+   SECTION DIVIDER LINES
+   ========================================================= */
 
-/* --- Layer 3 --- */
-#layer-3 {
-  width: 90%;
-  z-index: 3;
+.para,
+.identity,
+.mockups {
+    border-top: 1px solid #425563;
+    padding-top: 60px;
 }
 
-
-/* --- Layer 4 --- */
-#layer-4 {
-  width: 90%;
-  z-index: 5;
+/* First section sits below logo animation */
+.para {
+    margin-top: 10px;
 }
 
+    .inlineLogo {
+        padding-top: 100px;
 
+        text-align: center;
+    }
 
+    .inlineLogo img {
+        width: 100%;
 
+        max-width: 800px;
 
+        height: auto;
+    }
+/* =========================================================
+   ABOUT / INTRODUCTION
+   ========================================================= */
 
+.para {
+    max-width: 1200px;
 
-/* =============================================
+    padding-bottom: 80px;
+}
+
+.para p {
+    max-width: 850px;
+
+    margin: 0 auto;
+}
+
+/* =========================================================
+   IDENTITY
+   ========================================================= */
+
+.identity {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 40px;
+
+    align-items: center;
+
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.identity img {
+    display: block;
+
+    width: 100%;
+    max-width: 550px;
+
+    height: auto;
+
+    margin: 0 auto;
+}
+
+/* =========================================================
+   MOCKUPS
+   ========================================================= */
+
+.mockups {
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    text-align: center;
+}
+
+.mockups img {
+    display: block;
+
+    width: 100%;
+    max-width: 1100px;
+
+    height: auto;
+
+    margin: 0 auto;
+}
+
+/* =========================================================
+   OPTIONAL BRAND SECTION
+   ========================================================= */
+
+#brand {
+    border-top: 1px solid #425563;
+
+    padding-top: 60px;
+    margin-top: 80px;
+}
+
+#brand h2 {
+    margin: 0;
+}
+
+/* =========================================================
+   OLD CAROUSEL / RESEARCH IMAGES
+   ========================================================= */
+
+.carousel-scroll {
+    width: min(1200px, calc(100% - 80px));
+
+    margin: 60px auto 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 30px;
+}
+
+.carousel-scroll img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+}
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+.centerImg {
+    margin-top: 100px;
+    margin-bottom: 20px;
+
+    text-align: center;
+}
+
+.centerImg button {
+    padding: 12px 30px;
+
+    border: 1px solid #425563;
+    border-radius: 0;
+
+    background: transparent;
+    color: #425563;
+
+    font-family: "Figtree", sans-serif;
+    font-size: 10pt;
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.centerImg button:hover {
+    background: #425563;
+    color: #fff;
+
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    font-size: x-small;
+    text-align: center;
+    color: #000;
+
+    width: 100%;
+
+    margin-top: 100px;
+
+    padding: 3rem 2rem;
+}
+
+/* =========================================================
+   TABLET
+   769px — 1100px
+   ========================================================= */
+
+@media (min-width: 769px) and (max-width: 1100px) {
+
+    .para,
+    .identity,
+    .mockups,
+    #brand,
+    .carousel-scroll,
+    .centerImg {
+        width: calc(100% - 80px);
+    }
+
+    .logo-stage {
+        width: min(500px, 65vw);
+        height: min(500px, 65vw);
+    }
+
+    .para {
+        margin-top: 80px;
+        padding-top: 50px;
+    }
+
+    .identity {
+        gap: 30px;
+
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .mockups {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .dots {
+        right: 25px;
+    }
+}
+
+/* =========================================================
+   SMALL TABLET
+   769px — 900px
+   ========================================================= */
+
+@media (min-width: 769px) and (max-width: 900px) {
+
+    .para,
+    .identity,
+    .mockups,
+    #brand,
+    .carousel-scroll,
+    .centerImg {
+        width: calc(100% - 50px);
+    }
+
+    .logo-stage {
+        width: min(450px, 65vw);
+        height: min(450px, 65vw);
+    }
+
+    .identity {
+        gap: 20px;
+    }
+}
+
+/* =========================================================
    MOBILE
-============================================= */
+   0px — 768px
+   ========================================================= */
 
 @media (max-width: 768px) {
 
-  .logo-stage {
-    width: 95vw;
-  }
+    html,
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
 
-  .logo-layer {
-    width: 90%;
-  }
+    .para,
+    .identity,
+    .mockups,
+    #brand,
+    .carousel-scroll,
+    .centerImg {
+        width: auto;
 
+        margin-left: 20px;
+        margin-right: 20px;
+    }
 
+    p {
+        font-size: 10pt;
+        line-height: 1.5;
+    }
+
+    h2 {
+        font-size: 18pt;
+        line-height: 1.15;
+    }
+
+    h3 {
+        font-size: 14pt;
+        line-height: 1.2;
+    }
+
+    /* =====================================================
+       HERO
+       ===================================================== */
+
+    .sticky-stage {
+        min-height: 85vh;
+    }
+
+    .logo-stage {
+        width: min(400px, 85vw);
+        height: min(400px, 85vw);
+    }
+
+    .scroll-hint {
+        bottom: 45px;
+    }
+
+    .sticky-stage > .progress-bar {
+        bottom: 25px;
+
+        width: 45vw;
+    }
+
+    .dots {
+        right: 15px;
+
+        gap: 8px;
+    }
+
+    .dot {
+        width: 6px;
+        height: 6px;
+    }
+
+    /* =====================================================
+       INTRO
+       ===================================================== */
+
+    .para {
+        margin-top: 70px;
+
+        padding-top: 40px;
+        padding-bottom: 60px;
+    }
+
+    .para p {
+        max-width: none;
+    }
+
+    /* =====================================================
+       IDENTITY
+       ===================================================== */
+
+    .identity {
+        display: flex;
+        flex-direction: column;
+
+        gap: 25px;
+
+        padding-top: 50px;
+        padding-bottom: 60px;
+    }
+
+    .identity img {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    /* =====================================================
+       MOCKUPS
+       ===================================================== */
+
+    .mockups {
+        padding-top: 50px;
+        padding-bottom: 60px;
+    }
+
+    .mockups img {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    /* =====================================================
+       OLD CAROUSEL
+       ===================================================== */
+
+    .carousel-scroll {
+        display: flex;
+        flex-direction: column;
+
+        gap: 20px;
+
+        padding-top: 40px;
+    }
+
+    /* =====================================================
+       BACK
+       ===================================================== */
+
+    .centerImg {
+        margin-top: 30px;
+
+        padding-top: 40px;
+        padding-bottom: 20px;
+    }
+
+    footer {
+        margin-top: 60px;
+
+        padding: 2rem 1rem;
+    }
 }

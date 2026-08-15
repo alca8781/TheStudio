@@ -1,463 +1,738 @@
-/* ==============================
-   RESET & ACCESSIBILITY
-================================ */
+/* =========================================================
+   LEVANT GOURMET — BRANDING CASE STUDY
+   ========================================================= */
+
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  white-space: nowrap;
-  border: 0;
-}
-
-/* ==============================
-   BASE STYLES
-================================ */
 html {
-  height: 100%;
-  width: 90%;
-  margin: 0 auto;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 body {
-  margin: 0;
-  font-family: "Raleway", sans-serif;
-  color: #ffffff;
-  background-color: #e2eae6;
-  overflow-x: hidden;
-}
-
-h1 {
-  font-family: "Limelight", sans-serif;
-  font-weight: 400;
-  color: #fbb831;
-  font-size: 40px;
-  text-align: left;
-  margin-left: 25px;
-}
-
-h2 {
-  font-family: "Cutive Mono", monospace;
-  font-weight: 400;
-  font-style: normal;
-  margin-left: 50px;
-}
-
-a {
-  font-family: "Limelight", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 1.5;
-  color: rgb(27, 27, 27);
-  text-decoration: none;
-}
-
- #instagram-button {
-     background: none;
-     border: none;
-     padding: 10px;
-     margin: 0;
- }
-
- #instagram-logo {
-     width: 30px;
-     height: auto;
-     transition: transform 0.3s;
- }
-
- #instagram-button:hover #instagram-logo {
-     transform: scale(1.1) rotate(5deg);
- }
-
- footer {
-     font-size: x-small;
-     text-align: center;
-     color: rgb(27, 27, 27);
-     padding: 15px;
-     margin-top: 100pt;
-     width: 100%;
-     text-align: center;
-     padding: 3rem 2rem;
- }
-
-/* ==============================
-   HEADER & NAVIGATION
-================================ */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background-color: #e2eae6;
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 0.5rem;
-}
-
-.nav-logo img {
-  width: 120px;
-  height: auto;
-}
-
-/* Nav links - common */
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav a {
-  display: block;
-  padding: 0.5rem 1rem;
-  font-size: 15pt;
-  transition: color 0.3s;
-}
-
-nav a:hover {
-  color: #fbb831;
-}
-
-/* Dropdowns - common */
-li.dropdown {
-  position: relative;
-  cursor: pointer;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #fbb831;
-  border-radius: 10px;
-  min-width: 200px;
-  box-shadow: 0 8px 10px rgba(27,27,27,0.7);
-  flex-direction: column;
-  z-index: 1000;
-}
-
-.dropdown-content a {
-  color: #000;
-  font-family: "Cutive Mono", monospace;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 11pt;
-  padding: 0.5rem 1rem;
-}
-
-.dropdown-content a:hover {
-  color: #fff;
-  background-color: black;
-  border-bottom: none;
-}
-
-/* Desktop nav */
-@media(min-width: 861px) {
-  nav ul {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-  }
-
-  li.dropdown:hover .dropdown-content {
-    display: flex;
-  }
-
-  #menu-toggle {
-    display: none;
-  }
+    width: 100%;
+    margin: 0;
+    background: #fbf8ed;
+    color: #494f49;
+    overflow-x: hidden;
 }
 
 
-/* Tablet & Mobile nav */
-@media (max-width: 860px) {
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
 
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+.levant-page {
+    font-family: "Figtree", sans-serif;
+}
 
-  .nav-logo img {
-  width: 100px;
-  height: auto;
-  }
+.levant-page h2 {
+    margin: 0 0 18px;
 
-  .nav-controls {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
+    font-family: "Figtree", sans-serif;
+    font-size: clamp(20px, 2.2vw, 30px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
 
-  #menu-toggle {
+    color: #494f49;
+}
+
+.levant-page p {
+    margin: 0 0 18px;
+
+    font-family: "Figtree", sans-serif;
+    font-size: 10.5pt;
+    font-weight: 400;
+    line-height: 1.7;
+
+    color: #494f49;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.levant-page {
+    width: min(1180px, calc(100% - 80px));
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HERO LOGO
+   ========================================================= */
+
+.inlineLogo {
+    width: 100%;
+    padding-top: 125px;
+    padding-bottom: 20px;
+
+    text-align: center;
+}
+
+.inlineLogo img {
     display: block;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
 
-  #menu-toggle img {
-    width: 40px;
+    width: min(100%, 720px);
     height: auto;
-    display: block;
-  }
 
-  /* Mobile dropdowns */
-  li.dropdown .dropdown-content {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    box-shadow: none;
-    border-radius: 0;
-  }
-
-  li.dropdown.active .dropdown-content {
-    display: flex;
-    max-width: 80%;
-  }
-
-  .dropdown-content a{
-    font-size: 9pt;
-    padding-top:2px;
-    padding-bottom: 2px;
-    padding-left: 5px;
-    padding-right: 5px;
-  }
-
-    nav ul {
-    position: absolute;
-    top: 50%;
-    right: 60px;
-
-    transform: translateY(-20%);
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-
-    background-color: rgb(27,27,27);
-    padding: 0.75rem 1rem;
-    gap: 0.4rem;
-
-    min-width: 100px;
-    border-radius: 8px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
-
-    z-index: 999;
-  }
-
-  nav ul.show {
-    display: flex;
-  }
-
-  nav a {
-    font-size: 9pt;
-    padding: 0.25rem 0;
-    white-space: nowrap;
-  }
-
-  h1{
-    font-size: 30px;
-    text-align: left;
-    margin-left: 30px;
-  }
-
-
+    margin: 0 auto;
 }
+
+
+/* =========================================================
+   ABOUT / STORY
+   ========================================================= */
+.about {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.9fr)
+        minmax(0, 1.1fr);
+
+    align-items: center;
+
+    gap: clamp(25px, 4vw, 55px);
+
+    margin-top: 90px;
+}
+
+.about-image {
+    width: 100%;
+    max-width: 360px;
+
+    padding: 14px;
+
+    margin: 0 auto;
+}
+
+.about-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
+
+.about-content {
+    max-width: 500px;
+    margin-left: -10px;
+}
+.about-content p:first-of-type {
+    margin-bottom: 28px;
+
+    font-size: 11pt;
+    font-weight: 600;
+
+    color: #425563;
+}
+
+.about-content p:nth-of-type(2) {
+    max-width: 470px;
+}
+
+.logo-sketch {
+    display: block;
+
+    width: 100%;
+    max-width: 460px;
+
+    height: auto;
+
+    margin-top: 40px;
+}
+
 @media (max-width: 768px) {
-  .nav-logo img {
-    width: 80px; 
-    height: auto;
-  }
 
-  h1{
-    font-size: 25px;
-    text-align: left;
-    margin-left: 10px;
-  }
+    .about {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
 
-  h2{
-    margin-left: 0px;
-  }
-}  * { box-sizing: border-box; margin: 0; padding: 0; }
+    .about-content {
+        width: 100%;
+        margin-left: 0;
+    }
 
+    .about-image {
+        width: 82%;
+        max-width: 360px;
+        padding: 10px;
+        margin: 0 auto 35px;
+    }
+}
 
+/* =========================================================
+   ICONOGRAPHY
+   ========================================================= */
 
-  .scroll-container {
-    height: 300vh;
-    position: relative;
-    background: #e2eae6;
-  }
+.iconography {
+    display: grid;
 
-  .sticky-stage {
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+    grid-template-columns:
+        minmax(220px, 0.65fr)
+        minmax(0, 1.35fr);
+
     align-items: center;
-    justify-content: center;
-    gap: 0.2rem;
-  }
 
-  .logo-stage {
-    width: min(900px, 92vw);
-    aspect-ratio: 16/9;
-    background: #e2eae6;
-    border-radius: 10px;
-    position: relative;
-    overflow: hidden;
-  }
+    gap: clamp(50px, 7vw, 100px);
 
+    margin-top: 150px;
 
+    padding: 70px 0;
 
-  /* =============================================
-     LOGO LAYERS
-     Each .logo-layer is a positioned <img> or <div>.
-     Customize position/size with the inline styles
-     on each element below.
-     ============================================= */
+    border-top: 1px solid rgba(73, 79, 73, 0.16);
+    border-bottom: 1px solid rgba(73, 79, 73, 0.16);
+}
 
-  .logo-layer {
-    position: absolute;
-    /* shared transition — tweak duration/easing here */
+.iconography-content {
+    max-width: 320px;
+}
+
+.iconography-content h2 {
+    margin-bottom: 15px;
+}
+
+.iconography-content p {
+    margin: 0;
+    max-width: 300px;
+}
+
+.icon-grid {
+    display: grid;
+
+    grid-template-columns: repeat(7, 1fr);
+
+    align-items: center;
+    justify-items: center;
+
+    gap: 10px;
+}
+
+.icon-grid img {
+    display: block;
+
+    width: clamp(45px, 5vw, 72px);
+
+    height: auto;
+
     transition:
-      opacity   0.65s cubic-bezier(0.4, 0, 0.2, 1),
-      transform 0.75s cubic-bezier(0.4, 0, 0.2, 1),
-      filter    0.65s;
-    opacity: 0;
-    will-change: transform, opacity;
-  }
-  .logo-layer.visible { opacity: 1; }
-
-
-  /* --- LAYER 1: Figure (slides in from left) --- */
-  #layer-1 {
-    left: 0%;
-    bottom: 0;
-    height: 100%;
-    width: auto;
-    transform: translateX(-60px) scale(0.92);
-    filter: blur(4px);
-    transform-origin: bottom left;
-  }
-  #layer-1.visible { transform: translateX(0) scale(1); filter: blur(0); }
-
-  /* --- LAYER 2: Main wordmark (drops in from top) --- */
-  #layer-2 {
-    right: 0%;
-    top: 0%;
-    width: 100%;
-    height: auto;
-    transform: translateY(-30px) scale(0.94);
-    filter: blur(3px);
-  }
-  #layer-2.visible { transform: translateY(0) scale(1); filter: blur(0); }
-
-  /* --- LAYER 3: Icon / tree (scales up) --- */
-  #layer-3 {
-    right: 0%;
-    top: 0%;
-    width: 100%;
-    height: auto;
-    transform: translateY(-20px) scale(0.7);
-    filter: blur(3px);
-    transform-origin: bottom center;
-    transition-delay: 0.06s;
-  }
-  #layer-3.visible { transform: translateY(0) scale(1); filter: blur(0); }
-
-  /* --- LAYER 4: Sub-wordmark (rises from below) --- */
-  #layer-4 {
-    right: 0%;
-    top: 0%;
-    width: 100%;
-    height: auto;
-    transform: translateY(20px);
-    filter: blur(3px);
-    transition-delay: 0.08s;
-  }
-  #layer-4.visible { transform: translateY(0); filter: blur(0); }
-
-  /* --- LAYER 5: Badge / tagline (expands in) --- */
-  #layer-5 {
-    right: 0%;
-    bottom: 0%;
-    width: 100%;
-    height: auto;
-    transform: translateY(24px) scaleY(0.8);
-    filter: blur(3px);
-    transition-delay: 0.18s;
-    transform-origin: center;
-    background: #e2eae6;
-  }
-  #layer-5.visible { transform: translateY(0) scaleY(1); filter: blur(0); }
-
-.mainlogo{
-    text-align: center;
-}
-.mainlogo img{
-    width: 900px; 
+        transform 0.25s ease,
+        opacity 0.25s ease;
 }
 
-.identity{
-    display:block;
-    text-align: center;
-
-}
-.identity img{
-    width:600px; 
-    height: 100%;
-    text-align: center;
+.icon-grid img:hover {
+    transform: translateY(-5px);
 }
 
-.labels{
+
+/* =========================================================
+   LABEL + CONTAINER
+   ========================================================= */
+
+.labels {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.3fr)
+        minmax(520px, 0.7fr);
+    align-items: center;
+    gap: clamp(30px, 5vw, 70px);
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px 0;
+}
+
+.labels img {
     display: block;
-    text-align: center;
-}
-.labels img{
-    max-width: 1200px;
-    padding-bottom: 8px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
 }
 
-.mockups{
-    text-align: center;
+.labels img:first-child {
+    width: 100%;
+    max-width: 660px;
 }
 
-.mockups img{
-    max-width: 1200px;
+.labels img:nth-child(2) {
+    width: 100%;
+    max-width: 660px;
 }
 
 @media (max-width: 768px) {
 
-  .logo-stage {
-    width: 95vw;
-  }
+    .labels {
+        display: flex;
+        flex-direction: column;
 
-  .logo-layer {
-    width: 90%;
-  }
-.labels img{
-    max-width: 300px;
-    padding-bottom: 8px;
+        gap: 35px;
+
+        margin-top: 80px;
+        padding: 0;
+    }
+
+    .labels img:first-child {
+        width: 100%;
+        max-width: 700px;
+    }
+
+    .labels img:nth-child(2) {
+        width: 90%;
+        max-width: 420px;
+    }
+
+    .mockups {
+        margin-top: 80px;
+    }
+
+    .mockups img {
+        width: 100%;
+        max-width: 700px;
+    }
 }
 
-.mockups img{
-    max-width: 300px;
+
+/* =========================================================
+   VISUAL IDENTITY
+   ========================================================= */
+
+.identity {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(0, 0.85fr)
+        minmax(0, 0.85fr);
+
+    align-items: center;
+
+    gap: clamp(25px, 4vw, 60px);
+
+    margin-top: 10px;
+
+    padding-top: 80px;
+
+    border-top: 1px solid rgba(73, 79, 73, 0.16);
 }
 
-.identity img{
- max-width: 300px;
+.identity-item {
+    width: 100%;
 }
+
+.identity-item img {
+    display: block;
+
+    width: 100%;
+    max-width: 520px;
+
+    height: auto;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   FINAL MOCKUP
+   ========================================================= */
+
+.mockups {
+    width: 100%;
+
+    margin-top: 140px;
+
+    text-align: center;
+}
+
+.mockups img {
+    display: block;
+
+    width: min(100%, 850px);
+
+    height: auto;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+.centerImg {
+    margin-top: 100px;
+    margin-bottom: 20px;
+
+    text-align: center;
+}
+
+.centerImg button {
+    padding: 12px 30px;
+
+    border: 1px solid #425563;
+    border-radius: 0;
+
+    background: transparent;
+    color: #425563;
+
+    font-family: "Figtree", sans-serif;
+    font-size: 10pt;
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.centerImg button:hover {
+    background: #425563;
+    color: #fff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    width: 100%;
+
+    margin-top: 130px;
+    padding: 3rem 2rem;
+
+    text-align: center;
+
+    font-family: "Figtree", sans-serif;
+    font-size: x-small;
+
+    color: #000;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (min-width: 769px) and (max-width: 1100px) {
+
+    .levant-page {
+        width: calc(100% - 60px);
+    }
+
+    .inlineLogo {
+        padding-top: 110px;
+    }
+
+    .about {
+        gap: 45px;
+        margin-top: 75px;
+    }
+
+    .about-image img {
+        max-width: 420px;
+    }
+
+    .iconography {
+        grid-template-columns:
+            minmax(180px, 0.7fr)
+            minmax(0, 1.3fr);
+
+        gap: 45px;
+
+        margin-top: 110px;
+        padding: 55px 0;
+    }
+
+    .icon-grid {
+        grid-template-columns: repeat(7, 1fr);
+    }
+
+    .icon-grid img {
+        width: 55px;
+    }
+
+    .labels {
+        gap: 40px;
+        margin-top: 110px;
+    }
+
+    .identity {
+        gap: 25px;
+        margin-top: 100px;
+        padding-top: 60px;
+    }
+
+    .mockups {
+        margin-top: 100px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .levant-page {
+        width: calc(100% - 36px);
+        margin: 0 auto;
+    }
+
+
+    /* -----------------------------------------
+       LOGO
+    ----------------------------------------- */
+
+    .inlineLogo {
+        padding-top: 90px;
+        padding-bottom: 10px;
+    }
+
+    .inlineLogo img {
+        width: 100%;
+        max-width: 550px;
+    }
+
+
+    /* -----------------------------------------
+       ABOUT
+    ----------------------------------------- */
+
+    .about {
+        display: flex;
+        flex-direction: column;
+
+        gap: 0;
+
+        margin-top: 60px;
+    }
+
+    .about-image {
+        width: 100%;
+        margin-bottom: 55px;
+    }
+
+    .about-image::after {
+        right: -8px;
+        bottom: -8px;
+    }
+
+    .about-image img {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .about-content {
+        width: 100%;
+        max-width: none;
+    }
+
+    .about-content p {
+        max-width: none;
+    }
+
+    .logo-sketch {
+        width: 100%;
+        max-width: 500px;
+
+        margin: 35px auto 0;
+    }
+
+
+    /* -----------------------------------------
+       ICONOGRAPHY
+    ----------------------------------------- */
+
+    .iconography {
+        display: block;
+
+        margin-top: 90px;
+        padding: 45px 0;
+
+        border-top: 1px solid rgba(73, 79, 73, 0.16);
+        border-bottom: 1px solid rgba(73, 79, 73, 0.16);
+    }
+
+    .iconography-content {
+        width: 100%;
+        max-width: none;
+
+        margin-bottom: 35px;
+    }
+
+    .iconography-content p {
+        max-width: 400px;
+    }
+
+    .icon-grid {
+        display: grid;
+
+        grid-template-columns: repeat(4, 1fr);
+
+        gap: 25px 8px;
+
+        width: 100%;
+    }
+
+    .icon-grid img {
+        width: clamp(48px, 15vw, 68px);
+    }
+
+
+    /* -----------------------------------------
+       LABEL + CONTAINER
+    ----------------------------------------- */
+
+    .labels {
+        display: flex;
+        flex-direction: column;
+
+        gap: 45px;
+
+        margin-top: 85px;
+
+        padding: 0;
+    }
+
+    .labels img {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .labels img:nth-child(2) {
+        width: 75%;
+        max-width: 350px;
+    }
+
+
+    /* -----------------------------------------
+       IDENTITY
+    ----------------------------------------- */
+
+    .identity {
+        display: flex;
+        flex-direction: column;
+
+        gap: 45px;
+
+        margin-top: 90px;
+
+        padding-top: 60px;
+    }
+
+    .identity-item {
+        width: 100%;
+    }
+
+    .identity-item img {
+        width: 100%;
+        max-width: 550px;
+    }
+
+
+    /* -----------------------------------------
+       FINAL MOCKUP
+    ----------------------------------------- */
+
+    .mockups {
+        margin-top: 85px;
+    }
+
+    .mockups img {
+        width: 100%;
+        max-width: 600px;
+    }
+
+
+    /* -----------------------------------------
+       BACK
+    ----------------------------------------- */
+
+    .centerImg {
+        margin-top: 70px;
+        margin-bottom: 20px;
+    }
+
+
+    /* -----------------------------------------
+       FOOTER
+    ----------------------------------------- */
+
+    footer {
+        margin-top: 80px;
+        padding: 2rem 1rem;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .levant-page {
+        width: calc(100% - 30px);
+    }
+
+    .inlineLogo {
+        padding-top: 75px;
+    }
+
+    .about {
+        margin-top: 45px;
+    }
+
+    .about-image {
+        margin-bottom: 40px;
+    }
+
+    .iconography {
+        margin-top: 70px;
+        padding: 40px 0;
+    }
+
+    .icon-grid {
+        gap: 22px 5px;
+    }
+
+    .icon-grid img {
+        width: 48px;
+    }
+
+    .labels {
+        margin-top: 70px;
+    }
+
+    .labels img:nth-child(2) {
+        width: 80%;
+    }
+
+    .identity {
+        margin-top: 75px;
+        padding-top: 50px;
+        gap: 35px;
+    }
+
+    .mockups {
+        margin-top: 70px;
+    }
+
+    .centerImg {
+        margin-top: 55px;
+    }
 }

@@ -1,11 +1,3 @@
-/* =========================================================
-   ECO MATERIALS LIBRARY — FULL RESPONSIVE CSS
-   ========================================================= */
-
-
-/* =========================================================
-   GLOBAL
-   ========================================================= */
 
 *,
 *::before,
@@ -21,9 +13,7 @@ html {
 body {
     width: 100%;
     margin: 0;
-
     background-color: #fbf8ed;
-
     overflow-x: hidden;
 }
  footer {
@@ -93,15 +83,7 @@ h4 {
    MAIN ARTICLE
    ========================================================= */
 
-/*
-   Fluid width:
 
-   Large desktop:
-   max-width = 1200px
-
-   Smaller screens:
-   automatically becomes narrower.
-*/
 
 article {
     width: min(1200px, calc(100% - 80px));
@@ -1632,4 +1614,158 @@ article {
 
         margin-bottom: 40px;
     }
+}
+
+/* =========================================================
+   SECTION DIVIDERS
+   ========================================================= */
+
+article > .about,
+article > .design,
+article > .labels,
+article > .iconography,
+article > .displayIcons,
+article > .webIcons,
+article > .signs,
+article > .book-carousel,
+article > .expo {
+    position: relative;
+}
+
+
+/* ---------- Divider ---------- */
+
+article > .about::before,
+article > .design::before,
+article > .labels::before,
+article > .iconography::before,
+article > .displayIcons::before,
+
+article > .signs::before,
+article > .book-carousel::before,
+article > .expo::before {
+    content: "";
+
+    display: block;
+
+    position: absolute;
+
+    top: -40px;
+    left: 0%;
+
+    width: 100%;
+
+    height: 1px;
+
+    background: #425563;
+
+    opacity: 0.25;
+}
+@media (max-width: 768px) {
+
+    article > .about::before,
+    article > .design::before,
+    article > .labels::before,
+    article > .iconography::before,
+    article > .displayIcons::before,
+    article > .webIcons::before,
+    article > .signs::before,
+    article > .book-carousel::before,
+    article > .expo::before {
+        top: -40px;
+
+        left: 5%;
+
+        width: 90%;
+
+        background: #425563;
+
+        opacity: 0.22;
+    }
+
+    article > .about::before {
+        display: none;
+    }
+}
+
+/* =========================================================
+   FIRST SECTION
+   Don't put a divider immediately after the samples.
+   ========================================================= */
+
+article > .about::before {
+    display: none;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    article > .about::before,
+    article > .design::before,
+    article > .labels::before,
+    article > .iconography::before,
+    article > .displayIcons::before,
+    article > .webIcons::before,
+    article > .signs::before,
+    article > .book-carousel::before,
+    article > .expo::before {
+        top: -40px;
+
+        left: 5%;
+
+        width: 90%;
+
+        background: #425563;
+
+        opacity: 0.22;
+    }
+
+    article > .about::before {
+        display: none;
+    }
+}
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+.centerImg {
+    margin-top: 100px;
+    margin-bottom: 20px;
+
+    text-align: center;
+}
+
+.centerImg button {
+    padding: 12px 30px;
+
+    border: 1px solid #425563;
+    border-radius: 0;
+
+    background: transparent;
+    color: #425563;
+
+    font-family: "Figtree", sans-serif;
+    font-size: 10pt;
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.centerImg button:hover {
+    background: #425563;
+    color: #fff;
+
+    transform: translateY(-2px);
 }
