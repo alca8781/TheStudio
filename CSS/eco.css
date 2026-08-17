@@ -102,6 +102,7 @@ h2 {
     line-height: 1.1;
 
     margin-top: 0;
+    margin-left: -0px;
 }
 
 h3 {
@@ -232,7 +233,6 @@ article {
     width: 100%;
 
     margin-top: 80px;
-
     position: relative;
 }
 
@@ -253,7 +253,7 @@ article {
 }
 
 .about-content h2 {
-    margin-left: 0;
+    margin-left: -0px;
 }
 
 
@@ -967,6 +967,7 @@ article > .expo::before {
 
 .signs p{
     margin-bottom: 50px;
+    margin-left: -0px;
 }
 
 
@@ -1001,6 +1002,9 @@ article > .expo::before {
 }
 
 .bookpara h2 {
+    margin-left: -0px
+}
+.bookpara p {
     margin-left: -0px
 }
 
