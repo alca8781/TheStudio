@@ -79,7 +79,7 @@ p,
 li {
     font-family: "Figtree", sans-serif;
 
-    font-size: 10pt;
+    font-size: 11pt;
 
     font-weight: 400;
 
@@ -91,7 +91,7 @@ li {
 h2 {
     font-family: "Figtree", sans-serif;
 
-    font-size: 22pt;
+    font-size: 24pt;
 
     font-weight: 700;
 
@@ -108,7 +108,7 @@ h2 {
 h3 {
     font-family: "Figtree", sans-serif;
 
-    font-size: 16pt;
+    font-size: 18pt;
 
     font-weight: 700;
 
@@ -124,7 +124,7 @@ h3 {
 h4 {
     font-family: "Figtree", sans-serif;
 
-    font-size: 12pt;
+    font-size: 14pt;
 
     font-weight: 700;
 
@@ -241,7 +241,7 @@ article {
 
     width: 100%;
 
-    max-width: 500px;
+    max-width: 550px;
 
     height: auto;
 
@@ -303,7 +303,7 @@ article {
         minmax(0, 1fr)
         minmax(0, 1fr);
 
-    gap: clamp(30px, 5vw, 100px);
+    gap: clamp(40px, 5vw, 50px);
 
     align-items: start;
 
@@ -344,9 +344,9 @@ article {
 .color img {
     display: block;
     width: 100%;
-    max-width: 540px;
+    max-width: 600px;
     height: auto;
-    margin: 20px auto 30px auto;
+    margin: 20px 0px 30px 0px;
 }
 
 .labelmock {
@@ -1443,22 +1443,22 @@ article > .expo::before {
 
     p,
     li {
-        font-size: 10pt;
+        font-size: 11pt;
         line-height: 1.5;
     }
 
     h2 {
-        font-size: 18pt;
+        font-size: 22pt;
         line-height: 1.15;
     }
 
     h3 {
-        font-size: 14pt;
+        font-size: 19pt;
         line-height: 1.2;
     }
 
     h4 {
-        font-size: 11pt;
+        font-size: 14pt;
         line-height: 1.25;
     }
 
@@ -1796,7 +1796,7 @@ article > .expo::before {
     }
 
     .icon-row img {
-        width: 53px;
+        width: 72px;
         height: auto;
         margin-right: 2px;
         margin-bottom: 5px;
@@ -1837,7 +1837,7 @@ article > .expo::before {
 
     .displayIcons #iconsdisplay img,
     .webIcons #iconsdisplay img {
-        width: 44px;
+        width: 58px;
         height: auto;
     }
 
