@@ -4,6 +4,8 @@ document.getElementById("instagram-button").addEventListener("click", ()=> {
 });
 
 
+
+
 // Book a shoot button
 document.querySelector("#book").addEventListener("click", function() {
     window.location.href = 'contact.html'; 
