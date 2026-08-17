@@ -204,12 +204,12 @@ a {
   }
 
   .logo-container img {
-    max-width: 90%;
-    width: 300px; /* control size */
+    max-width: 100%;
+    width: 400px; /* control size */
   }
 
   .hero-subtitle {
-    font-size: 0.9rem;
+    font-size: 0.6rem;
     letter-spacing: 2px;
     margin-bottom: 40px;
   }
