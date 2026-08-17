@@ -334,6 +334,7 @@ article {
 
 .design-content li {
     margin-bottom: 8px;
+    
 }
 
 .color {
@@ -342,14 +343,10 @@ article {
 
 .color img {
     display: block;
-
     width: 100%;
-
     max-width: 540px;
-
     height: auto;
-
-    margin: 20px auto 0 auto;
+    margin: 20px auto 30px auto;
 }
 
 .labelmock {
