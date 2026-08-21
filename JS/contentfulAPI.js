@@ -59,7 +59,7 @@ cartListDisplay.appendChild(heading);
 // =======================
 const scrollContainer = document.createElement('div');
 
-scrollContainer.style.maxHeight = '45vh';
+scrollContainer.style.maxHeight = '30vh';
 scrollContainer.style.overflowY = 'auto';
 scrollContainer.style.overflowX = 'hidden';
 
