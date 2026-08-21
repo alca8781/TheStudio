@@ -50,18 +50,31 @@ viewCartButton.addEventListener('click', () => {
     return;
   }
 
-  const heading = document.createElement('h3');
-  heading.textContent = 'Cart Items:';
-  cartListDisplay.appendChild(heading);
+const heading = document.createElement('h3');
+heading.textContent = 'Cart Items:';
+cartListDisplay.appendChild(heading);
+
+// =======================
+// SCROLLABLE CART ITEMS
+// =======================
+const scrollContainer = document.createElement('div');
+
+scrollContainer.style.maxHeight = '45vh';
+scrollContainer.style.overflowY = 'auto';
+scrollContainer.style.overflowX = 'hidden';
+
+const list = document.createElement('ul');
+
+cartItems.forEach(item => {
+  const li = document.createElement('li');
+  li.textContent = item;
+  list.appendChild(li);
+});
+
+scrollContainer.appendChild(list);
+cartListDisplay.appendChild(scrollContainer);
 
 
-  const list = document.createElement('ul');
-  cartItems.forEach(item => {
-    const li = document.createElement('li');
-    li.textContent = item;
-    list.appendChild(li);
-  });
-  cartListDisplay.appendChild(list);
 
 //
 // =======================
