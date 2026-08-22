@@ -285,11 +285,7 @@ li.dropdown {
       padding-left 0.2s ease;
   }
 
-  nav a:hover {
-    color: #fbb831;
-    background-color: rgba(251, 184, 49, 0.08);
-    padding-left: 18px;
-  }
+
 
   /* ==============================
      MOBILE DROPDOWNS
