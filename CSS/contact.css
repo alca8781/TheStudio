@@ -3,25 +3,41 @@
 ================================ */
 
 .contact-form {
+    width: calc(100% - 32px);
     max-width: 620px;
     margin: 60px auto 0;
+
     display: flex;
     flex-direction: column;
     gap: 18px;
 }
 
+
+/* ==============================
+   INPUTS & TEXTAREA
+================================ */
+
 .contact-form input,
 .contact-form textarea {
+    width: 100%;
+
     background: transparent;
     border: none;
     border-bottom: 1px solid rgba(255,255,255,0.4);
+
     padding: 10px 4px;
+
     font-family: "Cutive Mono", monospace;
     font-size: 11pt;
-    color: #ffffff;
+    color: #fbb831;
+
     letter-spacing: 0.05em;
+
     outline: none;
+
     transition: border-color 0.3s ease;
+
+    border-radius: 0;
 }
 
 .contact-form input::placeholder,
@@ -39,19 +55,33 @@
     resize: vertical;
 }
 
+
+/* ==============================
+   SUBMIT BUTTON
+================================ */
+
 .contact-form button {
     margin-top: 25px;
     align-self: center;
+
     padding: 10px 28px;
+
     font-family: "Cutive Mono", monospace;
     font-size: 10pt;
+
     letter-spacing: 0.15em;
     text-transform: uppercase;
+
     background: transparent;
     color: #ffffff;
+
     border: 1px solid rgba(255,255,255,0.6);
+
     cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
 }
 
 .contact-form button:hover {
@@ -59,66 +89,300 @@
     color: #000;
 }
 
+
+/* ==============================
+   FORM STATUS
+================================ */
+
 #form-status {
     margin-top: 18px;
+
     text-align: center;
+
     font-family: "Cutive Mono", monospace;
     font-size: 9pt;
+
     letter-spacing: 0.08em;
+
     color: rgba(255,255,255,0.7);
 }
 
+
 /* ==============================
-   CHECKBOXES
+   PROJECT TYPE / CHECKBOXES
 ================================ */
 
 .project-type {
     display: flex;
     flex-direction: column;
+
     gap: 10px;
+
     margin-top: 20px;
 }
 
 .project-label {
-    font-size: 9pt;
+    font-size: 12pt;
+
     letter-spacing: 0.12em;
     text-transform: uppercase;
+
     color: rgba(255,255,255,0.6);
 }
+
+
+/* Checkbox label */
 
 .checkbox {
     display: flex;
     align-items: center;
+
     gap: 10px;
-    font-size: 2pt;
+
     cursor: pointer;
-        font-family: "Cutive Mono", monospace;
+
+    font-family: "Cutive Mono", monospace;
     font-size: 10pt;
+
     letter-spacing: 0.15em;
-     color: rgba(255,255,255,0.5);
+
+    color: rgba(255,255,255,0.5);
 }
+
+
+/* Checkbox */
 
 .checkbox input {
     appearance: none;
+    -webkit-appearance: none;
+
     width: 14px;
     height: 14px;
+
+    flex: 0 0 14px;
+
+    margin: 0;
+    padding: 0;
+
+    background-color: transparent;
+
     border: 1px solid rgba(255,255,255,0.6);
+
+    border-radius: 0;
+
     position: relative;
-        font-family: "Cutive Mono", monospace;
-    font-size: 10pt;
-    letter-spacing: 0.15em;
+
+    cursor: pointer;
 }
+
+
+/* Checked checkbox */
 
 .checkbox input:checked {
     background-color: #fbb831;
     border-color: #fbb831;
-    color: #fbb831;
 }
+
+
+/* No inner square */
 
 .checkbox input:checked::after {
-    content: "";
-    position: absolute;
-    inset: 3px;
-    background: #000;
+    content: none;
 }
 
+
+/* ==============================
+   MOBILE CONTACT FORM
+================================ */
+
+@media (max-width: 768px) {
+
+    .contact-form {
+        width: calc(100% - 32px);
+        max-width: none;
+
+        margin: 35px auto 0;
+
+        gap: 20px;
+    }
+
+
+    /* ==============================
+       MOBILE INPUTS
+    ============================== */
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        min-width: 0;
+
+        padding: 14px 5px;
+
+        font-size: 14px;
+        line-height: 1.5;
+
+        -webkit-appearance: none;
+
+        border-radius: 0;
+    }
+
+    .contact-form input {
+        height: 48px;
+    }
+
+    .contact-form textarea {
+        min-height: 150px;
+        padding-top: 14px;
+
+        resize: vertical;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+        font-size: 13px;
+    }
+
+
+    /* ==============================
+       MOBILE PROJECT TYPES
+    ============================== */
+
+    .project-type {
+        width: 100%;
+
+        margin-top: 15px;
+
+        gap: 8px;
+    }
+
+    .project-label {
+        margin-bottom: 5px;
+
+        font-size: 10px;
+
+        line-height: 1.5;
+
+        letter-spacing: 0.12em;
+    }
+
+
+    /* ==============================
+       MOBILE CHECKBOX
+    ============================== */
+
+    .checkbox {
+        display: flex;
+        align-items: center;
+
+        width: 100%;
+
+        min-height: 36px;
+
+        gap: 10px;
+
+        font-size: 13px;
+
+        line-height: 1.4;
+
+        letter-spacing: 0.08em;
+
+        color: rgba(255,255,255,0.7);
+    }
+
+    .checkbox input {
+        width: 14px;
+        height: 14px;
+
+        flex: 0 0 14px;
+
+        margin: 0;
+    }
+
+    .checkbox input:checked {
+        background-color: #fbb831;
+        border-color: #fbb831;
+    }
+
+    .checkbox input:checked::after {
+        content: none;
+    }
+
+
+    /* ==============================
+       MOBILE BUTTON
+    ============================== */
+
+    .contact-form button {
+        width: 100%;
+
+        min-height: 50px;
+
+        margin-top: 15px;
+
+        padding: 12px 20px;
+
+        font-size: 12px;
+
+        letter-spacing: 0.12em;
+    }
+
+    .contact-form button:active {
+        background-color: #fbb831;
+        color: #000;
+    }
+
+
+    /* ==============================
+       MOBILE FORM STATUS
+    ============================== */
+
+    #form-status {
+        margin-top: 12px;
+
+        padding: 0 10px;
+
+        font-size: 10px;
+
+        line-height: 1.5;
+    }
+}
+
+
+/* ==============================
+   VERY SMALL PHONES
+================================ */
+
+@media (max-width: 400px) {
+
+    .contact-form {
+        width: calc(100% - 24px);
+
+        margin-top: 25px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 13px;
+    }
+
+    .contact-form textarea {
+        min-height: 130px;
+    }
+
+    .checkbox {
+        font-size: 12px;
+
+        letter-spacing: 0.06em;
+    }
+
+    .checkbox input {
+        width: 14px;
+        height: 14px;
+
+        flex-basis: 14px;
+    }
+
+    .contact-form button {
+        font-size: 11px;
+    }
+}
