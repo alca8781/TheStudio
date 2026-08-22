@@ -1,35 +1,295 @@
-/* ===== LOGO GALLERY ===== */
+/* =========================================================
+   AC STUDIOS — LOGO PORTFOLIO
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    background: #fbf8ed;
+    color: #494f49;
+    overflow-x: hidden;
+}
+
+p {
+    font-family: "Figtree", sans-serif;
+    font-size: 10pt;
+    font-weight: 400;
+    color: #d6d6d6;
+
+    line-height: 1.55;
+}
+
+h3 {
+    font-family: "Figtree", sans-serif;
+    font-size: clamp(20pt, 3vw, 30pt);
+    font-weight: 700;
+    color: #d6d6d6;
+    line-height: 1.1;
+    margin: 0;
+    padding: 0;
+}
+
+.typewriter h3 {
+  font-family: "Limelight", sans-serif;
+  color: #494f49;
+    font-size: clamp(22pt, 4vw, 34pt);
+    font-weight: 700;
+    border: none;
+}
+
+
+/* =========================================================
+   PAGE CONTAINER
+   ========================================================= */
+
+.logo-page {
+    width: min(1180px, calc(100% - 80px));
+    margin: 0 auto;
+    font-family: "Figtree", sans-serif;
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.typewriter {
+    width: 100%;
+    padding-top: 125px;
+    padding-bottom: 55px;
+    
+
+}
 
 article {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  padding: 2rem 5%;
+    width: min(1200px, calc(100% - 80px));
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-bottom: 40px;
+
+    animation: none;
 }
 
-/* images */
-article img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
 
-  padding: 0.5rem;
-  border-radius: 10px;
+/* =========================================================
+   LOGO GALLERY
+   ========================================================= */
 
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
+.logos {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding: 80px 80px 80px 80px;
 }
 
-/* hover effect */
-article img:hover {
-  transform: scale(1.05);
- 
+
+/* =========================================================
+   LOGO CARDS
+   ========================================================= */
+
+.logos img {
+    display: block;
+
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 0 auto;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
 }
 
-/* optional: make spacing tighter on small screens */
+.logos img:hover {
+    transform: translateY(-6px);
+}
+
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+.centerImg {
+    margin-top: 90px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.centerImg button {
+    padding: 12px 30px;
+    border: 1px solid #425563;
+    border-radius: 0;
+    background: transparent;
+    color: #425563;
+    font-family: "Figtree", sans-serif;
+    font-size: 10pt;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.centerImg button:hover {
+    background: #425563;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    width: 100%;
+    margin-top: 130px;
+    padding: 3rem 2rem;
+    text-align: center;
+    font-family: "Figtree", sans-serif;
+    font-size: x-small;
+    color: #000;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (min-width: 769px) and (max-width: 1100px) {
+
+    .logo-page {
+        width: calc(100% - 10px);
+    }
+
+    .typewriter {
+        padding-top: 110px;
+        padding-bottom: 45px;
+    }
+
+    .logos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 80px 80px 80px 80px;
+}
+
+    .logos img {
+        padding: 5px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
 @media (max-width: 768px) {
-  article {
-    gap: 1.5rem;
-    padding: 1rem;
-  }
+
+    .logo-page {
+        width: calc(100% - 36px);
+        margin: 0 auto;
+    }
+
+
+    /* -----------------------------------------
+       TITLE
+    ----------------------------------------- */
+
+    .typewriter {
+        padding-top: 90px;
+        padding-bottom: 35px;
+    }
+
+    .typewriter h3 {
+        font-size: clamp(27px, 8vw, 40px);
+    }
+
+
+    /* -----------------------------------------
+       LOGO GALLERY
+    ----------------------------------------- */
+
+    .logos {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 10px 0;
+    }
+
+    .logos img {
+        width: 100%;
+        max-width: 330px;
+
+        padding: 15px;
+    }
+
+
+
+    /* -----------------------------------------
+       BACK
+    ----------------------------------------- */
+
+    .centerImg {
+        margin-top: 65px;
+        margin-bottom: 20px;
+    }
+
+
+    /* -----------------------------------------
+       FOOTER
+    ----------------------------------------- */
+
+    footer {
+        margin-top: 80px;
+        padding: 2rem 1rem;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .logo-page {
+        width: calc(100% - 30px);
+    }
+
+    .typewriter {
+        padding-top: 75px;
+        padding-bottom: 30px;
+    }
+
+    .logos {
+        gap: 22px;
+    }
+
+    .logos img {
+        padding: 18px;
+    }
+
+    .centerImg {
+        margin-top: 50px;
+    }
 }
